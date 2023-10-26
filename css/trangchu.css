@@ -3,9 +3,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 header {
-    width: 1485px;
+    width: auto;
     height: auto;
   background-color: yellow;
 }
@@ -14,7 +15,7 @@ header ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 30px;
 }
 header ul li a {
     text-decoration: none;
@@ -30,7 +31,7 @@ header ul li {
 }
 header ul li input {
     position: relative;
-    width: 600px;
+    width: 500px;
     height: 50px;
     border-radius: 50px;
     border: 1px solid black;
@@ -43,34 +44,31 @@ header ul li input {
 header ul li> i{
     position: absolute;
     font-size: 40px;
-    right: 500px;
+    right: 40%;
     top: 25px;
     color: black;
 }
 .container{
-    width: 1485px;
-    height: 50px;
     background-color: #0e0909;
-    max-width: 1485px;
 }
-.container>ul {
-    position: relative;
+.container ul {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    
 }
-.container> ul>li {
-   line-height: 50px;
-    position: relative;
+.container>ul>li {
+   line-height: 30px;
     cursor: pointer;
+    padding: 10px 55px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
 }
+
 .container>ul>li:hover {
     background-color: #746d6d;
 }
-.container ul li a {
+.container>ul>li>a {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -78,7 +76,29 @@ header ul li> i{
 }
 .menu-container {
     position: absolute;
-    width: 1485px;
-    height: 50px;
-    max-width: 1485px;
+    background-color: #f5f0f0ef;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 100%;
+}
+.menu-container ul{
+    flex-direction: column;
+    padding: 15px ;
+    
+}
+.menu-container ul li{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+.menu-container ul li:hover{
+    color: rgb(57, 133, 219);
+    background-color: none;
+
+}
+.container ul li:hover .menu-container{
+    display: block;
 }
