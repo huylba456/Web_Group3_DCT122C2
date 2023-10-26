@@ -1,7 +1,19 @@
 {
   "scm.alwaysShowActions": false,
   "scm.alwaysShowRepositories": true,
-  "scm.repositories.sortOrder": "discovery time",
-  "scm.providerCountBadge": "auto",
-  "scm.experimental.showSyncView": false
+  "scm.repositories.sortOrder": "path",
+  "scm.providerCountBadge": "hidden",
+  "scm.experimental.showSyncView": false,
+  "scm.diffDecorationsIgnoreTrimWhitespace": "false",
+  "scm.diffDecorations": "all",
+  "git.alwaysSignOff": false,
+  "git.useCommitInputAsStashMessage": false,
+  "git.rememberPostCommitCommand": false,
+  "git.enableSmartCommit": true,
+  "git.branchProtectionPrompt": "alwaysPrompt",
+  "git.closeDiffOnOperation": false,
+  "git.postCommitCommand": "none",
+  "git.pullBeforeCheckout": false,
+  "git.verboseCommit": false,
+  "git.confirmEmptyCommits": false
 }
