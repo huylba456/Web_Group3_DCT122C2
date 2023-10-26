@@ -1,6 +1,7 @@
 {
   "scm.alwaysShowActions": false,
   "scm.alwaysShowRepositories": true,
+<<<<<<< HEAD
   "scm.repositories.sortOrder": "path",
   "scm.providerCountBadge": "hidden",
   "scm.experimental.showSyncView": false,
@@ -16,4 +17,9 @@
   "git.pullBeforeCheckout": false,
   "git.verboseCommit": false,
   "git.confirmEmptyCommits": false
+=======
+  "scm.repositories.sortOrder": "discovery time",
+  "scm.providerCountBadge": "auto",
+  "scm.experimental.showSyncView": false
+>>>>>>> 01a548e2bd6e18d6bf2617011e267fce78b93ace
 }
