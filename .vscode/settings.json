@@ -1,0 +1,7 @@
+{
+  "scm.alwaysShowActions": false,
+  "scm.alwaysShowRepositories": true,
+  "scm.repositories.sortOrder": "discovery time",
+  "scm.providerCountBadge": "auto",
+  "scm.experimental.showSyncView": false
+}
