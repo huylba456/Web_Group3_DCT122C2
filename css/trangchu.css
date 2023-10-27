@@ -133,10 +133,18 @@ header ul li> i{
     justify-content: center;
     align-items: center;
 } 
+.slider-product{
+    background-color: purple;
+    position: relative;
+    margin: 100px;
+}
 .slider-product-title{
     font-size: 50px;
     font-weight: bold;
     color: white;
     text-align: center;
     text-transform: uppercase;
+}
+.slider-product-items{
+  
 }
