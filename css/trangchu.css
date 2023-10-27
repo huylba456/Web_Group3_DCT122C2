@@ -170,14 +170,27 @@ header ul li> i{
 .slider-product-item{
     background-color: white;
     width: 85%;
-    border: 2px solid black;
-    
+    border-radius: 8px;
     margin: 10px;
 }
 .slider-product-item img{
+    padding-top: 20px;
     width: 200px;
     height: 200px;
+    border-radius: 8px;
+    transition: transform 0.5s;
 }
+.slider-product-item img:hover {
+    transform: translateY(0);
+    animation: pulse 1s infinite ; 
+}
+
+@keyframes pulse {
+    100% {
+        transform: translateY(-5%);
+    }
+}
+
 .foot-content{
     background-color: #eee1e1e8;
 }
