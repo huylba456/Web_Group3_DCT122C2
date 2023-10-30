@@ -8,7 +8,8 @@
 header {
     width: auto;
     height: auto;
-  background-color: yellow;
+    background-color: yellow;
+    text-align: center;
 }
 header ul {
     list-style-type: none;
@@ -144,7 +145,4 @@ header ul li> i{
     color: white;
     text-align: center;
     text-transform: uppercase;
-}
-.slider-product-items{
-  
 }
