@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+     
+     <style>
+        .align{
+            align-items: center;
+            font-size: 20px;
+        }
+            .text{
+    text-transform: uppercase;
+    font-size: 24px;
+}
+.box {
+    margin: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+   
+    border-radius: 5px;
+    padding: 15px;
+}
+.img-box {
+    width: 100%;
+    height: 176px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.images {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: cover;
+    object-position: center;
+}
+.bottom {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px;
+}
+h2 {
+    font-size: 20px;
+    color: orangered;
+}
+body{
+  background: #f3f3f3;
+}
+.text{
+  transform: uppercase;
+    font-size: 20px;
+}
+        
+     </style>
+</head> 
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-warning bg-gradient fixed-top mh-100 d-block" style="  background:white;" >
+    <div class="container-fluid d-flex justify-content-center">
+      <a class="navbar-brand mx-sm-2 text-primary text  " style="padding-left: 20%;" href="index.html">Logo</a>
+      <form class="d-flex col-sm-4 ms-sm-5 ">
+        <input class="form-control me-5 " id="searchBar" type="text" placeholder="Search">
+        <button class="btn btn-primary" style="max-width: 70px;" type="button">Search</button>
+      </form>
+      <ul class="navbar-nav me-auto " >
+       
+        <li class="nav-item mx-sm-3">
+          <a class="nav-link text-primary text signin" href="signin.html">Đăng nhập</a>
+        </li>
+      </ul>
+    </div>
+      <div class="container-fluid d-flex justify-content-center">
+        
+        <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="mynavbar">
+          <ul class="navbar-nav me-auto" style="padding-left: 20%;" >
+            <li class="nav-item mx-sm-5">
+              <a class="nav-link  text-1  " href="javascript:void(0)">introduce</a>
+            </li>
+            <li class="nav-item mx-sm-5">
+              <a class="nav-link  text-1 " href="danhsach.html?iphone">apple</a>
+            </li>
+            <li class="nav-item mx-sm-5">
+              <a class="nav-link  text-1 " href="danhsach.html?vivo">vivo</a>
+            </li>
+            <li class="nav-item mx-sm-5">
+              <a class="nav-link  text-1 " href="danhsach.html?xiaomi">xiaomi</a>
+            </li>
+            <li class="nav-item mx-sm-5">
+              <a class="nav-link  text-1 " href="danhsach.html?samsung">samsung</a>
+            </li>
+            <li class="nav-item mx-sm-5">
+              <a class="nav-link  text-1 " href="danhsach.html?oppo">oppo</a>
+            </li>
+            
+          </ul>
+          
+        </div>
+      </div>
+     
+    </nav>
+    
+        <div class="top row mh-100  " style=" border: 1px solid; margin-top: 120px; background: white;">
+            <div class="picture col-sm-4 " style="border-right: 1px solid;">
+                <img class="overflow-hidden w-100 img-fluid d-block align-self-lg-center" style="margin: 0; margin-top: 20px;" src="" alt="">
+            </div>
+            <div class="content col-sm-8  justify-content-center ">
+                <h1 class="name mt-sm-2 display-1 justify-content-center d-flex text-danger"></h1>
+                <div class="info d-block p-2" style="border: 1px solid;"></div>
+                <div class="price mt-sm-2 justify-content-center d-flex"></div>
+                <button type="button" class="btn btn-outline-warning btn-add-cart my-sm-2" onclick="them()" style="margin-left: 46%; font-size: 25px;">Buy</button>
+            </div>
+        </div>
+        <div class="rounded-3 align-content-end  mt-sm-5 " style=" background: #4e4a4a">
+          <div class=" justify-content-center  pt-4 rounded-3" style=" ">
+           <strong class="display-4" style="color: white;">Danh mục xu hướng</strong> 
+          </div>
+          <div class="container-fluid mh-100 row mx-sm-5 py-sm-5"
+        id="root-random"></div>
+        </div>
+        <div class="row my-sm-5" style="border: 1px solid lightcyan; background: white">
+            <div class="col-sm-3 mx-sm-4">
+            <p><a href="https://www.facebook.com/shino.chung.39" class="text-uppercase text-decoration-none  ">vũ hoàng chung</a></p>
+            <p><a href="https://www.facebook.com/profile.php?id=100009276486984" class="text-uppercase text-decoration-none" style="color: rgb(246, 36, 89);"> trần đăng khoa</a></p>
+            <p> <a href="https://www.facebook.com/profile.php?id=100025086367192" class="text-uppercase text-decoration-none" style="color: purple;"> nguyễn quốc khánh</a></p>
+            <p><a href="" class="text-uppercase text-decoration-none"> trần quang huy</a></p>  
+              
+             
+              
+            </div>
+            <div class="col-sm-3">
+              <p class="text-uppercase">mssv:3122560007</p>
+              <p class="text-uppercase"> mssv:3122410186</p>
+              <p class="text-uppercase"> mssv:3122410180</p>
+              <p class="text-uppercase"> trần quang huy</p>
+            </div>
+            <div class="col-sm-3">
+              <p class="text-uppercase">sđt:0357628050</p>
+              <p class="text-uppercase"> sđt:0388635899</p>
+              <p class="text-uppercase"> sđt:0931213714</p>
+              <p class="text-uppercase"> trần quang huy</p>
+            </div>
+          </div>
+    
+    <script src="main.js"></script>
+    <script src="javascripts/data.js"></script>
+    <script src="javascripts/hienthichitiet.js"></script>
+    <script>
+      const categories = [...new Set(list_products.map((item) => { return item }))]
+      var list_random =[];
+      function addlist(){
+     for(let i=0;i<5;i++){
+             list_random.push(categories[Math.floor(Math.random()*50)+1])
+      }
+}
+addlist();
+const displayItemRandom = (items) => {
+    
+    document.getElementById('root-random').innerHTML = items.map((item) => {
+        var { img, name, price , masp} = item;
+        var chitietSp='chitietsanpham.html?' +name.split(' ').join('-');
+        console.log(masp);
+        return (
+            `<div class='box hover col-sm-2   mx-sm-3 my-sm-2' style=' background:white;'>
+            <a class='text-decoration-none'href="` + chitietSp + `">
+                <div class='img-box'>
+                    <img class='images ' src=${img}></img>
+                </div> 
+                <div class='bottom'>
+                    <p name='name'>${name}</p>
+                    <h2> ${price}đ</h2>
+                <button class='btn'  >Add to cart</button>
+                </div>
+            </div>`
+        )
+    }).join('')
+};
+displayItemRandom(list_random);
+</script>
+</body>
+</html>

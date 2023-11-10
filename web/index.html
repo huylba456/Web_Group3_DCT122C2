@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Làm Của Bốn Sinh Viên</title>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      body{
+        background: #cd1817;
+        background-image: url(image/banner\ 1.webp);
+        
+      }
+      *{
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-warning bg-gradient fixed-top mh-100 d-block" style="  background:white;" >
+      <div class="container-fluid d-flex justify-content-center">
+        <a class="navbar-brand mx-sm-2 text-primary text  " style="padding-left: 20%;" href="index.html">Logo</a>
+        <form class="d-flex col-sm-4 ms-sm-5 ">
+          <input class="form-control me-5 " id="searchBar" type="text" placeholder="Search">
+          <button class="btn btn-primary" style="max-width: 70px;" type="button">Search</button>
+        </form>
+        <ul class="navbar-nav me-auto " >
+         
+          <li class="nav-item mx-sm-3">
+            <a class="nav-link text-primary text signin" href="signin.html">Đăng nhập</a>
+          </li>
+        </ul>
+      </div>
+        <div class="container-fluid d-flex justify-content-center">
+          
+          <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="mynavbar">
+            <ul class="navbar-nav me-auto" style="padding-left: 20%;" >
+              <li class="nav-item mx-sm-5">
+                <a class="nav-link  text-1  " href="javascript:void(0)">introduce</a>
+              </li>
+              <li class="nav-item mx-sm-5">
+                <a class="nav-link  text-1 " href="danhsach.html?iphone">apple</a>
+              </li>
+              <li class="nav-item mx-sm-5">
+                <a class="nav-link  text-1 " href="danhsach.html?vivo">vivo</a>
+              </li>
+              <li class="nav-item mx-sm-5">
+                <a class="nav-link  text-1 " href="danhsach.html?xiaomi">xiaomi</a>
+              </li>
+              <li class="nav-item mx-sm-5">
+                <a class="nav-link  text-1 " href="danhsach.html?samsung">samsung</a>
+              </li>
+              <li class="nav-item mx-sm-5">
+                <a class="nav-link  text-1 " href="danhsach.html?oppo">oppo</a>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+       
+      </nav>
+       <img class=" img mh-100 overflow-hidden container " src="image/quang-cao1.jpg" style="height: 600px; margin-top: 200px; margin-left: 7%; " alt="New York" > 
+       <div class="container row overflow-hidden justify-content-center align-content-end"  style="background: url(image/sieu-sale.webp) ; height: 600px; margin-left: 7%; margin-top: 30px;">
+        <a href="chitietsanpham.html?Samsung-Galaxy-A05" class="col-sm-2 overflow-hidden mx-sm-3 mb-sm-5" style="background: url(image/sale-1.webp) ;   background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover ; height: 300px; ;"></a>
+        <a href="chitietsanpham.html?Samsung-Galaxy-A34" class="col-sm-2 overflow-hidden mx-sm-3 mb-sm-5" style="background: url(image/sale-2.webp)   ; background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;height: 300px;"></a>
+        <a href="chitietsanpham.html?Samsung-Galaxy-S22-Ultra" class="col-sm-2 overflow-hidden mx-sm-3 mb-sm-5" style="background: url(image/sale-3.webp) ;   background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;height: 300px;"></a>
+        <a href="chitietsanpham.html?Samsung-Galaxy-Z-Flip5" class="col-sm-2 overflow-hidden mx-sm-3 mb-sm-5" style="background: url(image/sale-4.webp) ;   background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;height: 300px;"></a>
+      </div>
+      <div class=" mh-100 ms-sm-6" style="height: 80px; margin: 50px; border: 1px solid ;background:white;">
+        <select class="col-sm-3 mx-sm-5 my-sm-4"  name="" id="list-company" onchange="getsearch()">
+            <option value="company">company</option>
+            <option value="xiaomi">xiaomi</option>
+            <option value="vivo">vivo</option>
+            <option value="samsung">samsung</option>
+            <option value="oppo">oppo</option>
+            <option value="iphone">iphone</option>
+        </select>
+        <select class="col-sm-3 mx-sm-5 my-sm-4" name="" id="list-price" onchange="getsearch()">
+            <option value="price">price</option>
+            <option value="0-5milion">5 triệu</option>
+            <option value="5milion-10milion">10 triệu</option>
+            <option value="10milion-15milion">15 triệu</option>
+            <option value="15milion-50milion">50 triệu</option>
+          
+
+        </select>
+        <select class="col-sm-3 mx-sm-5 my-sm-4" name="" id="list-ram" onchange="getsearch()">
+          <option value="ram">ram</option>
+          <option value="4 GB">4 GB</option>
+          <option value="6 GB">6 GB</option>
+          <option value="8 GB">8 GB</option>
+          <option value="12 GB">12 GB</option>
+      </select>
+      </div>
+      <div class="rounded-3 align-content-end bg-danger container " style=" background: #ff685f;">
+        <div class="w-75 justify-content-center py-sm-4  rounded-4" style="margin-left: 40%; ">
+          <p class="display-2" style="color: #f3f3f3;">SẢN PHẨM</p>
+        </div>
+        <div class="container-fluid mh-100 row mx-sm-5 py-sm-3"
+      id="root"></div>
+      </div>
+      
+      <div class="pagination justify-content-center mt-sm-4">
+        <button class="w-25 mx-sm-5" id="prevPage">Previous</button>
+        <button class="w-25 mx-sm-5" id="nextPage">Next</button>
+    </div>
+    <div class="rounded-3 align-content-end bg-danger mt-sm-4 container " style=" background:  linear-gradient(90deg,#ffecd2 0%,#fcb69f 100%);">
+      <div class=" justify-content-center   rounded-3" style=" ">
+        <img src="image/sale.webp" alt="" style="width: 100%;">
+      </div>
+      <div class="container-fluid mh-100 row mx-sm-5 py-sm-5"
+    id="root-sale"></div>
+    </div>
+    <div class="pagination justify-content-center mt-sm-4">
+      <button class="w-25 mx-sm-5" id="prevPageSale">Previous</button>
+      <button class="w-25 mx-sm-5" id="nextPageSale">Next</button>
+  </div>
+  <div class="rounded-3 align-content-end  mt-sm-4 container" style=" background: #4e4a4a">
+    <div class=" justify-content-center  pt-4 rounded-3" style=" ">
+     <strong class="display-4" style="color: white;">Danh mục xu hướng</strong> 
+    </div>
+    <div class="container-fluid mh-100 row mx-sm-5 py-sm-5"
+  id="root-random"></div>
+  </div>
+  <div class="pagination justify-content-center mt-sm-4">
+    <button class="w-25 mx-sm-5" id="prevPageRandom">Previous</button>
+    <button class="w-25 mx-sm-5" id="nextPageRandom">Next</button>
+</div>
+      <div class="row my-sm-5 container justify-content-center" style="border: 1px solid lightcyan; margin-left: 8%; background:white;">
+        <div class="col-sm-3 mx-sm-4">
+        <p  class="text-uppercase text-decoration-none  ">Đặng Minh Hào</p>
+        <p class="text-uppercase text-decoration-none" >Đỗ Gia Huy</p>
+        <p class="text-uppercase text-decoration-none" > Lưu Chấn Vinh</p>
+          
+         
+          
+        </div>
+        <div class="col-sm-3" style="color: #7e7e7e;">
+          <p class="text-uppercase">mssv:3122411047</p>
+          <p class="text-uppercase"> mssv:312241062</p>
+          <p class="text-uppercase"> mssv:312241246</p>
+        </div>
+        <div class="col-sm-3" style="color: #000;">
+          <p class="text-uppercase">sđt:0999999999</p>
+          <p class="text-uppercase"> sđt:0988888888</p>
+          <p class="text-uppercase"> sđt:0900000009</p>
+        </div>
+      </div>
+    
+      <script src="javascripts/data.js"></script>
+      <script src="javascripts/seaarch.js"></script>
+      <script src="main.js"></script>
+        <script>
+          
+           var img= document.querySelector(".img");
+           var index=1;
+        changeImge = function()
+        {
+            var imgs = ["image/quang-cao1.jpg","image/quang-cao2.png","image/quang-cao3.jpg","image/quang-cao4.jpg"];
+            console.log(imgs[index]);
+            switch (index) {
+                case 1:
+                    img.src =imgs[index] ;
+                    break;
+                
+                case 2:
+                    img.src = imgs[index];
+                    break;
+                
+                case 3:
+                   img.src= imgs[index];
+                    break;
+                
+                case 0:
+                    img.src = imgs[index];
+                    break;
+            }
+            index++;
+            if(index==4) index = 0;
+        }
+        setInterval(changeImge,2000);
+        
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <style>
+        body{
+        background: #cd1817;
+        background-image: url(image/banner\ 1.webp);
+        height: 100vh;
+      }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding-top: 10%;">
+        <div class="signup margin">
+            <h1 class="margin" style=" margin-left: 35%">Đăng kí miễn phí</h1>
+        
+            <form  onsubmit="getuser()">
+        
+                
+                    <div class="field-wrap margin">
+                        <label class="form-label">
+                            Họ<span class="req">*</span>
+                        </label>
+                        <input name="ho" class="name form-control" type="text" required autocomplete="off" />
+                    </div>
+        
+                    <div class="field-wrap margin">
+                        <label class="form-label">
+                            Tên<span class="req">*</span>
+                        </label>
+                        <input name="ten" type="text" class="fullname form-control required autocomplete="off" />
+                    </div>
+                 <!-- / ho ten -->
+        
+                <div class="field-wrap margin">
+                    <label class="form-label">
+                        Email<span class="req">*</span>
+                    </label>
+                    <input name="email" type="email" class="email form-control" required autocomplete="off" style="font-size: 15px;" />
+                </div> <!-- /email -->
+        
+                <div class="field-wrap margin">
+                    <label class="form-label">
+                        user<span class="req">*</span>
+                    </label>
+                    <input name="newUser" class="username form-control" type="text" required autocomplete="off" />
+                </div> <!-- /user name -->
+        
+                <div class="field-wrap margin">
+                    <label>
+                        Mật khẩu<span class="req">*</span>
+                    </label>
+                    <input name="newPass" type="password" class="pass form-control" required autocomplete="off" />
+                </div> <!-- /pass -->
+        
+                <button  class="button margin " style="margin-left: 50%; font-size: 20px; margin-top: 5%;" >Tạo tài khoản</button>
+        
+            </form> <!-- /form -->
+        
+          </div>
+    </div>
+    
+      <script src="/javascripts/data.js"></script>
+      <script src="main.js"></script>
+   
+      
+      
+    
+</body>
+</html>
