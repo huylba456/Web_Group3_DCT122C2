@@ -26,10 +26,13 @@ function updateListUser(u, newData) {
     setListUser(list);
 }
 
+function khongTimThaySanPham() {
+    console.log('Không tìm thấy sản phẩm');
+}
 function phanTich_URL_chiTietSanPham() {
    var nameProduct = window.location.href.split('?')[1]; // lấy tên
    var maProduct;
-    
+   console.log(nameProduct);
 
     // tách theo dấu '-' vào gắn lại bằng dấu ' ', code này giúp bỏ hết dấu '-' thay vào bằng khoảng trắng.
     // code này làm ngược lại so với lúc tạo href cho sản phẩm trong file classes.js
@@ -48,7 +51,6 @@ function phanTich_URL_chiTietSanPham() {
     if(!sanPhamHienTai) return khongTimThaySanPham();
 
     var divChiTiet = document.getElementsByClassName('content')[0];
-
     // Đổi title
     document.title = nameProduct + ' - Thế giới điện thoại';
 
