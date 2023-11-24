@@ -109,6 +109,6 @@ function scrollToProduct() {
 // chuyen sang admin
 const adminBtn = document.querySelector('.adminbtn');
 adminBtn.addEventListener('click', function () {
-    window.location.href = "../TrangAdmin/index.html";
+    window.location.href = "../TrangAdmin/tongquan.html";
 })
 

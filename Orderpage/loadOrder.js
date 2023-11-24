@@ -192,7 +192,7 @@ checkout.addEventListener("click", function() {
     }
     clickToBuyModalCart();
     alert('Đặt hàng thành công! quay về trang chủ.');
-    window.location.href = "../ProductPage/ProductPage.html";
+    window.location.href = "../ProductPage/index.html";
 })
 
 let listMessage = document.querySelectorAll(".listMes");
