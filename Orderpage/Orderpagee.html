@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Link CSS -->
+ <link rel="stylesheet" href="./orderpage.css">
+ <!-- Fontawesome -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css" integrity="sha512-C8Movfk6DU/H5PzarG0+Dv9MA9IZzvmQpO/3cIlGIflmtY3vIud07myMu4M/NTPJl8jmZtt/4mC9bAioMZBBdA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+ <title>Porfumelus</title>
+ 
+</head>
+<body>
+	<div class="activemauden"></div>
+ <!-- Header STARTS -->
+	<div class="header">
+			<div class="nav">
+				<div class="nav__link">
+					<ul>
+						<li><a>Trang Chủ</a></li>
+						<li><a>Giới Thiệu</a></li>
+						<li><a>Bảo Hành</a></li>
+						<li><a>Liên Hệ</a></li>
+					</ul>
+					<ul>
+						<div class="user">
+							<div class="borderuser">
+								<li class="usersection"><div>Xin chào,</div> <div class="name"></div></li>
+								<li class="usersection logout">| Đăng xuất</li>
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="admin">
+							<div class="borderadmin">
+								<li class= "adminsection"><div>Xin chào, </div> <div class="name"> </div></li>
+								<li class="adminsection logout"><a>| Đăng xuất</a></li>
+								<li class="adminbtn"><i class="fa-solid fa-gear"></i></li>
+								<li class="vieworder"><i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+							</div>
+						</div>
+						<div class="nonuser">
+							<div class="bordernonuser">
+								<li><div class="dangnhap">Đăng nhập</div></li>
+								<li><div class="dangky">| Đăng ký</div></li>
+							</div>
+						</div>
+					</ul>
+			</div>
+			<div class="nav__center">
+				<div class="nav__logo--icon"></div>
+				<div class="nav__logo--name">Porfumelus</div>
+				<form class="nav__search outline" method="get" action="index.html">
+					<input class="nav__search--input" type="text" placeholder="Tìm kiếm sản phẩm...">
+					<button class="nav__search--btn outline" type="submit"><i class="fas fa-search"></i></button>
+				</form>
+			</div>
+			</div>
+	</div>
+<!-- Header ENDS  -->
+	<div class="top"></div>
+
+<!-- Content STARTS -->
+	<div class="content">
+		<div class="small-container cart-page">
+			<table>
+				<thead>
+					<tr>
+						<th>Sản phẩm</th>
+						<th>Dung tích</th>
+						<th>Số lượng</th>
+						<th>Giá</th>
+					</tr>
+				</thead>
+				<tbody class="productordered">
+					
+				</tbody>
+			</table>
+			<div class="product__pagination">
+				<a href="#">&laquo;</a>
+				<a href="#" class="active">1</a>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">&raquo;</a>
+				</div>
+			<!-- Tổng chi phí -->
+			<div class="total-price">
+
+			</div>
+			<div class="orderpage-button">
+				<button class="check-shipping-info" id="myBtn">Kiểm tra thông tin vận chuyển</button>
+				<button class="checkout">Thanh toán</button>
+			</div>
+		</div>
+		
+		<div id="my_shipping_modal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+			  <span class="close">&times;</span>
+			  <h2>Kiểm tra thông tin vận chuyển</h2>
+			 <div class="info">
+				<label for="name"><b>Họ và tên</b></label>
+				<input type="text" class="ten" placeholder="nhập họ và tên">
+				<p class="listMes">err</p>
+				<label for="number"><b>Số điện thoại</b></label>
+				<input type="text" class="sdt" placeholder="nhập số điện thoại">
+				<p class="listMes">err</p>
+				<label for="address"><b>Địa chỉ</b></label>
+				<input type="text"  class="diachi" placeholder="nhập địa chỉ">
+				<p class="listMes">err</p>
+			 </div>
+	
+			  <small>Xin hãy xem xét cẩn thận thông tin vận chuyển kẻo gặp lỗi khi vận chuyển nha</small>
+				
+			  <button class="save">Lưu thông tin</button>
+			</div>
+		  </div>
+	
+		<script>
+			
+			var modal = document.getElementById("my_shipping_modal");
+	
+			// Get the button that opens the modal
+			var btn = document.getElementById("myBtn");
+			
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+			var activemauden = document.querySelector(".activemauden");
+			// When the user clicks the button, open the modal 
+			btn.onclick = function() {
+			  modal.style.display = "block";
+			  activemauden.style.display = "block";
+			  activemauden.addEventListener("click", function(){
+				modal.style.display = "none";
+				activemauden.style.display = "none";
+			  })
+			}
+			
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+			  modal.style.display = "none";
+			  activemauden.style.display = "none";
+			}
+			
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+			  if (event.target == modal) {
+				modal.style.display = "none";
+			  }
+			}    
+	
+		</script>
+	</div>
+<!-- Content ENDS -->
+
+
+<!-- Footer STARTS -->
+	<div class="footer parent">
+		<div class="child">
+			<div class="footer__left">
+				<div class="footer__left--name">Porfumelus</div>
+				<div class="footer__left--slogan">Kích thích mọi giác quan<br> với hương thơm đẳng cấp.</div>
+				<div class="footer__left--social">
+					<button class="footer__left--socialbtn"><i class="fab fa-facebook-square"></i></button>
+					<button class="footer__left--socialbtn"><i class="fab fa-instagram-square"></i></button>
+					<button class="footer__left--socialbtn"><i class="fab fa-twitter-square"></i></button>
+				</div>
+			</div>
+			<div class="footer__right">	
+				<div class="footer__right--information">
+				<ul>
+					<li><h3>Information</h3></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Product</a></li>
+					<li><a href="">Blog</a></li>
+				</ul>
+
+				</div>
+				<div class="footer__right--company">
+				<ul>
+					<li><h3>Company</h3></li>
+					<li><a href="">Community</a></li>
+					<li><a href="">Career</a></li>
+					<li><a href="">Our story</a></li>
+				</ul>
+				</div>
+				<div class="footer__right--contact">
+				<ul>
+					<li><h3>Contact</h3></li>
+					<li><a href="">Getting Started</a></li>
+					<li><a href="">Pricing</a></li>
+					<li><a href="">Resources</a></li>
+				</ul>
+				</div>
+				</div>
+		</div>
+		<div class="child">
+			<div class="footer__terms">2023 all Right Reserved Term of use Porfumelus</div>
+		</div>
+	</div>
+<!-- Footer ENDS -->
+<script  src="../TrangAdmin/class.js"></script>
+<script src="./loadOrder.js"></script> -
+<script src="./XuLyLogin.js"></script>
+</body>
+
+</html>
+
