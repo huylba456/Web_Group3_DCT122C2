@@ -24,7 +24,7 @@ loginButtonClick.addEventListener('click', function (event) {
 
 loginButton.forEach(item => {
     item.addEventListener('click', function () {
-        document.querySelector('.modal').style.display = 'block';
+        document.querySelector('.modal').style.display = 'flex';
         document.querySelector('.activemauden').style.display = 'block';
         document.querySelector('.closeiconDangnhap').addEventListener('click', function () {
             document.querySelector('.modal').style.display = 'none';
@@ -32,17 +32,6 @@ loginButton.forEach(item => {
         })
         document.querySelector('.activemauden').addEventListener('click', function () {
             document.querySelector('.modal').style.display = 'none';
-            document.querySelector(".modal_signup").style.display = "none";
-            document.querySelector('.activemauden').style.display = 'none';
-        })
-    })
-
-    document.querySelector(".button-asking1").addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(".modal").style.display = "none";
-        document.querySelector(".modal_signup").style.display = "block";
-        document.querySelector(".closeiconDangky").addEventListener('click', function() {
-            document.querySelector(".modal_signup").style.display = "none";
             document.querySelector('.activemauden').style.display = 'none';
         })
     })
@@ -58,16 +47,6 @@ signupForm.addEventListener('click', function () {
     document.querySelector('.activemauden').addEventListener('click', function () {
         document.querySelector('.modal_signup').style.display = 'none';
         document.querySelector('.activemauden').style.display = 'none';
-    })
-
-    document.querySelector(".button-asking2").addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(".modal").style.display = "block";
-        document.querySelector(".modal_signup").style.display = "none";
-        document.querySelector(".closeiconDangky").addEventListener('click', function() {
-            document.querySelector(".modal_signup").style.display = "none";
-            document.querySelector('.activemauden').style.display = 'none';
-        })
     })
 })
 
@@ -105,26 +84,19 @@ function checkInputName() {
 }
 
 function checkInputUserName() {
-    var userz = user.getUsers();
-    var kiemtrabitrung = 0;
-    userz.forEach(item => {
-        if (item.username == inputUsername.value) {
-            listMessage[0].textContent = "Tên người dùng đã tồn tại";
-            listMessage[0].style.display = "block";
-            kiemtrabitrung = 1;
-        }
-    })
-    if (kiemtrabitrung == 0) {
-        let returnValue = form.validateUserName(inputUsername.value);
-        if (returnValue.value === false) {
-            listMessage[0].textContent = returnValue.str;
-            listMessage[0].style.display = "block";
-            return 0;
-        }
-        listMessage[0].style.display = "none";
-        return 1;
+    let returnValue = form.validateUserName(inputUsername.value);
+    if (returnValue.value === false) {
+        listMessage[0].textContent = returnValue.str;
+        listMessage[0].style.display = "block";
+        return 0;
     }
-    return 0;
+    listMessage[0].style.display = "none";
+    // if (user.isSameUserName(inputUsername.value) == true) {
+    //     listMessage[1].textContent = "Tên người dùng đã tồn tại";
+    //     showOneMessage(listMessage[1]);
+    //     return false;
+    // }
+    return 1;
 }
 
 
@@ -179,4 +151,3 @@ function checkInputAddress() {
     listMessage[5].style.display = "none";
     return 1;
 }
-

@@ -37,7 +37,6 @@ const soDondadat = document.querySelector(".sodondadat");
 soDondadat.innerHTML = order.getOrders().length;
 const tongdoanhthu = document.querySelector(".tongdoanhthu");
 tongdoanhthu.innerHTML = money.vnd(order.getTotalOrderMoney(order.getOrders()));
-
 const historyTable = document.querySelectorAll(".data-list");
 renderHistoryTable();
 function renderHistoryTable() {

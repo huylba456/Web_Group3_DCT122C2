@@ -33,9 +33,27 @@
 						<li><a>Liên Hệ</a></li>
 					</ul>
 					<ul>
-						<li><a>Đăng Nhập</a></li>
-						<li><a>|</a></li>
-						<li><a>Đăng Ký</a></li>
+						<div class="user">
+							<div class="borderuser">
+								<li class="usersection"><div>Xin chào,</div>
+									<div class="name"></div>
+								</li>
+								<li class="usersection logout">| Đăng xuất</li>
+							</div>
+						</div>
+						<div class="admin">
+							<div class="borderadmin">
+								<li class="adminbtn"><img src="svg/admin.svg" width="18px" height="18px"></li>
+								<li class= "adminsection"><div>Xin chào, </div> <div class="name"> </div></li>
+								<li class="adminsection logout"><a>| Đăng xuất</a></li>
+							</div>
+						</div>
+						<div class="nonuser">
+							<div class="bordernonuser">
+								<li><div class="dangnhap">Đăng nhập</div></li>
+								<li><div class="dangky">| Đăng ký</div></li>
+							</div>
+						</div>
 					</ul>
 			</div>
 			<div class="nav__center">
@@ -52,36 +70,41 @@
 
 
 <!-- Content STARTS -->
-	<div class="content">
-		<div class="container_order_info">
-			<div class="view__order__content__desc">
-				<div class="view__order__content__desc-item">
-					<div class="desc-item-title">MÃ ĐƠN HÀNG</div>
-					<div class="desc-item-body">5910</div>
-				</div>
-				<div class="view__order__content__desc-item">
-					<div class="desc-item-title">NGÀY ĐẶT</div>
-					<div class="desc-item-body">December 4, 2021</div>
-				</div>
-				<div class="view__order__content__desc-item">
-					<div class="desc-item-title">TỔNG</div>
-					<div class="desc-item-body">$70.00</div>
-				</div>
-				<div class="view__order__content__desc-item">
-					<div class="desc-item-title">PAYMENT METHOD</div>
-					<div class="desc-item-body">Cash on delivery</div>
-				</div>
-			</div>
-			<div class="empty_order_notifycation">
-				<div class="empty_order_notifycation">
-					Bạn chưa có đơn hàng nào
-				</div>
-				<div>
-					<img src="./img/empty.svg" alt="" width="200px" height="200px">
-				</div>
-			</div>
+<div class="content">
+	<div class="small-container cart-page">
+	  <table>
+		<thead>
+		  <tr>
+			<th>Mã đơn hàng</th>
+			<th>Ngày đặt</th>
+			<th>Phương thức thanh toán</th>
+			<th>Tổng chi phí</th>
+		  </tr>
+		</thead>
+		<tbody class="productordered">
+		  <td>0319</td>
+		  <td>22-03-2004</td>
+		  <td>COD (nhận tiền mặt khi giao hàng)</td>
+		  <td>789098767 đ</td>
+		</tbody>
+	  </table>
+
+	  <div class="empty_order_notifycation">
+		<div class="empty_order_notifycation">Bạn chưa có đơn hàng nào</div>
+		<div>
+		  <img src="./img/empty.svg" alt="" width="200px" height="200px" />
+		</div>
+	  </div>
+
+	  <div class="product__pagination">
+		<a href="#">&laquo;</a>
+		<a href="#" class="active">1</a>
+		<a href="#">2</a>
+		<a href="#">3</a>
+		<a href="#">&raquo;</a>
+	  </div>
 	</div>
-	</div>
+  </div>
 <!-- Content ENDS -->
 
 
@@ -131,66 +154,10 @@
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        $('.owl-carousel').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:false,
-            responsive:{   
-                0:{
-                    items:1
-                }
-            }
-        });
-    </script>
-    <script>
-        var owl = $('.owl-carousel');
-        owl.owlCarousel({
-        items:10,
-        loop:true,
-        margin:10,
-        autoplay:true,
-        autoplayHoverPause:true
-        });
-        owl.trigger('play.owl.autoplay',[3000])
-		var owl = $('.owl-carousel');
-owl.owlCarousel();
-// Go to the next item
-$('.customNextBtn').click(function() {
-    owl.trigger('next.owl.carousel');
-})
-// Go to the previous item
-$('.customPrevBtn').click(function() {
-    // With optional speed parameter
-    // Parameters has to be in square bracket '[]'
-    owl.trigger('prev.owl.carousel');
-})
-     </script>
 <!-- Footer ENDS -->
-<script  src="./js/class.js"></script>
-<script src="./js/randomOrder.js"></script>
-<script src="./js/data.js"></script>
-<!-- <script src="./js/XuLyLogin.js"></script> -->
-<script src="./js/productdetail.js"></script>
-
-<script>
-	var description = document.querySelector('.description')
-	var review = document.querySelector('.review')
-	var description__content = document.querySelector('.description__content')
-	var review__content = document.querySelector('.review__content')
-	description.addEventListener('click', function () {
-		description.classList.remove('grayout')
-		review.classList.add('grayout')
-		description__content.style.display = 'block'
-		review__content.style.display = 'none'
-	})
-	review.addEventListener('click', function () {
-		description.classList.add('grayout')
-		review.classList.remove('grayout')
-		description__content.style.display = 'none'
-		review__content.style.display = 'block'
-	})
-</script>
+<script  src="../ProductPage/js/class.js"></script>
+<script src="../ProductPage/js/XuLyLogin.js"></script>
+<script src="./renderOrdered.js"></script>
 </body>
 
 </html>

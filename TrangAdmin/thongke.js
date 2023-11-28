@@ -19,8 +19,8 @@ function filterOrderbyBrand(brand, month) {
             if(time.getOnlyMonth(item.orderTime) == month) {
                 item.cartList.forEach((itemz) => {
                   var day = parseInt(time.getOnlyDate(item.orderTime));
-                    result[day] += itemz.product_price;
-                    sumMonth += itemz.product_price;
+                    result[day-1] += itemz.total;
+                    sumMonth += itemz.total;
                 })
             }
         })

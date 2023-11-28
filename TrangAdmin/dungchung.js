@@ -31,13 +31,14 @@ renderUserManagement(userz);
 AddEventrenderPhanTrang();
 //end
 
+//render cho các nút previous và next ở đây
 
 const gohome = document.querySelector('.logo-name');
 gohome.addEventListener('click', () => {
-    window.location.href = "../ProductPage/index.html";
+    window.location.href = "../ProductPage/ProductPage.html";
 })
 
 const backhome = document.querySelector('.backhome');
 backhome.addEventListener('click', () => {
-    window.location.href = "../ProductPage/index.html";
+    window.location.href = "../ProductPage/ProductPage.html";
 })

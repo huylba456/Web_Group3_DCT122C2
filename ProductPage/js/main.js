@@ -1,4 +1,4 @@
-const perPage = 8;
+const perPage = 9;
 // var maxPage = Math.ceil(products.length / perPage);
 const pageContainer = document.querySelector('.product__pagination');
 renderPages();
@@ -46,7 +46,7 @@ truoc.addEventListener('click', function () {
 }
 
 
-var searchInput = document.querySelector('.fa-search')
+var searchInput = document.querySelector('.nav__search--btn')
 
 searchInput.addEventListener('click', (e) => {
     e.stopPropagation()
@@ -109,6 +109,6 @@ function scrollToProduct() {
 // chuyen sang admin
 const adminBtn = document.querySelector('.adminbtn');
 adminBtn.addEventListener('click', function () {
-    window.location.href = "../TrangAdmin/tongquan.html";
+    window.location.href = "../TrangAdmin/index.html";
 })
 

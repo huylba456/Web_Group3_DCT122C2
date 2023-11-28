@@ -55,7 +55,7 @@ function randomOrder() {
         boolProduct[randomId] = true;
         let product = data.getProductId(randomId);
         let amout = Math.floor(Math.random() * 10) + 1;
-        cartListArr.push(new CartItem(randomId, product.price3, amout, product.imgList[0]));
+        cartListArr.push(new CartItem(randomId, product.price3, amout, product.imgList[0], "100ml"));
     }
     listOrder.push(new Order(cartListArr, userid, time.toTimeSpan(dateTime)));
     order.loadOrder(listOrder);

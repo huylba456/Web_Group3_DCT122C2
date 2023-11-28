@@ -150,7 +150,7 @@
             }
             user.setLoginState(isUserid);
             if (isUserid) {
-                // history.addNode(Date.now(), "Người dùng " + username + " đã đăng nhập!");
+                //history.addNode(Date.now(), "Người dùng " + username + " đã đăng nhập!");
                 
                 return true;
             }
@@ -499,6 +499,26 @@
             return tong;
         }
 
+        static getTotalMoneyFromCartList(cartlist) {
+            if (!cartlist || cartlist.length === 0) return 0;
+            var tong = 0;
+            cartlist.forEach((item) => {
+                tong += item.total;
+            })
+            return tong;
+        }
+
+        static getOrderID(orderID) {
+            const list = order.getOrders();
+            if (!list) return null;
+            var result = null;
+            list.forEach((item) => {
+                if (item.orderId === orderID) {
+                    result = item;
+                }
+            })
+            return result;
+        }
     }
 
     class time {

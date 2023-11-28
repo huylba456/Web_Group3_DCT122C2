@@ -28,8 +28,8 @@ function renderPhanTrang(userz) {
         pageContainer.innerHTML = html;
     if (pageContainer.querySelector('.phantrangquanlynguoidung a'))
         pageContainer.querySelector('.phantrangquanlynguoidung a').classList.add('active');
-    addEventNext();
-    addEventPrevious();
+    addEventNextnguoidung();
+    addEventPreviousnguoidung();
 }
 
 renderUserManagement(userz);
@@ -76,7 +76,7 @@ function AddEventrenderPhanTrang() {
         })
     })
 }
- 
+changepageQuanlyuser(userz);
 function changepageQuanlyuser(userz) {
     var perPage = 10;
     const pageBtns = document.querySelectorAll('.phantrangquanlynguoidung a');
@@ -108,7 +108,7 @@ function changepageQuanlyuser(userz) {
 }
 
 // thêm sự kiện cho nút trước và sau của phân trang
-function addEventNext() {
+function addEventNextnguoidung() {
     truoc = document.querySelector('.nextuserpagnition');
     var perPage = 10;
     truoc.addEventListener('click', function () {
@@ -117,11 +117,12 @@ function addEventNext() {
             renderPhanTrang(userz);
             changepageQuanlyuser(userz);
             renderUserManagement(userz);
+            AddEventrenderPhanTrang();
         }
     })
 }
 
-function addEventPrevious() {
+function addEventPreviousnguoidung() {
     sau = document.querySelector('.previoususerpagnition');
     sau.addEventListener('click', function () {
         if (currentPage > 1) {
@@ -129,6 +130,7 @@ function addEventPrevious() {
             renderPhanTrang(userz);
             changepageQuanlyuser(userz);
             renderUserManagement(userz);
+            AddEventrenderPhanTrang();
         }
     })
 }
@@ -156,6 +158,7 @@ document.querySelector('.submit-btn').addEventListener('click', function () {
         renderPhanTrang(userz);
         changepageQuanlyuser(userz);
         renderUserManagement(userz);
+        AddEventrenderPhanTrang();
     }
     else if (check == true) {
         alert("Thêm người dùng thất bại vì tên đăng nhập đã tồn tại!");
@@ -241,7 +244,10 @@ function edituser(username, password, email, phone, hovaten, address, quyenhan, 
     alert("Chỉnh sửa thành công");
     document.getElementById("modalz").style.display = "none";
     document.querySelector('.activemauden').style.display = 'none';
-    renderUserManagement(userz);
+    renderPhanTrang(userz);
+        changepageQuanlyuser(userz);
+        renderUserManagement(userz);
+        AddEventrenderPhanTrang();
 }
 
 // add event khi ấn xoá
@@ -254,7 +260,10 @@ function addEventDelete() {
             if (!userChoice) return;
             var id = parseInt(this.getAttribute("value"));
             deleteuser(id);
+            renderPhanTrang(userz);
+            changepageQuanlyuser(userz);
             renderUserManagement(userz);
+            AddEventrenderPhanTrang();
         })
     })
 }
@@ -286,15 +295,22 @@ function filteruser(keywords) {
 
 //add event nut search
 document.querySelector('.user-search').addEventListener('change', function () {
+    document.querySelector('.nouserfound').style.display = "none";
     var keywords = document.querySelector('.user-search').value;
     var userz = filteruser(keywords);
     if (userz.length == 0) {
-        alert("Không tìm thấy người dùng");
+        document.querySelector('.bodyqlnd').innerHTML = ``;
+        document.querySelector('.nouserfound').style.display = "block";
+        renderPhanTrang(userz);
+        changepageQuanlyuser(userz);
+        renderUserManagement(userz);
+        AddEventrenderPhanTrang();
         return;
     }
     renderPhanTrang(userz);
     changepageQuanlyuser(userz);
     renderUserManagement(userz);
+    AddEventrenderPhanTrang();
 })
 
 // add event nut filter 
@@ -310,6 +326,7 @@ filterOrder.addEventListener('change', function () {
         renderPhanTrang(userz);
         changepageQuanlyuser(userz);
         renderUserManagement(userz);
+        AddEventrenderPhanTrang();
     }
     else if (filter == "ztoa") {
         userz.sort((a, b) => {
@@ -320,6 +337,7 @@ filterOrder.addEventListener('change', function () {
         renderPhanTrang(userz);
         changepageQuanlyuser(userz);
         renderUserManagement(userz);
+        AddEventrenderPhanTrang();
     }
     else if (filter == "theochucvuuser") {
         // negative thi a sort trước b
@@ -332,6 +350,7 @@ filterOrder.addEventListener('change', function () {
         renderPhanTrang(userz);
         changepageQuanlyuser(userz);
         renderUserManagement(userz);
+        AddEventrenderPhanTrang();
     }
     else if (filter == "theochucvuadmin") {
         userz.sort((a, b) => {
@@ -342,6 +361,6 @@ filterOrder.addEventListener('change', function () {
         renderPhanTrang(userz);
         changepageQuanlyuser(userz);
         renderUserManagement(userz);
+        AddEventrenderPhanTrang();
     }
 })
-

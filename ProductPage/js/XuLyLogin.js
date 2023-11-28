@@ -38,11 +38,3 @@ function showGroup(group,otherGroup1,otherGroup2) {
 function hideGroup(group) {
     group.style.display = 'none';
 }
-function checklogin() {
-    var userID= user.checkLoginId();
-    if (userID === null) {
-        document.querySelector('.vieworder').style.display = 'none';
-    }
-    else return true;
-}
-checklogin();

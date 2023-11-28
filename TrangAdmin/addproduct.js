@@ -1,20 +1,21 @@
 currentPage = 1;
 var productz = data.getProducts();
-console.log(productz);
 renderPhanTrangAddProduct(productz);
 function renderPhanTrangAddProduct(productz) {
     var perPage = 5;
     var html = ''
-    html += "<div class='previous'>&laquo;</div>";
+    html += "<div class='previousaddproductpagnition'>&laquo;</div>";
     const maxPageShow = data.getMaxPages(productz,perPage);
     for (var i = 1; i <= maxPageShow; i++) {
         html += `<a value=${i}>${i}</a>`
     }
-    html += "<div class='next'>&raquo;</div>"
+    html += "<div class='nextaddproductpagnition'>&raquo;</div>"
         const pageContainer = document.querySelector('.phantrangaddproduct');
         pageContainer.innerHTML = html;
     if (pageContainer.querySelector('.phantrangaddproduct a'))
         pageContainer.querySelector('.phantrangaddproduct a').classList.add('active');
+    addEventNextaddproduct();
+    addEventPreviousaddproduct();
 }
 
 renderProductManage(productz);
@@ -46,6 +47,7 @@ function renderProductManage(productz) {
     renderEdit();
     addEventDeletesp();
 }
+
 
 function renderEdit() {
     const edit = document.querySelectorAll('.edit');
@@ -138,7 +140,30 @@ function changePagesad(productz) {
 function scrollToProduct() {
     document.querySelector('.topp').scrollIntoView();
 }
+//add event cho nut previous vaf next cua phan trang
+function addEventNextaddproduct() {
+    var nextbtn = document.querySelector('.nextaddproductpagnition');
+    nextbtn.addEventListener('click', function() { 
+        currentPage++;
+        renderProductManage(productz);
+        changePagesad(productz);
+        addEventToPagead();
+        scrollToProduct();
+    })
 
+}
+
+function addEventPreviousaddproduct() {
+    var previousbtn = document.querySelector('.previousaddproductpagnition');
+    previousbtn.addEventListener('click', function() {
+        currentPage--;
+        renderProductManage(productz);
+        changePagesad(productz);
+        addEventToPagead();
+        scrollToProduct();
+    })
+
+}
 // addevent vào nút thêm sản phẩm
 const btnThem = document.querySelector('.addproducticon');
 btnThem.addEventListener('click', () => {
@@ -291,7 +316,8 @@ editchinhsuasp.addEventListener('click', function(e) {
             document.querySelector('.activemauden').style.display = 'none';
             renderPhanTrangAddProduct(productz);
             renderProductManage(productz);
-            addEventToPagead(); 
+            changePagesad(productz);
+            addEventToPagead();
             return;
         }
     })
@@ -321,7 +347,10 @@ deleteicon.forEach(item => {
                 listproduct.splice(index, 1);
                 data.loadProducts(listproduct);
                 alert("Xóa sản phẩm thành công!");
+                renderPhanTrangAddProduct(productz);
                 renderProductManage(productz);
+                changePagesad(productz);
+                addEventToPagead();
                 return;
             }
         })
@@ -331,15 +360,22 @@ deleteicon.forEach(item => {
 
 // render tim kiem san pham
 document.querySelector('.product-search').addEventListener('change', function () {
+    document.querySelector('.noproductfound').style.display = "none";
     var keywords = document.querySelector('.product-search').value;
     productz = filterproduct(keywords);
     if (productz.length == 0) {
-        alert("Không tìm thấy người dùng");
+        document.querySelectorAll('.tableinfo')[0].innerHTML = ``;
+        document.querySelector('.noproductfound').style.display = "block";
+        renderPhanTrangAddProduct(productz);
+        renderProductManage(productz);
+        changePagesad(productz);
+        addEventToPagead();
         return;
     }
     renderPhanTrangAddProduct(productz);
     renderProductManage(productz);
     changePagesad(productz);
+    addEventToPagead();
 })
 
 function filterproduct(keywords) {

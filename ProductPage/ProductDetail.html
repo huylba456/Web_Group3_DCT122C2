@@ -5,6 +5,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <!-- Link CSS -->
+ <link rel="stylesheet" href="./HeaderFooter.css">
  <link rel="stylesheet" href="./ProductDetail.css">
  <!-- Fontawesome -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,28 +24,50 @@
 </head>
 <body>
  <!-- Header STARTS -->
+ 	<div class="activemauden"></div>
 	<div class="header">
 			<div class="nav">
 				<div class="nav__link">
 					<ul>
-						<li><a href="">Trang Chủ</a></li>
+						<li><a>Trang Chủ</a></li>
 						<li><a>Giới Thiệu</a></li>
 						<li><a>Bảo Hành</a></li>
 						<li><a>Liên Hệ</a></li>
 					</ul>
 					<ul>
-						<li><a>Đăng Nhập</a></li>
-						<li><a>|</a></li>
-						<li><a>Đăng Ký</a></li>
+						<div class="user">
+							<div class="borderuser">
+								<li class="usersection"><div>Xin chào,</div>
+									<div class="name"></div>
+								</li>
+								<li class="usersection logout">| Đăng xuất</li>
+							</div>
+						</div>
+						<div class="admin">
+							<div class="borderadmin">
+								<li class="adminbtn"><img src="svg/admin.svg" width="18px" height="18px"></li>
+								<li class= "adminsection"><div>Xin chào, </div> <div class="name"> </div></li>
+								<li class="adminsection logout"><a>| Đăng xuất</a></li>
+							</div>
+						</div>
+						<div class="nonuser">
+							<div class="bordernonuser">
+								<li><div class="dangnhap">Đăng nhập</div></li>
+								<li><div class="dangky">| Đăng ký</div></li>
+							</div>
+						</div>
 					</ul>
 			</div>
 			<div class="nav__center">
-				<div class="nav__logo--icon"></div>
-				<div class="nav__logo--name">Porfumelus</div>
-				<form class="nav__search outline" method="get" action="tongquan.html">
+				<div class="nav__logo">
+					<div class="nav__logo--icon"></div>
+					<div class="nav__logo--name">Porfumelus</div>
+				</div>
+				<form class="nav__search outline" onsubmit="return false;">
 					<input class="nav__search--input" type="text" placeholder="Tìm kiếm sản phẩm...">
-					<button class="nav__search--btn outline" type="submit"><i class="fas fa-search"></i></button>
+					<button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg" width="22px" height="22px"></img></i></button>
 				</form>
+				<div class="nav__cart"><img src="svg/cart.svg" width="39px" height="39px"></img></div>
 			</div>
 			</div>
 	</div>
@@ -52,12 +75,95 @@
 
 
 <!-- Content STARTS -->
+<div class="modal">
+	<div class="modal-background">
+		<div class="modal-content">
+		  <div class="close" onclick="closeModal()"><img src="svg/x.svg" width="16px" height="16px"></img></div>
+		  <h2 class="signin">Đăng nhập</h2>
+		  <form class="form_signin">
+			<input id="username" type="text" name="username" placeholder="Email/Số điện thoại">
+			<input type="password" id="password" name="password" placeholder="Mật khẩu">
+			<div class="checkbox-text">
+			  <div class="checkbox-content">
+			  <input type="checkbox" id="logCheck">
+			  <label for="logCheck">Ghi nhớ đăng nhập</label>
+			</div>
+			
+			<a href="#">Quên mật khẩu?</a>
+			</div>
+			<button class="signin-button" type="submit">Đăng nhập</button>
+			<span>hoặc</span>
+			<div class="social">
+			  <button class="facebook"><img src="svg/facebook2.svg"></img>  Facebook</button>
+			  <button class="google"><img src="svg/google.svg"></img>  Google</button>
+			</div>
+			<p class="alternate">Bạn chưa có tài khoản? <button class="button-asking1" onclick="closeSignInAndOpenSignUp()">Đăng ký tại đây</button> </p>
+		  </form>
+		</div>
+		
+	</div>
+  </div>
+  <!-- Phần đăng ký -->
+  <div class="modal_signup">
+	<div class="modal-signup-content">
+	  <div class="closeiconDangky"><i class="fa-solid fa-x"></i></div>
+	  <h2  class="signup">Đăng ký</h2>
+	  <form class="form_signup">
+		<div class="form-content">
+		<div class="input-box">
+			<input type="text" id="userrname" placeholder="Tên đăng nhập">
+		    <div class="er errorLogin">Lỗxxxxxxxxxxxxxxxxxxxxxxxxxxxxi</div>
+		</div>
+		<div class="input-box">
+		  <input type="text" id="email" placeholder="Email">
+		  <div class="er errorEmail">Lỗxxxxxxxxxxxxxxxxxxxxxxxxxxxxi</div>
+		</div>
+		<div class="input-box">
+		  <input type="password" id="pass" placeholder="Mật khẩu">
+		  <div class="er errorPassword">Lỗxxxxxxxxxxxxxxxxxxxxxxxxxxxxi</div>
+		</div>
+		<div class="input-box">
+		  <input type="text" id="phone" placeholder="Số điện thoại">
+		  <div class="er errorSDT">Lỗxxxxxxxxxxxxxxxxxxxxxxxxxxxxi</div>
+		</div>
+		<div class="input-box">
+		  	<input type="text" id="yourname" placeholder="Họ và tên">
+			<div class="er errorName">Lỗxxxxxxxxxxxxxxxxxxxxxxxxxxxxi</div>
+		</div>
+		<div class="input-box">
+		  <div class="checkbox-container">
+		  <input type="checkbox" class="agree">
+		  <label for="" class="agree1">Bằng cách bấm vào nút đăng ký, bạn đã đồng ý với các <a href="#">chính sách riêng tư</a> và <a href="#">điều khoản sử dụng</a> của chúng tôi</label>
+		  </div>
+		</div>
+		<div class="input-box">
+		  <input type="text" id="address" placeholder="Địa chỉ">
+		  <div class="er errorAddress">Lỗxssxxxxxxxxxxxxxxxxxxxxxxxxxxxi</div>
+		</div>
+		<div class="input-box">
+		  <button class="signup-button">Đăng ký</button>
+		</div>
+		</div>
+		<span>Hoặc</span>
+		<div class="social">
+		  <button class="facebook"> <i class="fa-brands fa-facebook" style="color: #005eff;"></i>  Facebook</button>
+		  <button class="google"> <i class="fa-brands fa-google" style="color: #ff2424;"></i>  Google</button>
+		</div>
+		<br>
+		<p class="alternate">Bạn đã có tài khoản? <button class="button-asking2"> Đăng nhập tại đây</button> </p>
+		</div>
+	  </form>
+	</div>
+
+
+
+
 	<div class="content">
 		<div class="product parent">
 			<div class="product__name">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 			<div class="child">
 				<div class="product__left parent">
-					<div class="product__img"></div>
+					<img class="product__img"></img>
 				</div>
 				<div class="product__right parent">
 					<div class="product__price">727.000đ-1.727.000đ</div>
@@ -65,11 +171,21 @@
 					<div class="product__brand">Thương hiệu:</div>
 					<div class="product__sex">Giới tính:</div>
 					<div class="product__scent">Mùi hương:</div>
-					<div class="product__size">Lựa chọn size</div>
 					<div class="child">
-						<button class="product__size--btn">50ml</button>
-						<button class="product__size--btn">100ml</button>
-						<button class="product__size--btn">150ml</button>
+						<div class="product__size">Lựa chọn size</div>
+						<div class="product__amount">Số lượng</div>
+					</div>
+					<div class="child">
+						<div class="product__size--box">
+							<button class="product__size--btn">50ml</button>
+							<button class="product__size--btn">100ml</button>
+							<button class="product__size--btn">150ml</button>
+						</div>
+						<div class="product__amount--box">
+							<button class="product__amount--minus">-</button>
+							<input class="product__amount--number" type="text" value="1">
+							<button class="product__amount--add">+</button>
+						</div>
 					</div>
 					<div class="child">
 						<button class="product__addtocart--btn">Thêm vào giỏ hàng</button>
@@ -103,10 +219,50 @@
 				</div>
 			</div>
 			</div>
-		</div>
-		<div class="recommendation">
+	</div>
+	<div class="recommendation">
 			<h2>Những sản phẩm tương tự</h2>
 			<div class="box">
+				<div class="product__item outline">
+					<div class="product__item--img"></div>
+					<div class="product__item--name">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+					<div class="product__item--quickview">Xem nhanh</div> 
+				</div>
+				<div class="product__item outline">
+					<div class="product__item--img"></div>
+					<div class="product__item--name">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+					<div class="product__item--quickview">Xem nhanh</div> 
+				</div>
+				<div class="product__item outline">
+					<div class="product__item--img"></div>
+					<div class="product__item--name">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+					<div class="product__item--quickview">Xem nhanh</div> 
+				</div>
+			</div>
+	</div>
+	<div class="product__modal__cart__container">
+		<div class="product__modal__cart__content__box">
+			<div class="product__modal__cart__title">
+				 <h3>GIỎ HÀNG CỦA BẠN</h3>
+					<div class="product__modal__cart__close">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<lord-icon src="https://cdn.lordicon.com/wgwcqouc.json" trigger="" 
+							colors="primary:#7047ee,secondary:#7047ee"
+								style="width:100px">
+							</lord-icon>
+					</div>
+			</div>
+			<div class="product__modal__cart__content">
+				Cart modal render by js
 			</div>
 		</div>
 	</div>
@@ -114,23 +270,25 @@
 
 
 <!-- Footer STARTS -->
-	<div class="footer parent">
+<div class="footer parent">
+	<div class="footer__box">
 		<div class="child">
 			<div class="footer__left">
 				<div class="footer__left--name">Porfumelus</div>
 				<div class="footer__left--slogan">Kích thích mọi giác quan<br> với hương thơm đẳng cấp.</div>
 				<div class="footer__left--social">
-					<button class="footer__left--socialbtn"><i class="fab fa-facebook-square"></i></button>
-					<button class="footer__left--socialbtn"><i class="fab fa-instagram-square"></i></button>
-					<button class="footer__left--socialbtn"><i class="fab fa-twitter-square"></i></button>
+					
+					<a href="https://www.facebook.com"><button class="footer__left--socialbtn"><img src="svg/facebook.svg"></img></button></a>
+					<a href="https://www.instagram.com"><button class="footer__left--socialbtn"><img src="svg/instagram.svg"></img></button></a>
+					<a href="https://www.twitter.com"><button class="footer__left--socialbtn"><img src="svg/twitter.svg"></img></button></a>
 				</div>
 			</div>
 			<div class="footer__right">	
 				<div class="footer__right--information">
 				<ul>
 					<li><h3>Information</h3></li>
-					<li><a href="">About</a></li>
-					<li><a href="">Product</a></li>
+					<li><a href="Introduction.html">About</a></li>
+					<li><a href="ProductPage.html">Product</a></li>
 					<li><a href="">Blog</a></li>
 				</ul>
 
@@ -138,25 +296,24 @@
 				<div class="footer__right--company">
 				<ul>
 					<li><h3>Company</h3></li>
-					<li><a href="">Community</a></li>
+					<li><a href="https://www.google.com">Community</a></li>
 					<li><a href="">Career</a></li>
-					<li><a href="">Our story</a></li>
+					<li><a href="Introduction.html">Our story</a></li>
 				</ul>
 				</div>
 				<div class="footer__right--contact">
 				<ul>
 					<li><h3>Contact</h3></li>
-					<li><a href="">Getting Started</a></li>
+					<li><a href="Contact.html">Getting Started</a></li>
 					<li><a href="">Pricing</a></li>
 					<li><a href="">Resources</a></li>
 				</ul>
 				</div>
 				</div>
 		</div>
-		<div class="child">
-			<div class="footer__terms">2023 all Right Reserved Term of use Porfumelus</div>
-		</div>
+		<div class="footer__terms">2023 all Right Reserved Term of use Porfumelus</div>
 	</div>
+</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
@@ -195,11 +352,6 @@ $('.customPrevBtn').click(function() {
 })
      </script>
 <!-- Footer ENDS -->
-<script  src="./js/class.js"></script>
-<script src="./js/randomOrder.js"></script>
-<script src="./js/data.js"></script>
-<!-- <script src="./js/XuLyLogin.js"></script> -->
-<script src="./js/productdetail.js"></script>
 
 <script>
 	var description = document.querySelector('.description')
@@ -219,6 +371,10 @@ $('.customPrevBtn').click(function() {
 		review__content.style.display = 'block'
 	})
 </script>
+<script  src="./js/class.js"></script>
+<script src="./js/XuLyLogin.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/productdetail.js"></script>
 </body>
 
 </html>

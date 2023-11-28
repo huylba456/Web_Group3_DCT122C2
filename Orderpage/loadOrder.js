@@ -189,10 +189,11 @@ const checkout = document.querySelector('.checkout');
 checkout.addEventListener("click", function() {
     if (document.querySelector('.ten').value == ''|| document.querySelector('.sdt').value == '' || document.querySelector('.diachi').value == '') {
         alert('Vui lòng điền đầy đủ thông tin');
+        return;
     }
     clickToBuyModalCart();
     alert('Đặt hàng thành công! quay về trang chủ.');
-    window.location.href = "../ProductPage/index.html";
+    window.location.href = "../ProductPage/ProductPage.html";
 })
 
 let listMessage = document.querySelectorAll(".listMes");

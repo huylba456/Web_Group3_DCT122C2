@@ -314,7 +314,7 @@
         static filterProductsPrice(myList,price_min, price_max) {
             if (price_min >= price_max || price_max <= price_min) return [];
             if (price_min === null || price_max === null) return myList;
-
+            
             if (!myList) return [];
             var result = [];
             myList.forEach(item => {
@@ -612,14 +612,20 @@
             if (search !== null && search !=='') {
                 if (result.length === 0) result = data.searchProductsName(list,search);
                 else result = result.concat(data.searchProductsName(result,search));
+
+                if (result.length == 0) return []; // nếu như ko tìm dc sản phẩm nào thì return mảng rỗng [] luôn
             }
             if (brand != null) {
                 if (result.length === 0) result = data.filterProductBrand(list, brand.toLowerCase());
                 else result = result.concat(data.filterProductBrand(result, brand.toLowerCase()));
+
+                if (result.length == 0) return [];
             }
             if(gender != null) {
                 if (result.length === 0) result = data.filterProductGender(list, gender);
                 else result = data.filterProductGender(result, gender);
+
+                if (result.length == 0) return [];
             }
             if (priceMax != null && priceMin != null) {
                 if (result.length === 0) result = data.filterProductsPrice(list, priceMin, priceMax);

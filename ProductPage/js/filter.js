@@ -140,6 +140,7 @@ function filterProductSearch() {
 }
 
 priceTableFrom.addEventListener('input', function() {
+    if (priceTableFrom.value == '') pricemax = data.getMaxProductPrice();
     var temp = parseInt(priceTableFrom.value.replace(/,/g, '')); // xóa dấu "," nếu có
     if (!isNaN(temp)) {
         var result = "";
@@ -156,13 +157,11 @@ priceTableFrom.addEventListener('input', function() {
             }
         }
         priceTableFrom.value = result; 
-        pricemin = parseInt(priceTableFrom.value.replace(/,/g, ''));
-        pricemax = data.getMaxProductPrice();
-        searchAndRender()
     }
 });
 
 priceTableTo.addEventListener('input', function() {
+    if(priceTableTo.value == '') pricemin = 0;
     var temp = parseInt(priceTableTo.value.replace(/,/g, '')); // xóa dấu "," nếu có
     if (!isNaN(temp)) {
         var result = "";
@@ -179,12 +178,21 @@ priceTableTo.addEventListener('input', function() {
             }
         }
         priceTableTo.value = result; 
-        pricemin = 0;
-        pricemax = parseInt(priceTableTo.value.replace(/,/g, ''));
-        searchAndRender()
     }
 });
+document.querySelector('.findPrice').addEventListener('click', function() {
+    if (priceTableFrom.value == '')  priceTableFrom.value = 0;
+    if (priceTableTo.value == '')  priceTableTo.value = data.getMaxProductPrice();
+    var tempFrom = parseInt(priceTableFrom.value.replace(/,/g, '')); // xóa dấu "," nếu có
+    var tempTo = parseInt(priceTableTo.value.replace(/,/g, '')); // xóa dấu "," nếu có
+    if (!isNaN(tempFrom) && !isNaN(tempTo)) {
+        pricemin = tempFrom;
+        pricemax = tempTo;
+        searchAndRender()
+    }
 
+
+})
 function searchAndRender() {
     products = data.getProducts();
     products = menu.filterProudct(products, myChoiceBrand, pricemin, pricemax, gender, tangdan, searchKeyWords, starRange1, starRange2);

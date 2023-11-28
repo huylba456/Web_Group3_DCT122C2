@@ -123,17 +123,18 @@ body {
   border-radius: 0 10px 10px 0;
   border: 0;
 }
-.bordernonuser, .borderadmin, .borderuser{
+.bordernonuser, .borderadmin, .borderuser {
+  width: max-content;
   display: flex;
   gap: 5px;
 }
 
 .user, .admin, .nonuser {
-  position: absolute;
-  width: 500px;
+  width: max-content;
 }
 .adminsection, .usersection, .nonusersection {  
-  display:flex;
+  width: max-content;
+  display: flex;
   gap: 5px;  
 }
 /* CSS đăng nhập đăng ký */
@@ -1195,4 +1196,76 @@ h3.product__modal__details__name {
 }
 .empty_order_notifycation div{
   padding: 20px 0px;
+}
+
+/* css quanly don hang */
+/* START CSS CART */
+.cart-page {
+  margin-top: -20px;
+}
+
+.cart-page table {
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.cart-info img {
+  width: 100px;
+}
+
+.cart-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart-page th {
+  text-align: left;
+  padding: 17px;
+  color: #fff;
+  background: #FF9077;
+  font-weight: bold;    
+}
+
+.cart-page td {
+  padding: 10px 5px;
+}
+
+.cart-page td input {
+  width: 60px;
+  height: 30px;
+  padding: 5px;
+}
+
+.cart-page td a {
+  color: #FF9077;
+  font-size: bold;
+  text-decoration: none;
+}
+
+.cart-page td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.total-price {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total-price table {
+  margin-right: 0px;
+  border-top: 2px solid #FF9077;
+  width: 95%;
+  max-width: 350px;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+.cart-page th:last-child {
+  text-align: right;
 }
