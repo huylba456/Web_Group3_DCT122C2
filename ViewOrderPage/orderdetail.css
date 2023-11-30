@@ -976,7 +976,7 @@ h3.product__modal__details__name {
 }
 /* kết thúc css giỏ hàng xem nhanh */
 .product__pagination {
-  width: 70%;
+  width: 95%;
   height: max-content;
   display: flex;
   justify-content: center;

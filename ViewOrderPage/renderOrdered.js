@@ -1,9 +1,4 @@
-function renderOrdered() {
-    var orderlist = document.querySelectorAll('.desc-item-body');
-    
 
-}
-// renderOrdered();
 Ordered(user.checkLoginId());
 
 function getTotalMoneyOrder(list) {
@@ -18,12 +13,13 @@ function Ordered(userid) {
     const orderList = order.getOrders();
     var html="";
     var html1='';
+    var check=0;
     if (!orderList) return null;
     var orderl=document.querySelector('.productorderedd')
     if (!orderl) return null;
-
     orderList.forEach((item) => {
         if (item.userid === userid) {
+            check=1;
             var date=new Date(item.orderTime);
             var newDate = date.toDateString() + " " + date.toTimeString().split(" ")[0];
             html =`<table>
@@ -62,8 +58,10 @@ function Ordered(userid) {
         }
 })
     orderl.innerHTML = html1;
-    if(orderList.length>0){
-        document.querySelector('.empty_order_notifycation').style.display = 'none';
+    document.querySelector('.empty_order_notifycation').style.display = 'none';
+    if(check==0){
+        document.querySelector('.empty_order_notifycation').style.display = 'block';
+        document.querySelector(".product__pagination").style.display = "none";
     }
 }
 detaillll();
@@ -71,8 +69,10 @@ function detaillll() {
     chitietSp = location.href.split("=")[1] ;
     id=parseInt(chitietSp);
     const orderList = order.getOrders();
+    var check=0;
     orderList.forEach((item) => {
         if (item.orderId === id) {
+            check=1;
             var html = "";
             item.cartList.forEach((item) => {
                 html += `<table>
@@ -114,7 +114,8 @@ function detaillll() {
             document.querySelector('.order__item--detail--btn--detail').innerHTML += html;
         }
     })
-    if(orderList.length>0){
-        document.querySelector('.empty_order_notifycation').style.display = 'none';
-    }}
-    
+        document.querySelector('.empty_order_notifycationn').style.display = 'none';
+    if(check==0){
+         document.querySelector('.empty_order_notifycationn').style.display = 'block';
+     }
+}
