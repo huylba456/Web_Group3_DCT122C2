@@ -294,9 +294,13 @@ function filteruser(keywords) {
 }
 
 //add event nut search
-document.querySelector('.user-search').addEventListener('change', function () {
+SearchRenderUser();
+function SearchRenderUser() {
+    const inputsearch = document.querySelector('.user-search');
+    const searchicon= document.querySelector('.user__search--btn.outline');
+    searchicon.addEventListener('click', function () {
     document.querySelector('.nouserfound').style.display = "none";
-    var keywords = document.querySelector('.user-search').value;
+    var keywords = inputsearch.value;
     var userz = filteruser(keywords);
     if (userz.length == 0) {
         document.querySelector('.bodyqlnd').innerHTML = ``;
@@ -312,6 +316,7 @@ document.querySelector('.user-search').addEventListener('change', function () {
     renderUserManagement(userz);
     AddEventrenderPhanTrang();
 })
+}
 
 // add event nut filter 
 var filterOrder = document.querySelector('.selectfilter');

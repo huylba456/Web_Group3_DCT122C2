@@ -117,3 +117,4 @@ function detaillll() {
     if(orderList.length>0){
         document.querySelector('.empty_order_notifycation').style.display = 'none';
     }}
+    

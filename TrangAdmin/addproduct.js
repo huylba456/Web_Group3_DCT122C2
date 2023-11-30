@@ -359,24 +359,29 @@ deleteicon.forEach(item => {
 }
 
 // render tim kiem san pham
-document.querySelector('.product-search').addEventListener('change', function () {
-    document.querySelector('.noproductfound').style.display = "none";
-    var keywords = document.querySelector('.product-search').value;
-    productz = filterproduct(keywords);
-    if (productz.length == 0) {
-        document.querySelectorAll('.tableinfo')[0].innerHTML = ``;
-        document.querySelector('.noproductfound').style.display = "block";
+SearchRenderProduct();
+function SearchRenderProduct() {
+    const inputsearch = document.querySelector('.product-search');
+    const searchicon = document.querySelector('.product__search--btn.outline');
+    searchicon.addEventListener('click', function() {
+        document.querySelector('.noproductfound').style.display = "none";
+        var keywords = inputsearch.value;
+        productz = filterproduct(keywords);
+        if (productz.length == 0) {
+            document.querySelectorAll('.tableinfo')[0].innerHTML = ``;
+            document.querySelector('.noproductfound').style.display = "block";
+            renderPhanTrangAddProduct(productz);
+            renderProductManage(productz);
+            changePagesad(productz);
+            addEventToPagead();
+            return;
+        }
         renderPhanTrangAddProduct(productz);
         renderProductManage(productz);
         changePagesad(productz);
         addEventToPagead();
-        return;
-    }
-    renderPhanTrangAddProduct(productz);
-    renderProductManage(productz);
-    changePagesad(productz);
-    addEventToPagead();
-})
+    })
+}
 
 function filterproduct(keywords) {
     var productlist = data.getProducts();

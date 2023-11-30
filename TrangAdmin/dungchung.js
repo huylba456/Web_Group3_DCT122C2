@@ -35,10 +35,10 @@ AddEventrenderPhanTrang();
 
 const gohome = document.querySelector('.logo-name');
 gohome.addEventListener('click', () => {
-    window.location.href = "../ProductPage/ProductPage.html";
+    window.location.href = "../ProductPage/index.html";
 })
 
 const backhome = document.querySelector('.backhome');
 backhome.addEventListener('click', () => {
-    window.location.href = "../ProductPage/ProductPage.html";
+    window.location.href = "../ProductPage/index.html";
 })

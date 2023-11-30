@@ -152,3 +152,7 @@ function checkInputAddress() {
     listMessage[5].style.display = "none";
     return 1;
 }
+function closeModal(){
+    document.querySelector('.modal').style.display = 'none';
+    document.querySelector('.activemauden').style.display = 'none';
+}
