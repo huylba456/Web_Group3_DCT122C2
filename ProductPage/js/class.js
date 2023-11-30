@@ -111,7 +111,7 @@
             return false;
         }
 
-        static addUser(username, password, email, phone, name, address) {
+        static addUser(username, password, name, email, phone, address) {
             try {
                 const newUser = new User(username, password, email, phone, name, address, false);
                 const list = user.getUsers();
@@ -451,8 +451,6 @@
                 return true;
             return false;
         }
-
-
     }
 
     class time {

@@ -97,7 +97,7 @@ function renderProductDetail(self) {
                 <div class="quickview__scent">Mùi hương: ${product.mui}</div>
                 <div class="child">
                     <div class="quickview__size">Lựa chọn size</div>
-                    <a class="quickview__detail" href="${chitietSp}">Chi tiết sản phẩm</a>
+                    <a class=" " href="${chitietSp}">Chi tiết sản phẩm</a>
                 </div>
                 <div class="quickview__size--box">`
                     htmlStr += `<button class="quickview__size--btn active" value="0">${product.capacity[0]}</button>`
@@ -360,6 +360,7 @@ cartBtn.addEventListener('click', function () {
         alert("Vui lòng đăng nhập để xem giỏ hàng!");
         return;
     }
+    console.log(cart.getCartList(userz));
     renderCartModal();
     modalCart.classList.add('active');
     document.querySelector('.activemauden').style.display = 'block';
@@ -367,4 +368,7 @@ cartBtn.addEventListener('click', function () {
 
 function gotoorderpage() {
     window.location.href = "../Orderpage/Orderpagee.html";
-}   
+} 
+function clickToViewOrder() {
+    window.location.href = "../ViewOrderPage/ViewOrderPage.html";
+}

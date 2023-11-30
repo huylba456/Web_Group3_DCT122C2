@@ -12,7 +12,6 @@ const listMessage = document.querySelectorAll('.er');
 const loginButtonClick = document.querySelector('.signin-button');
 const userNameDangNhap = document.querySelector('#username');
 const passwordDangNhap = document.querySelector('#password');
-
 loginButtonClick.addEventListener('click', function (event) {
     event.preventDefault();
     var success = user.login(userNameDangNhap.value, passwordDangNhap.value);
@@ -36,7 +35,7 @@ loginButton.forEach(item => {
         })
     })
 })
-    
+
 signupForm.addEventListener('click', function () {
     document.querySelector('.modal_signup').style.display = 'block';
     document.querySelector('.activemauden').style.display = 'block';
@@ -62,6 +61,8 @@ signupButton.addEventListener('click', function (event) {
     if (check == 1) {
         user.addUser(inputUsername.value, inputPassword.value, inputUname.value, inputEmail.value, inputPhoneNumber.value, inputAddress.value);
         user.login(inputUsername.value, inputPassword.value);
+        document.querySelector('.modal_signup').style.display = 'none';
+        document.querySelector('.activemauden').style.display = 'none';
         alert("Đăng ký thành công");
     }
     

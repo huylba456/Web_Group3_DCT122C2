@@ -44,7 +44,7 @@ const listProducts = [
 if (!data.getProducts()) data.loadProducts(listProducts);
 const account = [
     new User('admin', 'admin', 'kietdezzzz@gmailcom', '0987654321', 'Admi', '273 An Dương Vương HCM', true),
-    new User('kiet', '123', 'aaaaaaaaa@dphone.com', '0987054321', 'Admn', '273 An Dương Vương HCM', true),
+    new User('hao', '12345', 'aaaaaaaaa@dphone.com', '0987054321', 'Admi', '273 An Dương Vương HCM', true),
 ];
 
 if (!user.getUsers()) user.loadUsers(account);

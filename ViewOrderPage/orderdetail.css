@@ -1261,10 +1261,55 @@ h3.product__modal__details__name {
 td:last-child {
   text-align: right;
 }
-.cart-page th {
-  text-align: center;
+
+.cart-page th:last-child {
+  text-align: right;
 }
-.cart-page td {
-  text-align: center;
-  padding: 17px;
+.cart-page th:nth-child(1) {
+    text-align: center;
+  width: 120px;
 }
+.cart-page th:nth-child(2) {
+    text-align: left;
+  width: 300px;
+}
+.cart-page th:nth-child(3) {
+    text-align: center;
+  width: 100px;
+}
+.cart-page th:nth-child(4) {
+    text-align: center;
+  width: 100px;
+}
+.cart-page th:nth-child(5) {
+    text-align: center;
+  width: 100px;
+}
+.cart-page th:nth-child(6) {
+    text-align: center;
+  width: 100px;
+}
+.cart-page td:nth-child(1) {
+    text-align: center;
+    width: 120px;
+  }
+  .cart-page td:nth-child(2) {
+    text-align: left;
+    width: 300px;
+  }
+  .cart-page td:nth-child(3) {
+    text-align: center;
+    width: 100px;
+  }
+  .cart-page td:nth-child(4) {
+    text-align: center;
+    width: 100px;
+  }
+  .cart-page td:nth-child(5) {
+    text-align: center;
+    width: 100px;
+  }
+  .cart-page td:nth-child(6) {
+    text-align: center;
+    width: 100px;
+  }

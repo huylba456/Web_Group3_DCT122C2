@@ -192,6 +192,7 @@ checkout.addEventListener("click", function() {
         return;
     }
     clickToBuyModalCart();
+    console.log(order.getOrders());
     alert('Đặt hàng thành công! quay về trang chủ.');
     window.location.href = "../ProductPage/ProductPage.html";
 })
