@@ -29,7 +29,7 @@ body {
   width: 100%;
   font-family: 'Be Vietnam Pro', sans-serif;
 }
-
+*/
 
 
 
@@ -74,6 +74,7 @@ body {
   display: block;
   text-align: center;
   text-decoration: none;
+  color: #000000;
 }
 .nav__center {
   display: flex;
@@ -127,7 +128,7 @@ body {
   background-color: var(--orange);
   border-radius: 0 10px 10px 0;
   border: 0;
-} */
+} 
 
 
 .bordernonuser, .borderadmin, .borderuser {
