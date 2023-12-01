@@ -478,6 +478,7 @@ nav.close ~ .dashboard .top{
   
   th:nth-child(9) {
     width: 100px;
+    height: 75px;
   }
 
   td {
@@ -595,7 +596,7 @@ nav.close ~ .dashboard .top{
   }
 
   .phantrangquanlynguoidung {
-    width: 75%;
+    width: 50%;
     display: flex;
     margin-top: 20px; 
     gap: 8px;
@@ -985,6 +986,7 @@ select.product-select {
     }
     
   #customers th {
+    width: 100px;
       padding-top: 12px;
       padding-bottom: 12px;
       background-color: #FF9077;
