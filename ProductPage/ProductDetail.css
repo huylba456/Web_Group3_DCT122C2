@@ -1068,10 +1068,11 @@ h3.product__modal__details__name {
   color: #000;
   float: left;
   padding: 8px 16px;
+  background-color: white;
 }
 .previous .active,
 .next.active {
-  background-color: var(--orange);
+  background-color: var(--black);
   color: white;
   border-radius: 10%;
 }
@@ -1083,7 +1084,7 @@ h3.product__modal__details__name {
   padding: 8px 16px;
 }
 .product__pagination a.active {
-  background-color: var(--orange);
+  background-color: var(--black);
   color: white;
   border-radius: 10%;
 }
