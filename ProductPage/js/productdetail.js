@@ -364,4 +364,7 @@ cartBtn.addEventListener('click', function () {
 function gotoorderpage() {
     window.location.href = "../Orderpage/Orderpagee.html";
 }   
+function clickToViewOrder() {
+    window.location.href = "../ViewOrderPage/ViewOrderPage.html";
+}
 

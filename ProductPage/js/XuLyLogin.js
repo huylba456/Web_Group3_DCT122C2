@@ -7,7 +7,7 @@ const logOut = document.querySelectorAll('.logout');
 logOut.forEach(element => {
     element.addEventListener('click', function() {
         user.logout();   
-        location.reload();
+        window.location.href='../ProductPage/index.html';
     })
 });
    
