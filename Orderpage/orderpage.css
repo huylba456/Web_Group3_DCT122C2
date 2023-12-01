@@ -95,7 +95,7 @@ body {
   margin-top: 12px;
 }
 .nav__logo--icon {
-  width: 50px;
+  width: 5px;
   height: 50px;
   /* margin: 12px 12px 0 0; */
   background-color: gray;
@@ -106,6 +106,9 @@ body {
   height: 50px;
   font-family: 'Be Vietnam Pro', sans-serif;
   flex: 1;
+  margin-top: 8px;
+  margin-left: 30px;
+  font-size: 30px;
 
 }
 .nav__search {
