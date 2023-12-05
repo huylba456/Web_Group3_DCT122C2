@@ -128,7 +128,7 @@ Header Menu STARTS */
     border-radius: 0 10px 10px 0;
     border: 0;
   } 
-  .bordernonuser, .borderadmin, .borderuser {
+   .borderuser {
     width: max-content;
     display: flex;
     gap: 5px;
@@ -136,6 +136,7 @@ Header Menu STARTS */
   
   .user, .admin, .nonuser {
     width: max-content;
+    display: flex;
   }
   .adminsection, .usersection, .nonusersection {  
     width: max-content;
@@ -195,7 +196,7 @@ Header Menu STARTS */
     font-weight: 600;
     margin-top: 10px;
   }
-    .close {
+    .closeiconDangnhap {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1157,7 +1158,7 @@ Header Menu STARTS */
   
   }
   
-  .child {
+  .product parent {
     display: flex;
     justify-content: space-between;
   
@@ -1444,4 +1445,21 @@ Header Menu STARTS */
 }
 .ket-qua.active{
     display: block;
+}
+.findPrice{
+  margin-top: 20px;
+  text-align: center;
+  border: solid 1px #696565;
+  background-color: #ede3e3;
+  border-radius: 10px;
+  width: 100px;
+}
+.social button{
+  align-items: center;
+  width: 1000px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 10px;
+  background: var(--orange);
+  font-weight: bold;
 }
