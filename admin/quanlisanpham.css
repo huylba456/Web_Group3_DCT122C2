@@ -593,7 +593,19 @@ nav.close ~ .dashboard .top{
     margin-top: 20px;
     margin-bottom: 20px;
   }
-
+  .phantrangaddproduct button a{
+    text-decoration: none;
+    color: white;
+  }
+  .myButton {
+    background-color: white;
+  }
+  .myButton.active{
+    background-color: rgb(8, 7, 7);
+  }
+  .imgdel button{
+    margin: 10px;
+  }
   .phantrangquanlynguoidung {
     width: 50%;
     display: flex;
@@ -692,7 +704,6 @@ nav.close ~ .dashboard .top{
     width: 500px;
     position: fixed;
     height: 650px;
-    margin: 0 auto;
     padding:  35px;
     background-color: var(--panel-color);
     z-index: 1000;
@@ -700,8 +711,9 @@ nav.close ~ .dashboard .top{
     display: none;
     margin-left: 50%;
     transform: translateX(-40%);
-    margin-top: 30px;
+    margin-top: -160px;
     border-radius: 10px;
+
   }
 
   .mauden {
@@ -1305,6 +1317,10 @@ table{
   transition: 200ms;
   margin-left: 620px;
   margin-top: 10px;
+}
+select{
+    width: 420px;
+    height: 30px;
 }
 /* end */
 
