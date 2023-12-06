@@ -1442,11 +1442,18 @@ a {
     }
   }
 .ket-qua{
-    margin-top:50px ; 
+    margin-top:65px ; 
     margin-bottom: 0px; 
+    margin-left: 300px ;
     text-align: center;
     font-size: 25px;
     display: none;
+    border: solid 1px #696565;
+    border-style: none;
+    background-color: #ede3e3;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
 }
 .ket-qua.active{
     display: block;

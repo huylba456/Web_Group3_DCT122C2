@@ -128,7 +128,10 @@ body {
   border-radius: 0 10px 10px 0;
   border: 0;
 } */
-
+a {
+  text-decoration: none;
+  color: white;
+}
 
 .bordernonuser, .borderadmin, .borderuser {
   width: max-content;
