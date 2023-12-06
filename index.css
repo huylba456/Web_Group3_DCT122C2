@@ -32,6 +32,11 @@ body {
 
 
 Header Menu STARTS */
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header {
     display: flex;
     width: 1140px;
@@ -91,10 +96,10 @@ Header Menu STARTS */
   .nav__logo--icon {
     width: 50px;
     height: 50px;
-    background-color: gray;
+    background-color: rgb(249, 239, 239);
   }
   .nav__logo--name {
-    width: max-content;
+    width: 50px;
     height: 50px;
     margin-left: 12px;
     font-family: 'Sacramento', cursive;
@@ -128,7 +133,7 @@ Header Menu STARTS */
     border-radius: 0 10px 10px 0;
     border: 0;
   } 
-  .bordernonuser, .borderadmin, .borderuser {
+   .borderuser {
     width: max-content;
     display: flex;
     gap: 5px;
@@ -136,6 +141,7 @@ Header Menu STARTS */
   
   .user, .admin, .nonuser {
     width: max-content;
+    display: flex;
   }
   .adminsection, .usersection, .nonusersection {  
     width: max-content;
@@ -195,7 +201,7 @@ Header Menu STARTS */
     font-weight: 600;
     margin-top: 10px;
   }
-    .close {
+    .closeiconDangnhap {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -1157,7 +1163,7 @@ Header Menu STARTS */
   
   }
   
-  .child {
+  .product parent {
     display: flex;
     justify-content: space-between;
   
@@ -1436,12 +1442,36 @@ Header Menu STARTS */
     }
   }
 .ket-qua{
-    margin-top:50px ; 
+    margin-top:65px ; 
     margin-bottom: 0px; 
+    margin-left: 300px ;
     text-align: center;
     font-size: 25px;
     display: none;
+    border: solid 1px #696565;
+    border-style: none;
+    background-color: #ede3e3;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
 }
 .ket-qua.active{
     display: block;
+}
+.findPrice{
+  margin-top: 20px;
+  text-align: center;
+  border: solid 1px #696565;
+  background-color: #ede3e3;
+  border-radius: 10px;
+  width: 100px;
+}
+.social button{
+  align-items: center;
+  width: 1000px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 10px;
+  background: var(--orange);
+  font-weight: bold;
 }

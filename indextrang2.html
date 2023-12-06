@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Link CSS -->
+ <link rel="stylesheet" href="./HeaderFooter.css">
+ <link rel="stylesheet" href="./index.css">
+ <!-- Fontawesome -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css" integrity="sha512-C8Movfk6DU/H5PzarG0+Dv9MA9IZzvmQpO/3cIlGIflmtY3vIud07myMu4M/NTPJl8jmZtt/4mC9bAioMZBBdA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <title>Havuyi</title>
+ 
+</head>
+<body>
+ <!-- Header STARTS -->
+	<div class="quickview"></div>
+	<div class="activemauden"></div>
+	<div class="header">
+			<div class="nav">
+				<div class="nav__link">
+					<ul>
+						<li><a href="../ProductPage/index.html">Trang Chủ</a></li>
+						<li><a>Giới Thiệu</a></li>
+						<li><a>Bảo Hành</a></li>
+						<li><a>Liên Hệ</a></li>
+					</ul>
+					<ul>
+						<div class="user" style="display: none;">
+							<div class="borderuser"  >
+								<li ><div class="usersection">Xin chào,user</div></li>
+								<li ><div class="usersection logout">| Đăng xuất</div></li>
+							</div>
+						</div>
+						<div class="admin">
+							<div class="borderadmin" style="display: none;">
+								<li class="adminbtn"><img src="svg/admin.svg" width="18px" height="18px"></li>
+								<li class= "adminsection"><div>Xin chào, </div> <div class="name"> </div></li>
+								<li class="adminsection logout"><a>| Đăng xuất</a></li>
+							</div>
+						</div>
+						<div class="nonuser">
+							<div class="bordernonuser" >
+								<li><div class="dangnhap">Đăng nhập</div></li>
+								<li><div class="dangky">| Đăng ký</div></li>
+							</div>
+						</div>
+					</ul>
+			</div>
+			<div class="nav__center">
+				<div class="nav__logo">
+					<div class="nav__logo--icon"> <img src="img/logo.png" alt="logo" class="nav__logo--icon"></div>
+					<div class="nav__logo--name">Havuyi</div>
+				</div>
+				<form class="nav__search outline" onsubmit="return false;">
+					<input class="nav__search--input" type="text" placeholder="Tìm kiếm sản phẩm...">
+					<button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg" width="22px" height="22px"></img></i></button>
+				</form>
+				<div class="nav__cart"><img src="svg/cart.svg" width="39px" height="39px"></img></div>
+			</div>
+			</div>
+	</div>
+<!-- Header ENDS  -->
+
+
+<!-- Content STARTS -->
+<div class="modal">
+	<div class="modal-background" >
+		<div class="modal-content">
+		  <div class="closeiconDangnhap" ><img src="svg/x.svg" width="16px" height="16px"></img></div>
+		  <h2 class="signin">Đăng nhập</h2>
+		  <form class="form_signin">
+			<input id="username" type="text" name="username" placeholder="Email/Số điện thoại">
+			<input type="password" id="password" name="password" placeholder="Mật khẩu">
+			<div class="checkbox-text">
+			  <div class="checkbox-content">
+			  <input type="checkbox" id="logCheck">
+			  <label for="logCheck">Ghi nhớ đăng nhập</label>
+			</div>
+			
+			<a href="#">Quên mật khẩu?</a>
+			</div>
+			<button class="signin-button" type="submit">Đăng nhập</button>
+			<!-- <p class="alternate">Bạn chưa có tài khoản? <button class="button-asking1" onclick="closeSignInAndOpenSignUp()">Đăng ký tại đây</button> </p> -->
+		  </form>
+		</div>
+		
+	</div>
+  </div>
+  <!-- Phần đăng ký -->
+  <div class="modal_signup">
+	<div class="modal-signup-content">
+	  <div class="closeiconDangky"><i class="fa-solid fa-x"></i></div>
+	  <h2  class="signup">Đăng ký</h2>
+	  <form class="form_signup">
+		<div class="form-content">
+		<div class="input-box">
+			<input type="text" id="userrname" placeholder="Tên đăng nhập">
+		    <div class="er errorLogin">Lỗi</div>
+		</div>
+		<div class="input-box">
+		  <input type="text" id="email" placeholder="Email">
+		  <div class="er errorEmail">Lỗi</div>
+		</div>
+		<div class="input-box">
+		  <input type="password" id="pass" placeholder="Mật khẩu">
+		  <div class="er errorPassword">Lỗi</div>
+		</div>
+		<div class="input-box">
+		  <input type="text" id="phone" placeholder="Số điện thoại">
+		  <div class="er errorSDT">Lỗi</div>
+		</div>
+		<div class="input-box">
+		  	<input type="text" id="yourname" placeholder="Họ và tên">
+			<div class="er errorName">Lỗi</div>
+		</div>
+		<div class="input-box">
+		  <div class="checkbox-container">
+		  <input type="checkbox" class="agree">
+		  <label for="" class="agree1">Bằng cách bấm vào nút đăng ký, bạn đã đồng ý với các <a href="#">chính sách riêng tư</a> và <a href="#">điều khoản sử dụng</a> của chúng tôi</label>
+		  </div>
+		</div>
+		<div class="input-box">
+		  <input type="text" id="address" placeholder="Địa chỉ">
+		  <div class="er errorAddress">Lỗi</div>
+		</div>
+		<div class="input-box">
+		  <button class="signup-button">Đăng ký</button>
+		</div>
+		</div>
+		<br>
+		<!-- <p class="alternate">Bạn đã có tài khoản? <button class="button-asking2"> Đăng nhập tại đây</button> </p> -->
+		</div>
+	  </form>
+	</div>
+
+	<div class="content">
+		<div class="banner">
+			<div class="list">
+				<div class="item">
+					<img src="img/banner1.jpg" alt="">
+				</div>
+				<!-- <div class="item">
+					<img src="img/banner2.jpeg" alt="">
+				</div>
+				<div class="item">
+					<img src="img/banner3.jpg" alt="">
+				</div>
+				<div class="item">
+					<img src="img/banner4.webp" alt="">
+				</div>
+				<div class="item">
+					<img src="img/banner5.png" alt="">
+				</div> -->
+			</div>
+			<div class="buttons">
+				<button id="prev"><</button>
+				<button id="next">></button>
+			</div>
+			<ul class="dots">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+        <div class="ket-qua">kết quả tìm thấy</div>
+		<div class="product parent" style="margin-top: 0;">
+			<div class="child">
+				<div class="product__filter outline">
+				<div class="product__filter--brand">
+					<h1>Theo hãng</h1>
+					<button class="product__filter--btn outline brand">Dior</button>
+					<button class="product__filter--btn outline brand">Louis Vulton</button>
+					<button class="product__filter--btn outline brand">Tom Ford</button>
+					<button class="product__filter--btn outline brand">Gucci</button>
+					<button class="product__filter--btn outline brand">Calvin Klein</button>
+				</div>
+				<div class="product__filter--type">
+					<h1>Theo giới tính</h1>
+					<button class="product__filter--btn outline sex nam">Nam</button>
+					<button class="product__filter--btn outline sex nu">Nữ</button>
+					<button class="product__filter--btn outline sex">Unisex</button>
+				</div>
+				<div class="product__filter--price">
+					<h1>Theo giá</h1>
+					<button class="product__filter--btn outline orderedPrice">Thấp nhất</button>
+					<button class="product__filter--btn outline orderedPrice">Cao nhất</button>
+					<h3>Khoảng giá</h2>
+					<input class="product__filter--input outline from" type="text" placeholder="Từ">
+					<input class="product__filter--input outline to" type="text" placeholder="Đến">
+					<div class="findPrice">Tìm Kiếm</div>
+				</div>
+				<div class="product__filer--rating">
+					<h1>Theo đánh giá</h1>
+					<button class="product__filter--btn outline star">4★-5★</button>
+					<button class="product__filter--btn outline star">3★-4★</button>
+					<button class="product__filter--btn outline star">2★-3★</button>
+					<button class="product__filter--btn outline star">1★-2★</button>
+				</div>
+				</div>
+				<div class="product__box">
+				 <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img19.jpg"></div>
+					<div class="product__item--name">Nước Hoa Gucci Memoire Dune Odeur EDP</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+                <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img21.jpg"></div>
+					<div class="product__item--name">Nước Hoa Dior Sauvage Parfum</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+                <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img23.jpg"></div>
+					<div class="product__item--name">Nước Hoa Tom Ford Velvet Orchird Lumiere</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+                <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img25.jpg"></div>
+					<div class="product__item--name">Nước Hoa Gucci Memoire Dune Odeur EDP</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+                <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img27.jpg"></div>
+					<div class="product__item--name">Nước Hoa Tom Ford Lost Cherry Eau De Parfum</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+                <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img29.jpg"></div>
+					<div class="product__item--name">Nước Hoa Tom Ford Velvet Orchird Lumiere</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+                <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img31.jpg"></div>
+					<div class="product__item--name">Nước Hoa Gucci Guilty Love Edition Pour Homme</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+                <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img33.jpg"></div>
+					<div class="product__item--name">Nước Hoa Tom Ford Ombré Leather</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+                <div class="product__item outline"><a href="ProductDetail.html">
+					<div class="product__item--img"><img src="./img/img35.jpg"></div>
+					<div class="product__item--name">Nước Hoa Louis Vuitton Les Sables Roses</div>
+					<div class="product__item--price">727.000đ-1.727.000đ</div>
+					<div class="product__item--size">3 size</div>
+					<div class="product__item--rating ">★★★★★</div>
+				</a></div>
+			</div>
+		</div>
+				<div class="product__pagination" >
+				<a href="#">&laquo;</a>
+				<a href="index.html">1</a>
+				<a href="indextrang2.html" class="active">2</a>
+				<a href="indextrang3.html">3</a>
+				<a href="#">&raquo;</a>
+				</div>
+		</div>
+	<div class="product__modal__cart__container">
+		<div class="product__modal__cart__content__box">
+			<div class="product__modal__cart__title">
+				 <h3>GIỎ HÀNG CỦA BẠN</h3>
+					<div class="product__modal__cart__close">
+							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+							<img src="svg/x.svg" width="16px" height="16px"
+							colors="primary:#7047ee,secondary:#7047ee" style="width:100px">
+						</img>
+					</div>
+			</div>
+			<div class="product__modal__cart__content">
+				Cart modal render by js
+			</div>
+		</div>
+	</div>
+	</div>
+<!-- Content ENDS -->
+
+
+<!-- Footer STARTS -->
+	<div class="footer parent">
+		<div class="footer__box">
+			<div class="child">
+				<div class="footer__left">
+					<div class="footer__left--name">Havuyi</div>
+					<div class="footer__left--slogan">Hương thơm dài lâu<br> cho cuộc tình trên lầu dai.</div>
+					<div class="footer__left--social">
+						
+						<a href="https://www.facebook.com"><button class="footer__left--socialbtn"><img src="svg/facebook.svg"></img></button></a>
+						<a href="https://www.instagram.com"><button class="footer__left--socialbtn"><img src="svg/instagram.svg"></img></button></a>
+						<a href="https://www.twitter.com"><button class="footer__left--socialbtn"><img src="svg/twitter.svg"></img></button></a>
+					</div>
+				</div>
+				<div class="footer__right">	
+					<div class="footer__right--information">
+					<ul>
+						<li><h3>Information</h3></li>
+						<li><a href="Introduction.html">About</a></li>
+						<li><a href="ProductPage.html">Product</a></li>
+						<li><a href="">Blog</a></li>
+					</ul>
+
+					</div>
+					<div class="footer__right--company">
+					<ul>
+						<li><h3>Company</h3></li>
+						<li><a href="https://www.google.com">Community</a></li>
+						<li><a href="">Career</a></li>
+						<li><a href="Introduction.html">Our story</a></li>
+					</ul>
+					</div>
+					<div class="footer__right--contact">
+					<ul>
+						<li><h3>Contact</h3></li>
+						<li><a href="Contact.html">Getting Started</a></li>
+						<li><a href="">Pricing</a></li>
+						<li><a href="">Resources</a></li>
+					</ul>
+					</div>
+					</div>
+			</div>
+			<div class="footer__terms">2023 all Right Reserved Term of use Havuyi</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Footer ENDS -->
+<script  src="index.js"></script>
+<script src="index1.js"></script>
+</body>
+
+</html>
+

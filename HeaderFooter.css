@@ -7,6 +7,7 @@
   }
   a {
     text-decoration: none;
+    color: white;
   }
   
   :root {
@@ -99,7 +100,7 @@
     width: max-content;
     height: 50px;
     margin-left: 12px;
-    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-family: 'Sacramento', cursive;
     font-size: 2.5rem;
   }
   .nav__search {
