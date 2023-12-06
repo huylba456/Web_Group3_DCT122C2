@@ -4,9 +4,12 @@ const loginButton = document.querySelector('.dangnhap');
 const signupForm = document.querySelector('.dangky');
 const hinhanh=document.querySelectorAll('.buttons button');
 const page=document.querySelectorAll('.product__pagination a');
-document.querySelector('.findPrice').addEventListener('click', () => {
+const findPrice=document.querySelector('.findPrice');
+if(findPrice){
+findPrice.addEventListener('click', () => {
     ketqua.style.display='block';
 });
+}
 document.querySelector('.nav__search--btn.outline').addEventListener('click', () => {
     ketqua.style.display='block';
 });

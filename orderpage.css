@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Open+Sans:ital,wght@0,300;0,400;1,500&family=Work+Sans:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family:  'Be Vietnam Pro', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+:root {
+  --orange: #FF9077;
+  --border: #D3D3D3;
+  --white: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+
+
+/* Header Menu STARTS */
+.activemauden {
+  display: none;
+  position: fixed;
+  width:  100%;
+  height: 100%;
+  z-index: 9999;  
+  background-color: rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  position: fixed;
+  padding: 0 10%;
+  z-index: 998;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 #80808033;
+}
+
+.fa-gear {
+  font-size: 20px;
+}
+
+.borderadmin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav {
+  width: 100%;
+  height: max-content;
+  justify-content: space-between;
+}
+.nav__link {
+  display: flex;
+  width: 100%;
+  height: 25px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav__link ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #000000;
+  cursor: pointer;
+}
+.nav__link ul li a {
+  display: block;
+  text-align: center;
+  /* padding-right: 20px; */
+  text-decoration: none;
+}
+.nav__centerr {
+  display: flex;  
+  gap: 20px;
+  width: 100px;
+  margin-top: 12px;
+}
+.nav__logo--icon {
+  width: 50px;
+  height: 50px;
+  /* margin: 12px 12px 0 0; */
+  background-color: gray;
+  flex: 1;
+}
+.nav__logo--name {
+  width: 50px;
+    height: 50px;
+    margin-left: 12px;
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5rem;
+}
+.nav__search {
+  display: flex;
+  width: 660px;
+  height: 40px;
+  flex: 7;
+}
+.nav__search--btn.outline {
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  margin-left: 350px;
+}
+.nav__search--input {
+  display: flex;
+  float: left;
+  width: 540px;
+  height: 100%;
+  padding-left: 20px;
+  text-align: left;
+  border-radius: 10px 0 0 10px;
+  border: 0;
+}
+
+.nav__search--input:focus {
+  outline: none;
+}
+
+.nav__search--btn {
+  display: flex;
+  float: right;
+  width: 120px;
+  height: 100%;
+  background-color: var(--orange);
+  border-radius: 0 10px 10px 0;
+  border: 0;
+}
+.bordernonuser, .borderadmin, .borderuser{
+  display: flex;
+  gap: 5px;
+}
+
+.user, .admin, .nonuser {
+  position: absolute;
+  width: 500px;
+}
+.adminsection, .usersection, .nonusersection {  
+  display:flex;
+  gap: 5px;  
+}
+
+ 
+/* kết thúc css đăng nhập đăng ký */
+.content {
+  width: 100%;
+  height: max-content;
+  padding: 160px 10% 0 10%;
+  
+}
+/* kết thúc css giỏ hàng xem nhanh */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 300px;
+  margin-top: 100px;
+  background-color: var(--orange);
+  padding: 20px 10% 0 10%;
+  color: var(--white);
+}
+.footer__left {
+  width: max-content;
+  height: max-content;
+}
+.footer__left--name {
+  font-family: 'Sacramento', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+.footer__left--slogan {
+  font-weight: 400;
+  font-size: 1rem;
+  width: max-content;
+  height: max-content;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+.footer__left--social {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  height: max-content;
+
+}
+.footer__left--socialbtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+}
+.footer__right {
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+  height: max-content;
+
+
+}
+.footer__right--information,
+.footer__right--company,
+.footer__right--contact {
+  width: max-content;
+  height: max-content;
+
+}
+.footer__right--information ul,
+.footer__right--company ul,
+.footer__right--contact ul {
+  
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer__right--information ul li,
+.footer__right--company ul li,
+.footer__right--contact ul li {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  margin-bottom: 10px;
+  justify-content: end;
+}
+
+.footer__right--information ul li h3,
+.footer__right--company ul li h3,
+.footer__right--contact ul li h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: right;
+  margin-bottom: 10px;
+}
+.footer__right--information ul li a,
+.footer__right--company ul li a,
+.footer__right--contact ul li a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+  opacity: 0.5;
+}
+
+
+.footer__terms {
+  display: flex;
+  align-self: flex-end;
+  width: max-content;
+  height: max-content;
+  opacity: 0.6;
+  padding-bottom: 10px;
+  
+}
+
+
+/* css orderpage */
+
+
+/* START CSS CART */
+.cart-page {
+    margin-top: -20px;
+}
+  
+  .cart-page table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.cart-info img {
+    width: 100px;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart-page th {
+    text-align: left;
+    padding: 17px;
+    color: #fff;
+    background: #FF9077;
+    font-weight: bold;    
+}
+
+.cart-page td {
+    padding: 10px 5px;
+}
+
+.cart-page td input {
+    width: 60px;
+    height: 30px;
+    padding: 5px;
+}
+
+.cart-page td a {
+    color: #FF9077;
+    font-size: bold;
+    text-decoration: none;
+}
+
+.cart-page td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price table {
+    margin-right: 0px;
+    border-top: 2px solid #FF9077;
+    width: 95%;
+    max-width: 350px;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+.cart-page th:last-child {
+    text-align: right;
+}
+
+.orderpage-button {
+    float: right;
+   margin-top: 20px;
+}
+
+.orderpage-button button{
+    padding: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background: #FF9077;
+    border-radius: 5px;
+    cursor: pointer ;
+    color: #fff;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 99999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 30%; /* Full width */
+    height: 70%; /* Full height */
+    margin-top: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 15px;
+    width: 50%;
+    border-radius: 6px;
+    width: 100%;
+    height: 88%;
+  }
+
+  .modal-content h2 {
+    text-align: center;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-content [type=text], input[type=password] {
+    width: 100%;
+    padding: 13px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background: #FF9077;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.noorder {
+    margin-left: 65%;
+}
+
+.product__pagination {
+    width: 70%;
+    height: max-content;
+    display: flex;
+    margin-left: 45%;
+
+}
+
+.product__pagination a {
+    font-size: 1.25rem;
+    font-weight: bolder;
+    color: #000;
+    float: left;
+    padding: 8px 16px;
+  }
+  .product__pagination a.active {
+    background-color: var(--orange);
+    color: white;
+    border-radius: 10%;
+  }
+  .product__pagination a:hover {
+    background-color: gray;
+    border-radius: 10%;
+  }
+  .previous,
+.next {
+  font-size: 1.25rem;
+  font-weight: bolder;
+  color: #000;
+  float: left;
+  padding: 8px 16px;
+}
+.previous .active,
+.next.active {
+  background-color: var(--orange);
+  color: white;
+  border-radius: 10%;
+}
+
+.info {
+  margin-top: 15px;
+}
+.listMes {
+  color: red;
+  margin-left: 10px;
+  margin-top: -10px;
+  display: none;
+}
+/* Reponsive ?? */
+@media only screen and (max-width: 700px) {
+    .cart-info p {
+        display: none;
+    }
+}
+.productordered td{
+padding-left: 20px;
+border: solid 1px #ccc;
+}
