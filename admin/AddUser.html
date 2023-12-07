@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="style.css">
-     
+    <link rel="stylesheet" href="Customer.css">
+
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://kit.fontawesome.com/6bddc9f4be.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styleadmin.css">
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <title>Admin Dashboard Panel</title> 
+    <title>Admin Dashboard Panel</title>
+    <script>
+        function hello() {
+            var result = confirm("Bạn có chắc không?");
+            if (result) {
+                alert("Người dùng đã được thêm")
+            }
+            else {
+                alert("Đã hủy bỏ thay đổi")
+            }
+        }
+
+    </script>
 </head>
+
 <body>
     <div class="activemauden"></div>
     <nav>
@@ -34,18 +49,22 @@
                 </li>
                 <li>
                     <a href="quanlysanphamadmin.html" class="link-name" style="cursor: pointer;">Quản lý sản phẩm
-                </a></li>
+                    </a>
+                </li>
                 <li>
                     <a href="thongkesanpham.html" class="link-name" style="cursor: pointer;">Thống kê sản phẩm
-                </a></li>
+                    </a>
+                </li>
                 <li>
                     <a href="quanlynguoidung.html" class="link-name" style="cursor: pointer;">Quản lý người dùng
-                </a></li>
+                    </a>
+                </li>
                 <li>
                     <a href="quanlydonhang.html" class="link-name" style="cursor: pointer;">Quản lý đơn hàng
-                </a></li>
+                    </a>
+                </li>
             </ul>
-            
+
             <ul class="logout-mode">
                 <li><a href="../index.html">
                         <i class="uil uil-signout"></i>
@@ -68,7 +87,7 @@
                 <a href="search.html" class="uil uil-search"></a>
                 <input type="text" placeholder="Search here...">
             </div>
-            
+
             <img src="img/profile.jpg" alt="">
         </div>
 
@@ -76,6 +95,46 @@
             <div class="overview">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Tổng quan</span>
+                    <span class="text">Quản lý người dùng</span>
                 </div>
-        <div>Không tìm thấy dữ liệu!</div>
+                <div id="user-management">
+                    <h2>Thêm người dùng</h2>
+                    
+                            <label for="email">Tên đăng nhập:</label>
+                            <input type="text" id="email">
+                            <br>
+                            <label for="email">Email:</label>
+                            <input type="text" id="email">
+                            <br>
+                            <label for="email">Mật khẩu:</label>
+                            <input type="text" id="email">
+                            <br>
+                            <select id="productType" style="width: 200px;">
+                                <option>Người mua hàng</option>
+                                <option>Admin</option>
+                            </select>
+                            <br>
+                            <button onclick="hello()" style="width: 50px; width: 50;">Save</button>
+    
+                        </div>
+                    
+                </div>
+                
+                
+        </div>
+
+
+
+        <ul id="user-list"></ul>
+        </div>
+
+        </div>
+        </div>
+
+
+
+    </section>
+
+   
+
+</body>
