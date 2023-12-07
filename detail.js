@@ -10,5 +10,5 @@ document.querySelector('.product__amount--minus').addEventListener('click', () =
     document.querySelector('.product__amount--box input').value=value;
  });
 document.querySelector('.product__addtocart--btn').addEventListener('click', () => {
-    alert('Thêm vào giỏ hàng thành công');
+    alert('Thêm vào giỏ hàng thành công!');
 });
