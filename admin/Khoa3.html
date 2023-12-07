@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="style.css">
-     
+    <link rel="stylesheet" href="Customer.css">
+
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://kit.fontawesome.com/6bddc9f4be.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styleadmin.css">
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
-    <title>Admin Dashboard Panel</title> 
+    <title>Admin Dashboard Panel</title>
+    <script>
+        function hello() {
+            var result = confirm("Bạn có chắc không?");
+            if (result) {
+                alert("Thay đổi thành công!")
+            }
+            else {
+                alert("Đã hủy bỏ thay đổi")
+            }
+        }
+
+    </script>
 </head>
+
 <body>
     <div class="activemauden"></div>
     <nav>
@@ -34,18 +49,22 @@
                 </li>
                 <li>
                     <a href="quanlysanphamadmin.html" class="link-name" style="cursor: pointer;">Quản lý sản phẩm
-                </a></li>
+                    </a>
+                </li>
                 <li>
                     <a href="thongkesanpham.html" class="link-name" style="cursor: pointer;">Thống kê sản phẩm
-                </a></li>
+                    </a>
+                </li>
                 <li>
                     <a href="quanlynguoidung.html" class="link-name" style="cursor: pointer;">Quản lý người dùng
-                </a></li>
+                    </a>
+                </li>
                 <li>
                     <a href="quanlydonhang.html" class="link-name" style="cursor: pointer;">Quản lý đơn hàng
-                </a></li>
+                    </a>
+                </li>
             </ul>
-            
+
             <ul class="logout-mode">
                 <li><a href="../index.html">
                         <i class="uil uil-signout"></i>
@@ -68,7 +87,7 @@
                 <a href="search.html" class="uil uil-search"></a>
                 <input type="text" placeholder="Search here...">
             </div>
-            
+
             <img src="img/profile.jpg" alt="">
         </div>
 
@@ -76,6 +95,56 @@
             <div class="overview">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Tổng quan</span>
+                    <span class="text">Quản lý người dùng</span>
                 </div>
-        <div>Không tìm thấy dữ liệu!</div>
+                <div id="user-management">
+                    <h2>User Management</h2>
+
+                    <li><b>Username</b>:huypro&nbsp;&nbsp;<b>Password</b>:huyhuyhuy&nbsp;&nbsp;
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Email</b>:huyhuy@gmail.com&nbsp;&nbsp;<b>Loại</b>:Admin<br>
+                        <a style="margin-left: 23px;" href="chinhsuanguoidung1.html">
+                            <button>Chỉnh sửa</button>
+                        </a>&nbsp;&nbsp;
+                        <a href="Khoa1.html">
+                            <button>Khóa</button>
+                        </a>
+                    </li>
+                    <li><b>Username</b>:haolong&nbsp;&nbsp;<b>Password</b>:haohaohao&nbsp;&nbsp;
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Email</b>:haohao@gmail.com&nbsp;&nbsp;<b>Loại</b>:Người mua hàng<br>
+                        <a style="margin-left: 23px;" href="chinhsuanguoidung2.html">
+                            <button>Chỉnh sửa</button>
+                        </a>&nbsp;&nbsp;
+                        <a href="Khoa2.html">
+                            <button>Khóa</button>
+                        </a>
+                    </li>
+                    <li><b>Username</b>:vinhluu&nbsp;&nbsp;<b>Password</b>:vinhvinhvinh&nbsp;&nbsp;
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Email</b>:vinhvinh@gmail.com&nbsp;&nbsp;<b>Loại</b>:Người mua hàng<br>
+                        <a style="margin-left: 23px;" href="chinhsuanguoidung3.html">
+                            <button>Chỉnh sửa</button>
+                        </a>&nbsp;&nbsp;
+                        <a href="quanlynguoidung.html">
+                            <button>Hủy Khóa</button>
+                        </a>
+                    </li>
+                    
+                </div>
+                
+                
+        </div>
+
+
+
+        <ul id="user-list"></ul>
+        </div>
+
+        </div>
+        </div>
+
+
+
+    </section>
+
+   
+
+</body>

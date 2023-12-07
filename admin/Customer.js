@@ -1,24 +1,5 @@
 
  const userList = document.getElementById('user-list');
-function renderUserList() {
-    const userList = document.getElementById('user-list');
-    userList.innerHTML = '';
-
-    users.forEach(user => {
-        const listItem = document.createElement('li');
-        listItem.className = 'user-item';
-        listItem.innerHTML = `
-            <div>
-                <strong>${user.username}</strong> - ${user.email}
-            </div>
-            <div>
-                <button onclick="editUser(${user.id})">Edit</button>
-                <button onclick="toggleUserLock(${user.id})">${user.locked ? 'Unlock' : 'Lock'}</button>
-            </div>
-        `;
-        userList.appendChild(listItem);
-    });
-}
 
 function showAddUserForm() {
     const addUserForm = document.getElementById('add-user-form');
@@ -60,5 +41,63 @@ function toggleUserLock(userId) {
         renderUserList();
     }
 }
-
-renderUserList();
+function hello(){  
+    var result = confirm("Bạn có chắc không?");  
+    if(result){
+      alert("Thay đổi thành công!");
+    }
+    else{
+      alert("Đã hủy bỏ thay đổi");
+    }
+  }
+const signupForm = document.querySelectorAll('.dangky');
+signupForm.forEach(item =>{
+    item.addEventListener('click', function () {
+    document.querySelector('.modal_signup').style.display = 'block';
+    document.querySelector('.activemauden').style.display = 'block';
+    document.querySelector('.closeiconDangky').addEventListener('click', function () {
+        document.querySelector('.modal_signup').style.display = 'none';
+        document.querySelector('.activemauden').style.display = 'none';
+    })
+    document.querySelector('.activemauden').addEventListener('click', function () {
+        document.querySelector('.modal_signup').style.display = 'none';
+        document.querySelector('.activemauden').style.display = 'none';
+    })
+    document.querySelector('.signup-button').addEventListener('click', function (e) {
+        e.preventDefault();  
+        hello();
+        document.querySelector('.modal_signup').style.display = 'none';
+        document.querySelector('.activemauden').style.display = 'none';
+    })
+    document.querySelector('.user').style.display='block'; 
+    document.querySelector('.nonuser').style.display='none';
+})
+})
+document.querySelectorAll('.khoa').forEach((item,index)=>{item.addEventListener('click',function(){
+    var value=item.value;
+    if(index==0){
+    if(value==1)
+    {
+        item.value=0;
+        item.innerHTML="Hủy khóa";
+    }
+    if(value==0)
+    {
+        item.value=1;
+        item.innerHTML="Khóa";
+    }
+}
+if(index==1){
+    if(value==1)
+    {
+        item.value=0;
+        item.innerHTML="Hủy khóa";
+    }
+    if(value==0)
+    {
+        item.value=1;
+        item.innerHTML="Khóa";
+    }
+}
+})
+})
