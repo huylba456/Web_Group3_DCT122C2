@@ -35,10 +35,10 @@
 						<li><a>Liên Hệ</a></li>
 					</ul>
 					<ul>
-						<div class="user" style="display: none;">
+						<div class="user" >
 							<div class="borderuser"  >
 								<li ><div class="usersection">Xin chào,user</div></li>
-								<li ><div class="usersection logout">| Đăng xuất</div></li>
+								<li ><div class="usersection logout"><a href="index.html">| Đăng xuất</a></div></li>
 							</div>
 						</div>
 						<div class="admin">
@@ -49,7 +49,7 @@
 							</div>
 						</div>
 						<div class="nonuser">
-							<div class="bordernonuser" >
+							<div class="bordernonuser" style="display: none;">
 								<li><div class="dangnhap">Đăng nhập</div></li>
 								<li><div class="dangky">| Đăng ký</div></li>
 							</div>
@@ -61,11 +61,10 @@
 					<div class="nav__logo--icon"> <img src="img/logo.png" alt="logo" class="nav__logo--icon"></div>
 					<div class="nav__logo--name">Havuyi</div>
 				</div>
-				<form class="nav__search outline" onsubmit="return false;">
 					<input class="nav__search--input" type="text" placeholder="Tìm kiếm sản phẩm...">
-					<button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg" width="22px" height="22px"></img></i></button>
-				</form>
-				<div class="nav__cart"><img src="svg/cart.svg" width="39px" height="39px"></img></div>
+					<a href="indexfind.html"><button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg" 
+						width="22px" height="22px"></button></a>
+				<div class="nav__cart"><a href="indexgiohang.html"><img src="svg/cart.svg" width="39px" height="39px"></img></a></div>
 			</div>
 			</div>
 	</div>
@@ -180,33 +179,33 @@
 				<div class="product__filter outline">
 				<div class="product__filter--brand">
 					<h1>Theo hãng</h1>
-					<button class="product__filter--btn outline brand">Dior</button>
-					<button class="product__filter--btn outline brand">Louis Vulton</button>
-					<button class="product__filter--btn outline brand">Tom Ford</button>
-					<button class="product__filter--btn outline brand">Gucci</button>
-					<button class="product__filter--btn outline brand">Calvin Klein</button>
+					<button class="product__filter--btn outline brand"><a href="button1.html">Dior</a></button>
+					<button class="product__filter--btn outline brand"><a href="button1.html">Louis Vulton</a></button>
+					<button class="product__filter--btn outline brand"><a href="button1.html">Tom Ford</a></button>
+					<button class="product__filter--btn outline brand"><a href="button1.html">Gucci</a></button>
+					<button class="product__filter--btn outline brand"><a href="button1.html">Calvin Klein</a></button>
 				</div>
 				<div class="product__filter--type">
 					<h1>Theo giới tính</h1>
-					<button class="product__filter--btn outline sex nam">Nam</button>
-					<button class="product__filter--btn outline sex nu">Nữ</button>
-					<button class="product__filter--btn outline sex">Unisex</button>
+					<button class="product__filter--btn outline sex nam"><a href="button1.html">Nam</a></button>
+					<button class="product__filter--btn outline sex nu"><a href="button1.html">Nữ</a></button>
+					<button class="product__filter--btn outline sex"><a href="button1.html">Unisex</a></button>
 				</div>
 				<div class="product__filter--price">
 					<h1>Theo giá</h1>
-					<button class="product__filter--btn outline orderedPrice">Thấp nhất</button>
-					<button class="product__filter--btn outline orderedPrice">Cao nhất</button>
+					<button class="product__filter--btn outline orderedPrice"><a href="button1.html">Thấp nhất</a></button>
+					<button class="product__filter--btn outline orderedPrice"><a href="button1.html">Cao nhất</a></button>
 					<h3>Khoảng giá</h2>
 					<input class="product__filter--input outline from" type="text" placeholder="Từ">
 					<input class="product__filter--input outline to" type="text" placeholder="Đến">
-					<div class="findPrice">Tìm Kiếm</div>
+					<div class="findPrice"><a href="indexfind.html">Tìm Kiếm</a></div>
 				</div>
 				<div class="product__filer--rating">
 					<h1>Theo đánh giá</h1>
-					<button class="product__filter--btn outline star">4★-5★</button>
-					<button class="product__filter--btn outline star">3★-4★</button>
-					<button class="product__filter--btn outline star">2★-3★</button>
-					<button class="product__filter--btn outline star">1★-2★</button>
+					<button class="product__filter--btn outline star"><a href="button1.html">4★-5★</a></button>
+					<button class="product__filter--btn outline star"><a href="button1.html">3★-4★</a></button>
+					<button class="product__filter--btn outline star"><a href="button1.html">2★-3★</a></button>
+					<button class="product__filter--btn outline star"><a href="button1.html">1★-2★</a></button>
 				</div>
 				</div>
 				<div class="product__box">
@@ -269,11 +268,11 @@
 			</div>
 		</div>
 				<div class="product__pagination" >
-				<a href="#">&laquo;</a>
+				<!-- <a href="#">&laquo;</a> -->
 				<a href="index.html">1</a>
 				<a href="indextrang2.html">2</a>
 				<a href="indextrang3.html" class="active">3</a>
-				<a href="#">&raquo;</a>
+				<!-- <a href="#">&raquo;</a> -->
 				</div>
 		</div>
 	<div class="product__modal__cart__container">
@@ -281,10 +280,12 @@
 			<div class="product__modal__cart__title">
 				 <h3>GIỎ HÀNG CỦA BẠN</h3>
 					<div class="product__modal__cart__close">
+						<a href="indextrang3.html">
 							<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
 							<img src="svg/x.svg" width="16px" height="16px"
 							colors="primary:#7047ee,secondary:#7047ee" style="width:100px">
 						</img>
+					</a>
 					</div>
 			</div>
 			<div class="product__modal__cart__content">
@@ -344,8 +345,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- Footer ENDS -->
-<script  src="index.js"></script>
-<script src="index1.js"></script>
+<!-- <script  src="index.js"></script>
+<script src="index1.js"></script> -->
 </body>
 
 </html>

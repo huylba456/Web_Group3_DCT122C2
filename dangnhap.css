@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(232, 191, 115);
+}
+.container{
+    margin-left:500px ;
+    margin-top: 100px;
+    border: solid 1px #ccc;
+    margin-right: 500px;
+    padding-left: 100px;
+    background-color: rgb(234, 234, 88);
+    border: solid 1px #ccc;
+    border-radius: 10px;
+}
+.conten{
+    padding-left: 70px;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.content{
+    padding: 10px;
+    margin: 20px;
+    margin-left: -50px;
+    width: 350px;
+    border-radius: 10px;
+    border: solid 1px #ccc;
+}
+.content1{
+    padding: 10px;
+    margin-left: 85px;
+    width: 100px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgb(234, 161, 237);
+}
+.content2{
+   float: right;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+li a{
+    margin-top: 20px;
+    float: left;
+    margin-left: 50px;
+    color: black;
+    text-decoration: none;
+}
+.nav__logo{
+    margin-left: 50px;
+    width: 1390px;
+    height: 80px;
+    background-color: powderblue;
+    border-radius: 10px;
+}
+.nav__logo--icon{
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 50px;
+    height: 50px;
+}
+.nav__logo--name{
+    font-size: 2.5rem;
+    margin-top: -30px;
+    margin-left: 170px;
+    font-weight: bold;
+}

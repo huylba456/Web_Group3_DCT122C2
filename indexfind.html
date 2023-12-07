@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Link CSS -->
 	<link rel="stylesheet" href="./HeaderFooter.css">
-	<link rel="stylesheet" href="./index.css">
+	<link rel="stylesheet" href="./find.css">
 	<!-- Fontawesome -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,13 +47,13 @@
 					<li><a>Liên Hệ</a></li>
 				</ul>
 				<ul>
-					<div class="user" style="display: none;">
+					<div class="user">
 						<div class="borderuser">
 							<li>
 								<div class="usersection">Xin chào,user</div>
 							</li>
 							<li>
-								<div class="usersection logout">| Đăng xuất</div>
+								<div class="usersection logout"><a href="index.html">| Đăng xuất</a></div>
 							</li>
 						</div>
 					</div>
@@ -67,13 +67,13 @@
 							<li class="adminsection logout"><a>| Đăng xuất</a></li>
 						</div>
 					</div>
-					<div class="nonuser">
+					<div class="nonuser"style="display: none;">
 						<div class="bordernonuser">
 							<li>
-								<div class="dangnhap"><a href="dangnhap.html">Đăng nhập</a></div>
+								<div class="dangnhap">Đăng nhập</div>
 							</li>
 							<li>
-								<div class="dangky"><a href="dangky.html">| Đăng ký</a></div>
+								<div class="dangky">| Đăng ký</div>
 							</li>
 						</div>
 					</div>
@@ -222,7 +222,7 @@
 						<h3>Khoảng giá</h2>
 							<input class="product__filter--input outline from" type="text" placeholder="Từ">
 							<input class="product__filter--input outline to" type="text" placeholder="Đến">
-							<div class="findPrice"><a href="indexfind.html">Tìm Kiếm</a></div>
+							<div class="findPrice">Tìm Kiếm</div>
 					</div>
 					<div class="product__filer--rating">
 						<h1>Theo đánh giá</h1>
@@ -300,7 +300,7 @@
 			</div>
 			<div class="product__pagination">
 				<!-- <a href="#">&laquo;</a> -->
-				<a href="index.html" class="active">1</a>
+				<a href="indexdangnhap.html" class="active">1</a>
 				<a href="indextrang2.html">2</a>
 				<a href="indextrang3.html">3</a>
 				<!-- <a href="#">&raquo;</a> -->
@@ -311,7 +311,7 @@
 				<div class="product__modal__cart__title">
 					<h3>GIỎ HÀNG CỦA BẠN</h3>
 					<div class="product__modal__cart__close">
-						<a href="index.html">
+						<a href="indexdangnhap.html">
 						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
 						<img src="svg/x.svg" width="16px" height="16px"
 							colors="primary:#7047ee,secondary:#7047ee" style="width:100px">

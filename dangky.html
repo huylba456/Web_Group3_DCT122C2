@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Link CSS -->
 	<link rel="stylesheet" href="./HeaderFooter.css">
-	<link rel="stylesheet" href="./index.css">
+	<link rel="stylesheet" href="./dangky.css">
 	<!-- Fontawesome -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,10 +70,10 @@
 					<div class="nonuser">
 						<div class="bordernonuser">
 							<li>
-								<div class="dangnhap"><a href="dangnhap.html">Đăng nhập</a></div>
+								<div class="dangnhap">Đăng nhập</div>
 							</li>
 							<li>
-								<div class="dangky"><a href="dangky.html">| Đăng ký</a></div>
+								<div class="dangky">| Đăng ký</div>
 							</li>
 						</div>
 					</div>
@@ -84,10 +84,12 @@
 					<div class="nav__logo--icon"> <img src="img/logo.png" alt="logo" class="nav__logo--icon"></div>
 					<div class="nav__logo--name">Havuyi</div>
 				</div>
+				<form class="nav__search outline" onsubmit="return false;">
 					<input class="nav__search--input" type="text" placeholder="Tìm kiếm sản phẩm...">
-					<a href="indexfind.html"><button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg"
-							width="22px" height="22px"></button></a>
-				<div class="nav__cart"><a href="indexgiohang.html"><img src="svg/cart.svg" width="39px" height="39px"></img></a></div>
+					<button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg"
+							width="22px" height="22px"></img></i></button>
+				</form>
+				<div class="nav__cart"><img src="svg/cart.svg" width="39px" height="39px"></img></div>
 			</div>
 		</div>
 	</div>
@@ -157,7 +159,7 @@
 						<div class="er errorAddress">Lỗi</div>
 					</div>
 					<div class="input-box">
-						<button class="signup-button">Đăng ký</button>
+						<button class="signup-button"><a href="indexdangnhap.html">Đăng ký</a></button>
 					</div>
 				</div>
 				<br>
@@ -203,33 +205,33 @@
 				<div class="product__filter outline">
 					<div class="product__filter--brand">
 						<h1>Theo hãng</h1>
-						<button class="product__filter--btn outline brand"><a href="button1.html">Dior</a></button>
-						<button class="product__filter--btn outline brand"><a href="button1.html">Louis Vulton</a></button>
-						<button class="product__filter--btn outline brand"><a href="button1.html">Tom Ford</a></button>
-						<button class="product__filter--btn outline brand"><a href="button1.html">Gucci</a></button>
-						<button class="product__filter--btn outline brand"><a href="button1.html">Calvin Klein</a></button>
+						<button class="product__filter--btn outline brand">Dior</button>
+						<button class="product__filter--btn outline brand">Louis Vulton</button>
+						<button class="product__filter--btn outline brand">Tom Ford</button>
+						<button class="product__filter--btn outline brand">Gucci</button>
+						<button class="product__filter--btn outline brand">Calvin Klein</button>
 					</div>
 					<div class="product__filter--type">
 						<h1>Theo giới tính</h1>
-						<button class="product__filter--btn outline sex nam"><a href="button1.html">Nam</a></button>
-						<button class="product__filter--btn outline sex nu"><a href="button1.html">Nữ</a></button>
-						<button class="product__filter--btn outline sex"><a href="button1.html">Unisex</a></button>
+						<button class="product__filter--btn outline sex nam">Nam</button>
+						<button class="product__filter--btn outline sex nu">Nữ</button>
+						<button class="product__filter--btn outline sex">Unisex</button>
 					</div>
 					<div class="product__filter--price">
 						<h1>Theo giá</h1>
-						<button class="product__filter--btn outline orderedPrice"><a href="button1.html">Thấp nhất</a></button>
-						<button class="product__filter--btn outline orderedPrice"><a href="button1.html">Cao nhất</a></button>
+						<button class="product__filter--btn outline orderedPrice">Thấp nhất</button>
+						<button class="product__filter--btn outline orderedPrice">Cao nhất</button>
 						<h3>Khoảng giá</h2>
 							<input class="product__filter--input outline from" type="text" placeholder="Từ">
 							<input class="product__filter--input outline to" type="text" placeholder="Đến">
-							<div class="findPrice"><a href="indexfind.html">Tìm Kiếm</a></div>
+							<div class="findPrice">Tìm Kiếm</div>
 					</div>
 					<div class="product__filer--rating">
 						<h1>Theo đánh giá</h1>
-						<button class="product__filter--btn outline star"><a href="button1.html">4★-5★</a></button>
-						<button class="product__filter--btn outline star"><a href="button1.html">3★-4★</a></button>
-						<button class="product__filter--btn outline star"><a href="button1.html">2★-3★</a></button>
-						<button class="product__filter--btn outline star"><a href="button1.html">1★-2★</a></button>
+						<button class="product__filter--btn outline star">4★-5★</button>
+						<button class="product__filter--btn outline star">3★-4★</button>
+						<button class="product__filter--btn outline star">2★-3★</button>
+						<button class="product__filter--btn outline star">1★-2★</button>
 					</div>
 				</div>
 				<div class="product__box">
@@ -299,11 +301,11 @@
 				</div>
 			</div>
 			<div class="product__pagination">
-				<!-- <a href="#">&laquo;</a> -->
+				<a href="#">&laquo;</a>
 				<a href="index.html" class="active">1</a>
 				<a href="indextrang2.html">2</a>
 				<a href="indextrang3.html">3</a>
-				<!-- <a href="#">&raquo;</a> -->
+				<a href="#">&raquo;</a>
 			</div>
 		</div>
 		<div class="product__modal__cart__container" >
@@ -311,12 +313,10 @@
 				<div class="product__modal__cart__title">
 					<h3>GIỎ HÀNG CỦA BẠN</h3>
 					<div class="product__modal__cart__close">
-						<a href="index.html">
 						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
 						<img src="svg/x.svg" width="16px" height="16px"
 							colors="primary:#7047ee,secondary:#7047ee" style="width:100px">
 						</img>
-					</a>
 					</div>
 				</div>
 				<div class="product__modal__cart__content">

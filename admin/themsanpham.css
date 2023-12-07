@@ -8,7 +8,10 @@
     box-sizing: border-box;
     font-family:  'Be Vietnam Pro', sans-serif;
 }
-
+a{
+    text-decoration: none;
+    color: black;
+}
 :root{
     /* ===== Colors ===== */
     --primary-color: #FF9077;
@@ -70,7 +73,7 @@ body.dark .activity-data::-webkit-scrollbar-thumb:hover{
     margin-top: -30px;
     position: absolute;
     z-index: 999;
-    display: none;
+    display: block;
 }
 
 nav{
@@ -700,7 +703,22 @@ nav.close ~ .dashboard .top{
       margin-top: 50px;
   }
   
-  .container, .editproduct {
+  .container {
+    width: 500px;
+    position: fixed;
+    height: 650px;
+    padding:  35px;
+    background-color: var(--panel-color);
+    z-index: 1000;
+    overflow: scroll;
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-40%);
+    margin-top: -160px;
+    border-radius: 10px;
+
+  }
+  .editproduct {
     width: 500px;
     position: fixed;
     height: 650px;
@@ -1307,7 +1325,7 @@ td{
 table{
   border-collapse:collapse ;
 }
-/* .addproducticon{
+.addproducticon{
   width: 170px;
   height: 30px;
   background-color: #FF9077;
@@ -1317,26 +1335,10 @@ table{
   transition: 200ms;
   margin-left: 620px;
   margin-top: 10px;
-} */
+}
 select{
     width: 420px;
     height: 30px;
 }
-.ket-qua{
-  background-color: pink;
-  height: 40px;
-  padding-top: 10px;
-}
-/* .them{
-  margin-left: 10px;
-  width: 200px;
-  height: 50px;
-  padding-right: 100px;
-  padding-bottom: 10px;
-  background-color: #FF9077;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-} */
 /* end */
 
