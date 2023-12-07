@@ -24,14 +24,11 @@ body {
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 
-.orderpage-button a {
-  text-decoration: none;
-  color: #fff;
-}
+
 
 /* Header Menu STARTS */
 .activemauden {
-  display: none;
+  display: block;
   position: fixed;
   width:  100%;
   height: 100%;

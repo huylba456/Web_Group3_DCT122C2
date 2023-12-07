@@ -130,7 +130,7 @@ body {
 } */
 a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .bordernonuser, .borderadmin, .borderuser {
@@ -522,6 +522,9 @@ form .social {
   border-radius: 5px;
   background-color: var(--orange);
 
+}
+.product__buy--btn a{
+  color: var(--white);
 }
 .customNextBtn {
   position: absolute;

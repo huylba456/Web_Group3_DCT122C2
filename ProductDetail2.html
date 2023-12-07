@@ -35,7 +35,7 @@
 						<li><a>Liên Hệ</a></li>
 					</ul>
 					<ul>
-						<div class="user" style="display: none;">
+						<div class="user" >
 							<div class="borderuser">
 								<li>
 									<div class="usersection">Xin chào,user</div>
@@ -55,7 +55,7 @@
 								<li class="adminsection logout"><a>| Đăng xuất</a></li>
 							</div>
 						</div>
-						<div class="nonuser">
+						<div class="nonuser" style="display: none;">
 							<div class="bordernonuser">
 								<li>
 									<div class="dangnhap">Đăng nhập</div>
@@ -72,11 +72,7 @@
 					<div class="nav__logo--icon"><img src="img/logo.png" alt="logo" class="nav__logo--icon"></div>
 					<div class="nav__logo--name">Havuyi</div>
 				</div>
-				<form class="nav__search outline" onsubmit="return false;">
-					<input class="nav__search--input" type="text" placeholder="Tìm kiếm sản phẩm...">
-					<button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg" width="22px" height="22px"></img></i></button>
-				</form>
-				<div class="nav__cart"><img src="svg/cart.svg" width="39px" height="39px"></img></div>
+				<div class="nav__cart"><a href="indexgiohang.html"><img src="svg/cart.svg" width="39px" height="39px"></a></img></div>
 			</div>
 			</div>
 	</div>
@@ -177,19 +173,19 @@
 					</div>
 					<div class="child">
 						<div class="product__size--box">
-							<button class="product__size--btn "><a href="ProductDetail.html">50ml</a></button>
-							<button class="product__size--btn active">100ml</button>
-							<button class="product__size--btn"><a href="ProductDetail3.html">150ml</a></button>
+							<a href="ProductDetail.html"><button class="product__size--btn ">50ml</button></a>
+                            <a href="ProductDetail2.html">	<button class="product__size--btn active">100ml</button></a>
+                            <a href="ProductDetail3.html">	<button class="product__size--btn">150ml</button></a>
 						</div>
 						<div class="product__amount--box">
-							<button class="product__amount--minus">-</button>
-							<input class="product__amount--number" type="text" value="1">
-							<button class="product__amount--add">+</button>
+							<a href="detailgiam.html">	<button class="product__amount--minus">-</button></a>
+							<div ><input class="product__amount--number" type="text" value="1"></div>
+							<a href="detailtang.html"><button class="product__amount--add">+</button></a>
 						</div>
 					</div>
 					<div class="child">
 						<button class="product__addtocart--btn">Thêm vào giỏ hàng</button>
-						<button class="product__buy--btn"><a href="Orderpage.html">Mua ngay</a></button>
+						<a href="Orderpage.html"><button class="product__buy--btn">Mua ngay</button></a>
 					</div>
 				</div>
 			</div>
@@ -313,6 +309,7 @@
 </div>
 <!-- <script  src="index.js"></script>
 <script src="detail.js"></script> -->
+<script src="detail.js"></script> 
 </body>
 
 </html>
