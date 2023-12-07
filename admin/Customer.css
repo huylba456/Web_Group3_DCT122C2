@@ -196,10 +196,9 @@ a {
       justify-content: center;
     }
     span {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+      
     }
       .closeiconDangnhap {
         display: flex;
@@ -1242,6 +1241,7 @@ a {
       position: absolute;
       top: 0;
       right: 0;
+
     }
     
     .product__modal__cart__content__item__info__price__quantity {
