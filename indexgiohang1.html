@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Link CSS -->
 	<link rel="stylesheet" href="./HeaderFooter.css">
-	<link rel="stylesheet" href="./index.css">
+	<link rel="stylesheet" href="./indexdangnhap.css">
 	<!-- Fontawesome -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,13 +41,13 @@
 		<div class="nav">
 			<div class="nav__link">
 				<ul>
-					<li><a href="indexdangnhap.html">Trang Chủ</a></li>
-					<li><a href="gioithieu.html">Giới Thiệu</a></li>
-					<li><a href="baohanh.html">Bảo Hành</a></li>
-					<li><a href="lienhe.html">Liên Hệ</a></li>
+					<li><a href="index.html">Trang Chủ</a></li>
+					<li><a>Giới Thiệu</a></li>
+					<li><a>Bảo Hành</a></li>
+					<li><a>Liên Hệ</a></li>
 				</ul>
 				<ul>
-					<div class="user">
+					<div class="user" style="display: none;">
 						<div class="borderuser">
 							<li>
 								<div class="usersection">Xin chào,user</div>
@@ -67,7 +67,7 @@
 							<li class="adminsection logout"><a>| Đăng xuất</a></li>
 						</div>
 					</div>
-					<div class="nonuser"style="display: none;">
+					<div class="nonuser">
 						<div class="bordernonuser">
 							<li>
 								<div class="dangnhap">Đăng nhập</div>
@@ -84,9 +84,11 @@
 					<div class="nav__logo--icon"> <img src="img/logo.png" alt="logo" class="nav__logo--icon"></div>
 					<div class="nav__logo--name">Havuyi</div>
 				</div>
+				<form class="nav__search outline" onsubmit="return false;">
 					<input class="nav__search--input" type="text" placeholder="Tìm kiếm sản phẩm...">
-					<a href="indexfind.html"><button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg"
-						width="22px" height="22px"></button></a>
+					<button class="nav__search--btn outline" type="submit"><img src="svg/magnifying_glass.svg"
+							width="22px" height="22px"></img></i></button>
+				</form>
 				<div class="nav__cart"><img src="svg/cart.svg" width="39px" height="39px"></img></div>
 			</div>
 		</div>
@@ -203,46 +205,46 @@
 				<div class="product__filter outline">
 					<div class="product__filter--brand">
 						<h1 style="margin-top: 50px;">Theo hãng</h1>
-						<a href="button1.html">	<button class="product__filter--btn outline brand">Dior</button></a>
-						<a href="LV.html">	<button class="product__filter--btn outline brand">Louis Vulton</button></a>
-						<a href="tom.html">	<button class="product__filter--btn outline brand">Tom Ford</button></a>
-						<a href="gucci.html">	<button class="product__filter--btn outline brand">Gucci</button></a>
-						<a href="CK.html">	<button class="product__filter--btn outline brand active">Calvin Klein</button></a>
+						<button class="product__filter--btn outline brand">Dior</button>
+						<button class="product__filter--btn outline brand">Louis Vulton</button>
+						<button class="product__filter--btn outline brand">Tom Ford</button>
+						<button class="product__filter--btn outline brand">Gucci</button>
+						<button class="product__filter--btn outline brand">Calvin Klein</button>
 					</div>
 					<div class="product__filter--type">
 						<h1>Theo giới tính</h1>
-						<a href="button1.html">	<button class="product__filter--btn outline sex nam">Nam</button></a>
-						<a href="button1.html">	<button class="product__filter--btn outline sex nu">Nữ</button></a>
-						<a href="button1.html">	<button class="product__filter--btn outline sex">Unisex</button></a>
+						<button class="product__filter--btn outline sex nam">Nam</button>
+						<button class="product__filter--btn outline sex nu">Nữ</button>
+						<button class="product__filter--btn outline sex">Unisex</button>
 					</div>
 					<div class="product__filter--price">
 						<h1>Theo giá</h1>
-						<a href="button1.html">	<button class="product__filter--btn outline orderedPrice">Thấp nhất</button></a>
-						<a href="button1.html">	<button class="product__filter--btn outline orderedPrice">Cao nhất</button></a>
+						<button class="product__filter--btn outline orderedPrice">Thấp nhất</button>
+						<button class="product__filter--btn outline orderedPrice">Cao nhất</button>
 						<h3>Khoảng giá</h2>
 							<input class="product__filter--input outline from" type="text" placeholder="Từ">
 							<input class="product__filter--input outline to" type="text" placeholder="Đến">
-							<a href="indexfind.html"><div class="findPrice">Tìm Kiếm</div></a>
+							<div class="findPrice">Tìm Kiếm</div>
 					</div>
 					<div class="product__filer--rating">
 						<h1>Theo đánh giá</h1>
-						<a href="button1.html">	<button class="product__filter--btn outline star">4★-5★</button></a>
-						<a href="button1.html">	<button class="product__filter--btn outline star">3★-4★</button></a>
-						<a href="button1.html">	<button class="product__filter--btn outline star">2★-3★</button></a>
-						<a href="button1.html">	<button class="product__filter--btn outline star">1★-2★</button></a>
+						<button class="product__filter--btn outline star">4★-5★</button>
+						<button class="product__filter--btn outline star">3★-4★</button>
+						<button class="product__filter--btn outline star">2★-3★</button>
+						<button class="product__filter--btn outline star">1★-2★</button>
 					</div>
 				</div>
 				<div class="product__box">
 					<div class="product__item outline"><a href="ProductDetail.html">
-						<div class="product__item--img"><img src="./img/img11.jpg"></div>
-						<div class="product__item--name">Nước Hoa Calvin Klein Ins 2U Her</div>
+						<div class="product__item--img"><img src="./img/img1.jpg"></div>
+						<div class="product__item--name">Nước Hoa Louis Vuitton Heures DAbsence EDP</div>
 						<div class="product__item--price">727.000đ-1.727.000đ</div>
 						<div class="product__item--size">3 size</div>
 						<div class="product__item--rating ">★★★★★</div>
 					</a></div>
 					<div class="product__item outline"><a href="ProductDetail.html">
 						<div class="product__item--img"><img src="./img/img3.jpg"></div>
-						<div class="product__item--name">Nước Hoa Louis Vuitton Heures DAbsence 2</div>
+						<div class="product__item--name">Nước Hoa Dior Miss Dior EDT</div>
 						<div class="product__item--price">727.000đ-1.727.000đ</div>
 						<div class="product__item--size">3 size</div>
 						<div class="product__item--rating ">★★★★★</div>
@@ -299,25 +301,59 @@
 				</div>
 			</div>
 			<div class="product__pagination">
-				<!-- <a href="#">&laquo;</a> -->
-				<a href="button1.html" class="active">1</a>
-				<a href="button2.html">2</a>
-				<!-- <a href="#">&raquo;</a> -->
+				<a href="#">&laquo;</a>
+				<a href="index.html" class="active">1</a>
+				<a href="indextrang2.html">2</a>
+				<a href="indextrang3.html">3</a>
+				<a href="#">&raquo;</a>
 			</div>
 		</div>
-		<div class="product__modal__cart__container" >
+		<div class="product__modal__cart__container active" >
 			<div class="product__modal__cart__content__box">
 				<div class="product__modal__cart__title">
 					<h3>GIỎ HÀNG CỦA BẠN</h3>
 					<div class="product__modal__cart__close">
+						<a href="indexdangnhap.html">
 						<script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
 						<img src="svg/x.svg" width="16px" height="16px"
 							colors="primary:#7047ee,secondary:#7047ee" style="width:100px">
 						</img>
+					</a>
 					</div>
 				</div>
 				<div class="product__modal__cart__content">
-					Cart modal render by js
+                    <div class="product__modal__cart__content__item">
+                        <div class="product__modal__cart__content__item__info__close" value=1><a href="indexgiohangtrong.html"><i class="fas fa-window-close"></i></a></div>
+                                 <div class="product__modal__cart__content__item__image">
+                                        <img src="img/img1.jpg" alt="" onerror="imgError(this)">
+                                    </div>
+                                    <div class="product__modal__cart__content__item__info">
+                                        <div class="product__modal__cart__content__item__info__title">
+                                            <h5>Nước Hoa Louis Vuitton Heures DAbsence EDP(100ml)</h5>
+                                        </div>
+                                        <div class="product__modal__cart__content__item__info__price__quantity">
+                                            <div class="product__modal__cart__content__item__info__quantity">
+                                                <div class="product__modal__cart__content__item__info__quantity__minus"><a href="indexgiohang.html"><i class="fas fa-chevron-left"></i></a></div>
+                                                <div class="product__modal__cart__content__item__info__quantity__number">2</div>
+                                                <div class="product__modal__cart__content__item__info__quantity__plus"><a href="indexgiohang1.html"><i class="fas fa-chevron-right"></i></a></div>
+                                            </div>
+                                            <div class="product__modal__cart__content__item__info__price">1.980.000đ</div>
+                                        </div>
+                                    </div>
+                            </div>`;
+                            <div class="product__modal__cart__content__total">
+                                <h5>Tạm tính:</h5>
+                                <div class="product__modal__cart__content__total__price">1.980.000đ</div>
+                        </div>
+                        <div class="product__modal__cart__content__checkout__viewcart">
+                           <a href="Orderpage.html" style="width: 300px;"> <div class="product__modal__cart__content__checkout__item checkout__button" onclick="gotoorderpage()">
+                               <i class="fas fa-lock"></i> <h5>THANH TOÁN HÓA ĐƠN</h5>
+                            </div></a>
+							<a href="HisOrder.html"style="width: 300px;">
+                            <div class="product__modal__cart__content__viewcart__item viewcart__item" onclick="clickToViewOrder()">
+                                <i class="fas fa-shopping-cart"></i> <h5>XEM CÁC ĐƠN HÀNG ĐÃ ĐẶT</h5>
+                            </div></a>
+                        </div>
 				</div>
 			</div>
 		</div>
@@ -348,9 +384,9 @@
 							<li>
 								<h3>Information</h3>
 							</li>
-							<li><a href="index.html">About</a></li>
-							<li><a href="index.html">Product</a></li>
-							<li><a href="index.html">Blog</a></li>
+							<li><a href="Introduction.html">About</a></li>
+							<li><a href="ProductPage.html">Product</a></li>
+							<li><a href="">Blog</a></li>
 						</ul>
 
 					</div>
@@ -359,9 +395,9 @@
 							<li>
 								<h3>Company</h3>
 							</li>
-							<li><a href="index.html">Community</a></li>
-							<li><a href="index.html">Career</a></li>
-							<li><a href="index.html">Our story</a></li>
+							<li><a href="https://www.google.com">Community</a></li>
+							<li><a href="">Career</a></li>
+							<li><a href="Introduction.html">Our story</a></li>
 						</ul>
 					</div>
 					<div class="footer__right--contact">
@@ -369,9 +405,9 @@
 							<li>
 								<h3>Contact</h3>
 							</li>
-							<li><a href="index.html">Getting Started</a></li>
-							<li><a href="index.html">Pricing</a></li>
-							<li><a href="index.html">Resources</a></li>
+							<li><a href="Contact.html">Getting Started</a></li>
+							<li><a href="">Pricing</a></li>
+							<li><a href="">Resources</a></li>
 						</ul>
 					</div>
 				</div>
