@@ -1,6 +1,9 @@
 document.querySelector('.btn-primaryedit').addEventListener('click', function () {
     alert('Sửa sản phẩm thành công');
 });
+function suaa(){
+    location.href='quanlysanphamadmin.html';
+}
  document.querySelector('.imgdel1').addEventListener('click', function () {
      var check=confirm('Bạn có chắc chắn muốn xóa hình ảnh 1 không?');
      if(check){
