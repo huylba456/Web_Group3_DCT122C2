@@ -73,3 +73,41 @@ li a{
     margin-left: 170px;
     font-weight: bold;
 }
+.table ul{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+.table ul li{
+    margin-top: 10px;
+    font-size: 30px;
+}
+.intro{
+    margin-top: 40px;
+    font-size: 25px;
+    margin-left: 150px;
+    margin-right: 100px;
+}
+.topic{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(222, 17, 51);
+}
+.topicc{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(222, 17, 51);
+}
+.topiccc{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 50px;
+}
+.roww{
+    margin-top: 20px;
+}
