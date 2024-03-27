@@ -1,0 +1,40 @@
+*{
+    --color-line:rgba(0, 0, 0, 0.129);
+    --color-main: #000000;
+    --color-highlight:#ffcc01; 
+    --color-gray:gray;
+    --color-white:#ffffff;
+    --color-red: #cb1c3b;
+    --color-gray-light:#b5b6bd;
+    --color-error:#f44336;
+
+    --dark: #34495E;
+    --light: #ffffff;
+    --success: #0ABF30;
+    --error: #E24D4C;
+    --warning: #E9BD0C;
+    --info: #3498DB;
+    
+    --font-title: -apple-system, BlinkMacSystemFont, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-text: "Roboto", sans-serif;
+    --fs-h2:40px;
+    --lh-h2:50px;
+    --fs-text-body:13px;
+    --lh-text-body:30px;
+
+    --bg-one:#ffffff;
+    --bg-two:#f6f5f4;
+    
+
+    --bg-demo1:hsl(40, 100%, 92%);
+    --bg-demo2:#ffdc9f;
+    --pick-bg1:#ffffff;
+    --pick-bg2:#f6f5f4;
+
+    --container-witdh:1140px;
+
+    --max-width-container:1140px;
+    --padding-container: calc((100vw - var(--max-width-container) - 15px ) / 2);
+    
+    
+}
