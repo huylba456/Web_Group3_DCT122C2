@@ -224,10 +224,10 @@
             <h2 class="headingLogin">🍕🍕 WELCOME BACK!</h2>
             <p class="heading__desc">NEU BẠN ĐÃ LÀ THÀNH VIÊN PIZZA HUT<br>HAY ĐĂNG NHẬP
                 TRƯỚC KHI THANH TOÁN PIZZA NHÉ!</p>
-                <div class="form-item --login --error">
+                <div class="form-item --login ">
                     <label for="email">Email *</label>
                     <input type="text" name="" id="taikhoan">
-                    <p class="error">Sai dinh dang email</p>
+                    <p id="emailError" class="error"></p>
                 </div>
                 <div class="form-item --login">
                     <label for="email">Mật Khẩu *</label>
@@ -253,6 +253,32 @@
 
     </div>
 
+    <script>
+        const emailInput = document.getElementById('taikhoan');
+        const emailError = document.getElementById('emailError');
+        emailInput.addEventListener('click', function(event) { 
+        event.preventDefault();
+        const emailValue = emailInput.value.trim(); // Trim whitespace from the email
+        if (!emailValue) {
+            emailError.textContent = 'Hãy nhập email vào';
+            emailError.style.display = 'inline';
+            emailInput.classList.add('error');
+    }   else if (!isValidEmail(emailValue)) {
+            emailError.textContent = 'Vui lòng nhập email hợp lệ';
+            emailError.style.display = 'inline';
+            emailInput.classList.add('error');
+    }   else {
+            emailError.textContent = '';
+            emailInput.classList.remove('error');
+    }
+    function isValidEmail(email) {
+    // Regular expression to match Gmail addresses
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return gmailRegex.test(email);
+}
+});
+        
+    </script>
 
     <script>
 
