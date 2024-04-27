@@ -232,14 +232,12 @@
                 <div class="form-item --login">
                     <label for="email">Mật Khẩu *</label>
                     <input type="Password" name="" id="matkhau">
+                    <p id="passwordError" class="error"></p>
                 </div>
                
                 <button class="btn dangnhapz" onclick="loginz()">ĐĂNG NHẬP</button>
 
-                <div class="form-error">
-                <i class="fa-solid fa-circle-exclamation"></i>
-                <p>Email hoặc mật khẩu đăng nhập không hợp lệ. Vui lòng thử lại.</p>
-                </div>
+                
 
                 <p class="register">Bạn chưa có tài khoản? <a href="index.php?controller=SignUpController&action=index">Đăng ký ngay</a> hoặc tìm hiểu thêm về <a href="">Điều khoản và Quyền lợi Thành viên</a></p>
         </div>
@@ -256,7 +254,9 @@
     <script>
         const emailInput = document.getElementById('taikhoan');
         const emailError = document.getElementById('emailError');
-        emailInput.addEventListener('click', function(event) { 
+        const passInput = document.getElementById('matkhau');
+        const passError = document.getElementById('passwordError');
+        emailInput.addEventListener('input', function(event) { 
         event.preventDefault();
         const emailValue = emailInput.value.trim(); // Trim whitespace from the email
         if (!emailValue) {
@@ -277,7 +277,22 @@
     return gmailRegex.test(email);
 }
 });
-        
+passInput.addEventListener('input', function(event) {
+    event.preventDefault();
+    const passValue = passInput.value.trim(); // Trim whitespace from the password
+    if (!passValue) {
+        passError.textContent = 'Hãy nhập mật khẩu';
+        passInput.classList.add('error');
+    } else if (passValue.length < 6) {
+        passError.textContent = 'Mật khẩu phải có ít nhất 6 ký tự';
+        passInput.classList.add('error');
+    } else {
+        passError.textContent = '';
+        passInput.classList.remove('error');
+    }
+});
+
+   
     </script>
 
     <script>
