@@ -248,7 +248,7 @@
 
                 </div>
 
-                <div class="login__switch">Bạn là người dùng? Ấn đây</div>
+                <div class="login__switch">Bạn là nhân viên? Ấn đây</div>
                 <button class="btnX">
                     <img src="./images/iconClose.png">
                 </button>
