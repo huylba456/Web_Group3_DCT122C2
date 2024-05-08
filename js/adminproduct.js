@@ -243,12 +243,11 @@ function searchProduct() {
 
 function resetInput() {
   currentqueryz =
-    'SELECT sanpham.MaSP, TenSP, Mota, Img, Loai, MaSize, MaVien, GiaTien FROM `sanpham`, `chitietsanpham` WHERE sanpham.MaSP = chitietsanpham.MaSP AND chitietsanpham.MaSize = "S" AND chitietsanpham.MaVien ="V" and sanpham.TrangThai = 1 ';
+    'SELECT * FROM sanpham WHERE  sanpham.TrangThai = 1 ';
   currentPagez = 1;
   document.getElementById("the-loai").value = "Tất cả";
   loadTableProduct();
 }
-
 function loadCombinationSizeAndCrust() {
   $.ajax({
       url: './controller/ProductsController.php',

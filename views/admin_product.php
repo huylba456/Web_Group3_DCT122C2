@@ -581,7 +581,7 @@
         var addUserTitle = document.querySelector('.add-account-e');
         var addSignupButton = document.querySelector('#signup-button');
         var updateSignupButton = document.querySelector('#btn-update-account');
-       
+        var addbtnproduct = document.querySelector('#add-product-button');
     
 
 
@@ -651,6 +651,9 @@
                 modal.classList.remove('open');
                 modalSignup.classList.add('open');
             });
+        });
+        addbtnproduct.addEventListener('click', function() {
+            modal.classList.remove('open');
         });
 
     });

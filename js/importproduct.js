@@ -229,7 +229,8 @@ function thempn(e) {
             date: date,
         },
         success: function(data) {
-            console.log(data);
+                createToast('success', 'Thêm phiếu nhập thành công!');
+            
         }
     })
 }

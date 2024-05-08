@@ -307,8 +307,9 @@
                     setTimeout(() => {
                         staffLogin.classList.remove("hidden");
                     }, 600);
-
-
+                    loginSwitch.innerHTML = "Bạn là người dùng? Ấn đây";
+                    var x= '<div class="icon"><i class="fa-solid fa-circle-user"></i></div><p>NHÂN VIÊN</p>';
+                    document.querySelector(".header__action-member").innerHTML = x;
                 } else {
                     staffLogin.classList.add("hidden");
                     setTimeout(() => {
@@ -318,6 +319,9 @@
                     setTimeout(() => {
                         userLogin.classList.remove("hidden");
                     }, 600);
+                    loginSwitch.innerHTML = "Bạn là nhân viên? Ấn đây";
+                    var s= '<div class="icon"><i class="fa-solid fa-circle-user"></i></div><p>THÀNH VIÊN</p>';
+                    document.querySelector(".header__action-member").innerHTML =s;
                 }
             });
 
@@ -466,6 +470,26 @@
             if (checkForm) {
                 // alert("Đăng nhập thành công!" + email.value + " " + password.value);
                 logins(username.value, password.value);
+                var s=` <div class="header__action-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=HistoryBillController&action=index"><i class="fa-solid fa-file-invoice"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=AdminIndexController&action=index"><i class="fa-solid fa-sliders"></i></a>
+                    </div>
+                    <div class="header__action-member">
+                        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+                        <p>NHÂN VIÊN</p>
+                    </div>`
+        document.querySelector('.header__action').innerHTML=s;
                 formError.style.display = "none";
                 // email.value = "";
                 // password.value = "";
