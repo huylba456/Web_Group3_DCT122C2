@@ -21,8 +21,4 @@ require_once('./Backend/DB_driver.php');
 // 	$action = 'index';
 // }
 require_once('routes.php');
-
-
-// hahahahhahahaahhahahahahahahhaha
-//hello my name is kiet dep trai 
-// kiet hoc git 
+?>

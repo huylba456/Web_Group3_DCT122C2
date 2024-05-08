@@ -496,17 +496,17 @@ a {
 }
 
 .form-item .error {
-  color: #f44336;
+  color: black;
   font-size: 12px;
   grid-area: auto;
   letter-spacing: 0.14994px;
   margin: 2px 2px 0px;
 }
 .form-item.--error label {
-  color: #f44336;
+  color: black;
 }
 .form-item.--error input {
-  outline: #f44336 solid 1px;
+  outline: #000000 solid 1px;
 }
 .scbox__form.--bottom {
   margin-top: 24px;
