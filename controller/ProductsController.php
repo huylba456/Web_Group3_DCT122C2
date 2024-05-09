@@ -107,7 +107,7 @@ function loginUser() {
         die (json_encode($result)); 
         return 1;
     }  
-
+        
     die (json_encode(null));
     return 0;
 }

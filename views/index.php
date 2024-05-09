@@ -1,3 +1,10 @@
+
+<?php
+ if(isset($_GET['logout'])){
+     unset($_SESSION['currentUser']);
+     header('Location: index.php');
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -395,6 +402,27 @@
             if (checkForm) {
                 // alert("Đăng nhập thành công!" + email.value + " " + password.value);
                 loginz(username.value, password.value);
+                var s=`
+                    <div class="header__action-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=HistoryBillController&action=index"><i class="fa-solid fa-file-invoice"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href='?logout=true' id='logout'><i class="fa-solid fa-right-from-bracket"></i></a>
+                    </div>
+                    <div class="header__action-member">
+                        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+                        <p>${username.value}</p>
+                    </div>`;
+                    document.querySelector('.header__action').innerHTML=s;
                 formError.style.display = "none";
                 // email.value = "";
                 // password.value = "";
@@ -485,10 +513,13 @@
                     <div class="header__action-bell">
                         <a href="index.php?controller=AdminIndexController&action=index"><i class="fa-solid fa-sliders"></i></a>
                     </div>
+                    <div class="header__action-bell">
+                        <a href='?logout=true' id='logout'><i class="fa-solid fa-right-from-bracket"></i></a>
+                    </div>
                     <div class="header__action-member">
                         <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
-                        <p>NHÂN VIÊN</p>
-                    </div>`
+                        <p>${username.value}</p>
+                    </div>`;
         document.querySelector('.header__action').innerHTML=s;
                 formError.style.display = "none";
                 // email.value = "";
