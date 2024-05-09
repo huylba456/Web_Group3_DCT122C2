@@ -148,9 +148,10 @@
             <p class="heading__desc">NEU BẠN ĐÃ LÀ THÀNH VIÊN PIZZA HUT<br>HAY ĐĂNG NHẬP
                 TRƯỚC KHI THANH TOÁN PIZZA NHÉ!</p>
                 <div class="form-item --login --error">
-                    <label for="email">Email *</label>
-                    <input type="text" name="" id="">
-                    <p class="error">Sai dinh dang email</p>
+                <label for="email">Email *</label>
+                <!-- Sửa type và thêm pattern cho trường input email -->
+                <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+                <p class="error">Sai định dạng email</p>
                 </div>
                 <div class="form-item --login">
                     <label for="email">Mật Khẩu *</label>
