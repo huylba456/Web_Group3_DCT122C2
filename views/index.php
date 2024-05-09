@@ -339,7 +339,7 @@
             var username = document.getElementById("taikhoan");
             var usernameFormItem = document.querySelector(".form-item.--login");
             var usernameError = document.querySelector(".form-item.--login .error");
-            var usernamePattern = /^.{3,}$/;
+            var usernamePattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             var password = document.getElementById("matkhau");
             var passwordError = document.querySelector(".form-item.--login.--password .error");
             var passwordFormItem = document.querySelector(".form-item.--login.--password");
