@@ -14,7 +14,7 @@ class SignUpController extends BaseController
 if (isset($_POST['request'])) {
     switch ($_POST['request']) {
         case 'dangky':
-            if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['gioitinh'])  && isset($_POST['sdt'])) {
+            if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['gioitinh'])  && isset($_POST['sdt'])&& isset($_POST['diachi'])) {
                 signup();
             }
             break;
@@ -32,15 +32,18 @@ function signup() {
 
     // create array key value
     $data = array(
-        'Ho' => $name,
-        'Ten' => $name,
-        'GioiTinh' => $gioitinh,
-        'SDT' => $sodienthoai,
-        'Email' => $email,
-        'DiaChi' => 1,
+        // 'Ho' => $name,
+        // 'Ten' => $name,
+        // 'GioiTinh' => $gioitinh,
+        // 'SDT' => $sodienthoai,
+        'MaND'=> "ND".rand(1000,9999),
+        'TaiKhoan' => $email,
+        // 'DiaChi' => 1,
         'MatKhau' => $password,
-        'DiaChi' => $diachi
+        // 'DiaChi' => $diachi
+        'TrangThai'=>1
     );
     $result = (new NguoiDungBUS())->add_new($data);
     die (json_encode($result));
 }
+?>

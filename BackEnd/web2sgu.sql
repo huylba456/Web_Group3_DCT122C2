@@ -38,7 +38,7 @@ CREATE TABLE `TaiKhoanNguoiDung` (
 );
 
 INSERT INTO `TaiKhoanNguoiDung` (`MaND`, `TaiKhoan`, `MatKhau`, `TrangThai`) VALUES
-('ND01', 'abc', '123', 1),
+('ND01', 'abc@gmail.com', '123', 1),
 ('ND02', 'def', '456', 1),
 ('ND03', 'ghi', '789', 1);
 
@@ -51,7 +51,7 @@ CREATE TABLE `TaiKhoanNhanVien` (
 );
 
 INSERT INTO `TaiKhoanNhanVien` (`MaNV`, `TaiKhoan`, `MatKhau`, `TrangThai`) VALUES
-('NV01', 'aaa', '123', 1),
+('NV01', 'aaa@gmail.com', '123', 1),
 ('NV02', 'bbb', '456', 1),
 ('NV03', 'ccc', '789', 1);
 

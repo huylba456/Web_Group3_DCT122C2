@@ -195,7 +195,7 @@ document.querySelector(".dangkybtn").addEventListener("click", function () {
     return false;
   } else {
     alert(
-      "Đăng ký thành công !" +
+      "<p>Đăng ký thành công !</p>" +
         name.value +
         " " +
         gioitinh +
@@ -211,6 +211,29 @@ document.querySelector(".dangkybtn").addEventListener("click", function () {
         cfpassword.value +
         " "
     );
+    // ajax register
+    $.ajax({
+      url: './controller/SignUpController.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+          request: 'dangky',
+          name: name.value,
+          email: email.value,
+          password: password.value,
+          gioitinh: gioitinh,
+          sdt: sdt.value,
+          diachi: diachi.value
+      },
+      success: function(data) {
+          if(data) {
+              alert("thành công");
+          }
+      },
+      error: function(data) {
+          alert("thất bại");
+      }
+  });
     name.value = "";
     sdt.value = "";
     email.value = "";
@@ -221,23 +244,5 @@ document.querySelector(".dangkybtn").addEventListener("click", function () {
 
     return true;
   }
-  // ajax register
-  //   $.ajax({
-  //       url: './controller/SignUpController.php',
-  //       type: 'POST',
-  //       data: {
-  //           request: 'dangky',
-  //           name: name,
-  //           email: email,
-  //           password: password,
-  //           gioitinh: gioitinh,
-  //           sdt: sdt,
-  //           diachi: diachi
-  //       },
-  //       success: function(data) {
-  //           if(data) {
-  //               alert("thành công");
-  //           }
-  //       }
-  //   })
+ 
 });
