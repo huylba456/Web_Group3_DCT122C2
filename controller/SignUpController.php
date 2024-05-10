@@ -1,6 +1,7 @@
 <?php
 require_once('BaseController.php');
 require_once(__DIR__ . '/../model/NguoiDungBUS.php');
+require_once(__DIR__ . '/../model/NDBUS.php');
 session_start();
 
 class SignUpController extends BaseController
@@ -44,6 +45,17 @@ function signup() {
         'TrangThai'=>1
     );
     $result = (new NguoiDungBUS())->add_new($data);
+    if ($result) {
+        $result = (new NDBUS())->add_new(array(
+            'MaND' => $data['MaND'],
+            'Ho' => $name,
+            'Ten' => $name,
+            'GioiTinh' => $gioitinh,
+            'SDT' => $sodienthoai,
+            'Email' => $email,
+            'DiaChi' => $diachi
+        ));
+    }
     die (json_encode($result));
 }
 ?>
