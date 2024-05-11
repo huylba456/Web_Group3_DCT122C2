@@ -1,5 +1,5 @@
 var currentqueryz =
-  'SELECT distinct sanpham.MaSP, TenSP, Mota, Img, Loai FROM sanpham, chitietsanpham WHERE sanpham.MaSP = chitietsanpham.MaSP and chitietsanpham.gianhap > 0 and sanpham.TrangThai = 1 and chitietsanpham.trangthai = 1'
+  'SELECT distinct sanpham.MaSP, TenSP, Mota, Img, Loai FROM sanpham, chitietsanpham WHERE sanpham.MaSP = chitietsanpham.MaSP and chitietsanpham.gianhap > 0 and sanpham.TrangThai = 1 and chitietsanpham.trangthai = 1';
 var currentRowqueryz =
   'SELECT COUNT(distinct sanpham.masp)  FROM sanpham, chitietsanpham WHERE sanpham.MaSP = chitietsanpham.MaSP and chitietsanpham.gianhap > 0 and sanpham.TrangThai = 1 and chitietsanpham.trangthai = 1';
 var currentPagez = 1;

@@ -7,4 +7,5 @@ class AccountManagementController extends BaseController
     {
         $this->render('admin_account');
     }
+    
 }

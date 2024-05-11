@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/variables.css">
     <!-- <link rel="stylesheet" href="css/components.css"> -->
     <link rel="stylesheet" href="css/admin_styles1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -473,9 +474,57 @@
             </div>
         </div>
     </div>
+    
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var editButtons = document.querySelectorAll('.btn-edit');
+        var listAccounts=[];
+        var currentqueryx =
+      'SELECT nguoidung.MaND, Ho, Ten, GioiTinh, SDT, Email,DiaChi FROM nguoidung, taikhoannguoidung WHERE nguoidung.MaND = taikhoannguoidung.MaND AND taikhoannguoidung.TrangThai=1 ';
+        loaderAccounts();
+        function loaderAccounts() {
+        $.ajax({
+        url: "./controller/ProductsController.php",
+        type: "post",
+        dataType: "json",
+        timeout: 1500,
+        data: {
+          request: "getAccounts",
+          currentquery: currentqueryx,
+        },
+        success: function (data) {
+          console.log(data);
+          listAccounts= data.result;
+          showAccounts();
+        },
+        //fail
+        error: function (data) {
+          console.log(data);
+        },
+      });
+    }
+        function showAccounts() {
+      var html = "";
+      listAccounts.forEach(function (item) {
+        html += `<tr>
+                 <td>${item.MaND}</td>
+                 <td>${item.Ho} ${item.Ten}</td>   
+                 <td>${item.SDT}</td>   
+                 <td>${item.Email}</td>
+                 <td>${item.DiaChi}</td>
+                 <td>20/12/2020</td>
+                 <td><span class="status-complete">Hoạt động</span></td>
+                 <td class="control control-table">
+                 <button id="edit-account"><i class="fa-regular fa-pen-to-square"></i></button>
+                 <button class="btn-delete" id="delete-account"><i class="fa-solid fa-trash"></i></button>             
+                 </td>
+                 </tr>
+        `;
+      });
+      document.querySelector("#show-user").innerHTML = html;
+    }
+
+    window.onload = function() {
+        console.log("asdaasd");
+        // var editButtons = document.querySelectorAll('.btn-edit');
         var closeButtons = document.querySelectorAll('.modal-close');
         var updateButtons = document.querySelectorAll('.btn-update-product-form');
         var addButtons = document.querySelector('#btn-add-product');
@@ -490,7 +539,8 @@
         var addUserTitle = document.querySelector('.add-account-e');
         var addSignupButton = document.querySelector('#signup-button');
         var updateSignupButton = document.querySelector('#btn-update-account');
-
+        var status= document.querySelectorAll(".status-complete");
+        var nostatus= document.querySelectorAll(".status-no-complete");
         var statusUser = document.querySelectorAll('.form-group edit-account-e');
         var addUser = document.querySelector('#btn-add-user');
         addUser.addEventListener('click', function() {      
@@ -511,24 +561,36 @@
             };
         }
 
-        const closeBtn = document.querySelectorAll('.section');
-        console.log(closeBtn[0])
-        for (let i = 0; i < closeBtn.length; i++) {
-            closeBtn[i].addEventListener('click', (e) => {
-                sidebar.classList.add("open");
-            })
-        }
+        // const closeBtn = document.querySelectorAll('.section');
+        // console.log(closeBtn[0])
+        // for (let i = 0; i < closeBtn.length; i++) {
+        //     closeBtn[i].addEventListener('click', (e) => {
+        //         sidebar.classList.add("open");
+        //     })
+        // }
 
+        status.forEach(function(stat){
+        stat.addEventListener('click', function() {
+          if(stat.innerHTML == "Hoạt động"){
+              stat.innerHTML = "Bị khóa";
+            stat.style.backgroundColor = "#f04e2e";
+       }
+         else{
+              stat.innerHTML = "Hoạt động";
+              stat.style.backgroundColor = "#27ae60";
+         }
+          });
+    });
+    
        
+        // editButtons.forEach(function(button) {
+        //     button.addEventListener('click', function() {
 
-        editButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-
-                uploadImg.src = "img/pizza-1.png";
-                modal.classList.add('open');
-                titleModal.innerHTML = "CHỈNH SỬA SẢN PHẨM";
-            });
-        });
+        //         uploadImg.src = "img/pizza-1.png";
+        //         modal.classList.add('open');
+        //         titleModal.innerHTML = "CHỈNH SỬA SẢN PHẨM";
+        //     });
+        // });
 
         closeButtons.forEach(function(button) {
             button.addEventListener('click', function() {
@@ -544,12 +606,12 @@
             });
         });
 
-        addButtons.addEventListener('click', function() {
-            uploadImg.src = "img/upload-image.png";
-            modal.classList.add('open');
-            titleModal.innerHTML = "THÊM MỚI SẢN PHẨM";
+        // addButtons.addEventListener('click', function() {
+        //     uploadImg.src = "img/upload-image.png";
+        //     modal.classList.add('open');
+        //     titleModal.innerHTML = "THÊM MỚI SẢN PHẨM";
 
-        });
+        // });
 
         detailButtons.forEach(function(button) {
             button.addEventListener('click', function() {
@@ -567,10 +629,7 @@
                 modalSignup.classList.add('open');
             });
         });
-
-       
-
-    });
+    }
     </script>
 
 </body>

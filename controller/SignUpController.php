@@ -38,24 +38,26 @@ function signup() {
         // 'GioiTinh' => $gioitinh,
         // 'SDT' => $sodienthoai,
         'MaND'=> "ND".rand(1000,9999),
-        'TaiKhoan' => $email,
-        // 'DiaChi' => 1,
-        'MatKhau' => $password,
-        // 'DiaChi' => $diachi
-        'TrangThai'=>1
+        'Ho' => $name,
+        'Ten' => $name,
+        'GioiTinh' => $gioitinh,
+        'SDT' => $sodienthoai,
+        'Email' => $email,
+        'DiaChi' => $diachi
     );
-    $result = (new NguoiDungBUS())->add_new($data);
-    if ($result) {
-        $result = (new NDBUS())->add_new(array(
+    $result = (new NDBUS())->add_new($data);
+    $result = (new NguoiDungBUS())->add_new(array(
             'MaND' => $data['MaND'],
-            'Ho' => $name,
-            'Ten' => $name,
-            'GioiTinh' => $gioitinh,
-            'SDT' => $sodienthoai,
-            'Email' => $email,
-            'DiaChi' => $diachi
+            'TaiKhoan' => $email,
+            'MatKhau' => $password,
+            'TrangThai'=>1
+            // 'Ho' => $name,
+            // 'Ten' => $name,
+            // 'GioiTinh' => $gioitinh,
+            // 'SDT' => $sodienthoai,
+            // 'Email' => $email,
+            // 'DiaChi' => $diachi
         ));
-    }
     die (json_encode($result));
 }
 ?>

@@ -4,6 +4,7 @@ require_once('BaseController.php');
 require_once(__DIR__ . '/../model/NguoiDungBUS.php');
 require_once(__DIR__ . '/../model/NhanVienBUS.php');
 require_once(__DIR__ . '/../model/SanPhamBUS.php');
+require_once(__DIR__ . '/../model/NDBUS.php');
 session_start();
 class ProductsController extends BaseController
 {
@@ -48,6 +49,9 @@ switch($_POST['request']) {
         break;
     case 'getProducts':
         getProducts();
+        break;
+    case 'getAccounts':
+        getAccounts();
         break;
     case 'changePage':
         if(isset($_POST['currentpage']) && isset($_POST['currentquery'])){
@@ -194,6 +198,20 @@ function getProducts() {
     $to = 8;
     $query = $query . " LIMIT $from, $to";
     $result = (new SanPhamBUS())->get_list($query);
+
+    if ($result != null) {
+        die (json_encode(array('countrow' => $rownum['total'], 'result' => $result)));
+    }
+    die (json_encode(null));
+}
+
+function getAccounts() {
+    $query = $_POST['currentquery'];
+    // count(*) from query
+    $countrow = "SELECT count(*) as total from ($query) as total";
+    $rownum = (new DB_driver())->get1row($countrow);
+   
+    $result = (new NDBUS())->get_list($query);
 
     if ($result != null) {
         die (json_encode(array('countrow' => $rownum['total'], 'result' => $result)));
