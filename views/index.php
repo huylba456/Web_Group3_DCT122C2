@@ -424,7 +424,36 @@
                         <p>${username.value}</p>
                     </div>`;
                     document.querySelector('.header__action').innerHTML=s;
-                    return 1;
+
+                    var cartIcon = document.querySelector('.fa-cart-shopping');
+            var closeCartIcon = document.querySelector('.close-cart');
+            var wrapperRight = document.querySelector('.wrapper__right');
+            var wrapperLeft = document.querySelector('.wrapper__left');
+            var scproductsList = document.querySelector('.scproducts__list');
+            var items = document.querySelectorAll('.scproducts__list-item');
+
+            cartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'block';
+                wrapperLeft.style.width = '75%';
+                scproductsList.style.padding = '30px 0px';
+                scproductsList.style.gap = '5px';
+                items.forEach(function(item) {
+                    item.style.width = '24.5%';
+                });
+            });
+
+            closeCartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'none';
+                wrapperLeft.style.width = '100%';
+                scproductsList.style.padding = '';
+                scproductsList.style.gap = '';
+                items.forEach(function(item) {
+                    item.style.width = '';
+                });
+            });
+
                 formError.style.display = "none";
                 // email.value = "";
                 // password.value = "";
@@ -524,6 +553,36 @@
                         <p>${username.value}</p>
                     </div>`;
         document.querySelector('.header__action').innerHTML=s;
+     
+        var cartIcon = document.querySelector('.fa-cart-shopping');
+            var closeCartIcon = document.querySelector('.close-cart');
+            var wrapperRight = document.querySelector('.wrapper__right');
+            var wrapperLeft = document.querySelector('.wrapper__left');
+            var scproductsList = document.querySelector('.scproducts__list');
+            var items = document.querySelectorAll('.scproducts__list-item');
+
+            cartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'block';
+                wrapperLeft.style.width = '75%';
+                scproductsList.style.padding = '30px 0px';
+                scproductsList.style.gap = '5px';
+                items.forEach(function(item) {
+                    item.style.width = '24.5%';
+                });
+            });
+
+            closeCartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'none';
+                wrapperLeft.style.width = '100%';
+                scproductsList.style.padding = '';
+                scproductsList.style.gap = '';
+                items.forEach(function(item) {
+                    item.style.width = '';
+                });
+            });
+
                 formError.style.display = "none";
                 // email.value = "";
                 // password.value = "";
@@ -630,12 +689,12 @@
         });
 
         window.onload = function() {
-            let cartIcon = document.querySelector('.fa-cart-shopping');
-            let closeCartIcon = document.querySelector('.close-cart');
-            let wrapperRight = document.querySelector('.wrapper__right');
-            let wrapperLeft = document.querySelector('.wrapper__left');
-            let scproductsList = document.querySelector('.scproducts__list');
-            let items = document.querySelectorAll('.scproducts__list-item');
+            var cartIcon = document.querySelector('.fa-cart-shopping');
+            var closeCartIcon = document.querySelector('.close-cart');
+            var wrapperRight = document.querySelector('.wrapper__right');
+            var wrapperLeft = document.querySelector('.wrapper__left');
+            var scproductsList = document.querySelector('.scproducts__list');
+            var items = document.querySelectorAll('.scproducts__list-item');
 
             cartIcon.addEventListener('click', function(event) {
                 event.stopPropagation();

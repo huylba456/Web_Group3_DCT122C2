@@ -259,7 +259,7 @@ function show_bottom_detail(order_id,bottom_container){
             console.log("Error: ", jqXHR.responseText); 
             console.log("Status: ", textStatus);
             console.log("Error: ", errorThrown);
-            alert("code nhu cc");
+            alert("code");
         }
     });
 }

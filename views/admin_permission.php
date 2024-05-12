@@ -211,7 +211,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var editButtons = document.querySelectorAll('.btn-edit, .add');
@@ -229,6 +229,51 @@
             document.querySelector('.dark-overlay').style.display = 'none';
         });
     });
+
+    var showuser=document.getElementById('show-user');
+    var listphanquyen=[];
+    var currentqueryxxx="select * from phanquyen";
+    phanquyen();
+        function phanquyen() {
+        $.ajax({
+        url: "./controller/PermissionController.php",
+        type: "post",
+        dataType: "json",
+        timeout: 1500,
+        data: {
+          request: "getpermission",
+          currentquery: currentqueryxxx,
+        },
+        success: function (data) {
+          console.log(data);
+          listphanquyen= data.result;
+          showpermission();
+        },
+        //fail
+        error: function (data) {
+          console.log(data);
+        },
+      });
+    }
+
+    function showpermission(){
+        var html=``;
+        listphanquyen.forEach(function (item){
+            html+=`<tr>
+            <td>${item.MaQuyen}</td>
+            <td>${item.ChiTietQuyen}</td>
+            <td class="control control-table">
+                <button class="btn-edit" id="edit-account"><i
+                        class="fa-regular fa-pen-to-square"></i></button>
+                <button class="btn-delete" id="delete-account"><i
+                        class="fa-solid fa-trash"></i></button>
+            </td>
+        </tr>`;
+        })
+        showuser.innerHTML=html;
+
+        
+    }
     </script>
 </body>
 

@@ -94,16 +94,16 @@ INSERT INTO `NhanVien` (`MaNV`, `Ho`, `Ten`, `GioiTinh`, `SDT`, `Email`, `DiaChi
 
 CREATE TABLE `HoaDon` (
   `MaHD` int(11) NOT NULL AUTO_INCREMENT,
-  `MaND` int(11) NOT NULL,
-  `MaNV` int(11) NOT NULL,
+  `MaND` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `MaNV` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `NgayLap` date NOT NULL,
   `TongTien` decimal(10,2) NOT NULL,
   `TrangThai` int(11) NOT NULL,
   primary key (MaHD)
 );
 
-INSERT INTO `HoaDon` (`MaHD`, `MaND`, `MaNv`, `NgayLap`, `TongTien`, `TrangThai`) VALUES
-(1, 1, 2, '2020-12-12', '100000', 1);
+INSERT INTO `HoaDon` (`MaHD`, `MaND`, `MaNV`, `NgayLap`, `TongTien`, `TrangThai`) VALUES
+(1, 'ND01', 'NV01', '2020-12-12', '100000', 1);
 
 CREATE TABLE `ChiTietHoaDon` (
   `MaHD` int(11) NOT NULL,

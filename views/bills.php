@@ -50,7 +50,7 @@
                 </div>
                 <div class="header__action-member">
                     <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
-                    <p>Thanh Vien</p>
+                    <p>THÀNH VIÊN</p>
                 </div>
             </div>
         </header>
@@ -62,9 +62,9 @@
                     <h1>LỊCH SỬ ĐƠN HÀNG</h1>
                 </div>
                 <div class="info">
-                    <input type="text" placeholder="Nhập số điện thoại">
+                    <input type="text" placeholder="search-ma">
                     <div>
-                        <button id="Search">Tìm kiếm</button>
+                        <button id="Search" >Tìm kiếm</button>
                     </div>
                 </div>
                 <table class="table table-bordered">
@@ -215,7 +215,7 @@
 const closeDetail = document.querySelectorAll('.fa-xmark');
 const showBillButtons = document.querySelectorAll('.show-detail');
 const darkOverlay = document.querySelector('.dark-overlay');
-
+const search = document.getElementById('Search');
 showBillButtons.forEach(button => {
   button.addEventListener('click', function() {
     productDetails.classList.remove("hide");
@@ -228,6 +228,18 @@ closeDetail.forEach(button => {
     productDetails.classList.add("hide");
     darkOverlay.style.display = 'none';
   })
+})
+
+search.addEventListener('click', function() {
+    alert('ok');
+//    var ma=document.querySelector('.info').value;
+//    document.querySelectorAll('.table-bordered tbody tr').forEach(tr => {
+//     if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
+//       tr.style.display = 'table-row';
+//     } else {
+//       tr.style.display = 'none';
+//     }
+// })
 })
     </script>
 </body>

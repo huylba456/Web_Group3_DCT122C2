@@ -42,16 +42,16 @@
                 </a>
             </div>
             <div class="header__action">
-                <div class="header__action-location">
+                <!-- <div class="header__action-location" >
                     <i class="fa-solid fa-location-dot"></i>
                 </div>
                 <div class="header__action-bell">
                     <i class="fa-regular fa-bell"></i>
-                </div>
-                <i class="fa-solid fa-file-invoice"></i>
+                </div> -->
+                <!-- <i class="fa-solid fa-file-invoice"></i> -->
                 <div class="header__action-member">
                     <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
-                    <p>Thanh Vien</p>
+                    <p>THÀNH VIÊN</p>
                 </div>
             </div>
         </header>
@@ -214,6 +214,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/helper.js"></script>
     <script src="js/list-bill.js"></script>
+    <script>
+        const search = document.getElementById('Search');
+        search.addEventListener('click', function() {
+   var ma=document.querySelector('.info input').value;
+   document.querySelectorAll('.table-bordered tbody tr').forEach(tr => {
+    if (tr.querySelector('td:nth-child(1)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    } else {
+      tr.style.display = 'none';
+    }
+})
+})
+    </script>
 </body>
 
 </html>
