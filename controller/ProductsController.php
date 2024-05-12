@@ -50,6 +50,9 @@ switch($_POST['request']) {
     case 'getProducts':
         getProducts();
         break;
+    case 'chitietnhap':
+        chitietnhap();
+        break;
     case 'getAccounts':
         getAccounts();
         break;
@@ -231,6 +234,21 @@ function getProducts() {
         die (json_encode(array('countrow' => $rownum['total'], 'result' => $result)));
     }
     die (json_encode(null));
+}
+
+function chitietnhap() {
+    $query = $_POST['currentquery'];
+    // count(*) from query
+    $countrow = "SELECT count(*) as total from ($query) as total";
+    $rownum = (new DB_driver())->get1row($countrow);
+   
+    $result = (new NDBUS())->get_list($query);
+
+    if ($result != null) {
+        die (json_encode(array('countrow' => $rownum['total'], 'result' => $result)));
+    }
+    die (json_encode(null));
+  
 }
 
 function getAccounts() {

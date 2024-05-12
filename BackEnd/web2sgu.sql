@@ -340,24 +340,26 @@ CREATE TABLE `ChiTietNhap` (
   `MaSize` varchar(100) NOT NULL,
   `MaVien` varchar(100) NOT NULL,
   `SoLuong` int(11) NOT NULL,
+  `TongTien` DECIMAL (10, 2) NOT NULL,
   primary key (MaPN, MaSP, MaSize, MaVien)
 );
 
-INSERT INTO `ChiTietNhap` (`MaPN`, `MaSP`, `MaSize`, `MaVien`, `SoLuong`) VALUES
-(1, 'PBBQ', 'S', 'M', 10),
-(1, 'PBBQ', 'M', 'M', 10),
-(1, 'PBBQ', 'L', 'M', 10),
-(1, 'PBBQ', 'S', 'D', 10),
-(1, 'PBBQ', 'M', 'D', 10),
-(1, 'PBBQ', 'L', 'D', 10),
-(1, 'PBBQ', 'S', 'V', 10),
-(1, 'PBBQ', 'M', 'V', 10),
-(1, 'PBBQ', 'L', 'V', 10),
-(1, 'PBD', 'S', 'M', 10),
-(1, 'PBD', 'M', 'M', 10),
-(1, 'PBD', 'L', 'M', 10),
-(1, 'PBD', 'S', 'D', 10),
-(1, 'PBD', 'M', 'D', 10);
+INSERT INTO `ChiTietNhap` (`MaPN`, `MaSP`, `MaSize`, `MaVien`, `SoLuong`,`TongTien`) VALUES
+(1, 'PBBQ', 'S', 'M', 10, 100000),
+(1, 'PBBQ', 'M', 'M', 10, 100000),
+(1, 'PBBQ', 'L', 'M', 10, 100000),
+(1, 'PBBQ', 'S', 'D', 10, 100000),
+(1, 'PBBQ', 'M', 'D', 10, 100000),
+(1, 'PBBQ', 'L', 'D', 10, 100000),
+(1, 'PBBQ', 'S', 'V', 10, 100000),
+(1, 'PBBQ', 'M', 'V', 10, 100000),
+(1, 'PBBQ', 'L', 'V', 10, 100000),
+(1, 'PBD', 'S', 'M', 10, 100000),
+(1, 'PBD', 'M', 'M', 10, 100000),
+(1, 'PBD', 'L', 'M', 10, 100000),
+(1, 'PBD', 'S', 'D', 10, 100000),
+(1, 'PBD', 'M', 'D', 10, 100000);
+
 
 CREATE TABLE `XuatSanPham` (
   `MaPX` int(11) NOT NULL,

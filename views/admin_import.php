@@ -128,33 +128,13 @@
                     <div class="import-info">
                         <form>
                             <div class="insert">
-                                <label for="nha_cung_cap">Nhà cung cấp:</label>
-                                <select id="nha_cung_cap" name="nha_cung_cap">
-                                    <option value="">Chọn nhà cung cấp</option>
-                                    <option value="1">Công ty A</option>
-                                    <option value="2">Công ty B</option>
-                                    <option value="3">Công ty C</option>
-                                </select>
+                                <label for="nha_cung_cap">Mã phiếu nhập:</label>
+                                <input type="text" id="nha_cung_cap" name="nha_cung_cap" readonly>
                             </div>
                             <br>
                             <div class="insert">
-                                <label for="nhan_vien_nhap">Nhân viên nhập:</label>
-                                <select id="nhan_vien_nhap" name="nhan_vien_nhap">
-                                    <option value="">Chọn nhân viên</option>
-                                    <option value="1">Nguyễn Văn A</option>
-                                    <option value="2">Trần Thị B</option>
-                                    <option value="3">Lê Văn C</option>
-                                </select>
-                            </div>
-                            <br>
-                            <div class="insert">
-                                <label for="ngay_nhap_tu_ngay">Ngày nhập từ ngày:</label>
-                                <input type="date" id="ngay_nhap_tu_ngay" name="ngay_nhap_tu_ngay">
-                            </div>
-                            <br>
-                            <div class="insert">
-                                <label for="ngay_nhap_den_ngay">Đến ngày:</label>
-                                <input type="date" id="ngay_nhap_den_ngay" name="ngay_nhap_den_ngay">
+                                <label for="nhan_vien_nhap">Mã sản phẩm:</label>
+                                <input type="text" id="nhan_vien_nhap" name="nhan_vien_nhap">
                             </div>
                             <br>
                             <div class="insert">
@@ -173,53 +153,45 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>STT</th>
                                     <th>Mã phiếu nhập</th>
-                                    <th>Nhà cung cấp</th>
-                                    <th>Nhân viên nhập</th>
-                                    <th>Thời gian</th>
+                                    <th>Mã sản phẩm</th>
+                                    <th>Mã Size</th>
+                                    <th>Mã Viền</th>
+                                    <th>Số lượng</th>
                                     <th>Tổng tiền</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
+                                    <td>ABC123</td>
+                                    <td>ABC123</td>
                                     <td>ABC123</td>
                                     <td>Công ty A</td>
                                     <td>Nguyễn Văn A</td>
-                                    <td>2023-11-14 10:20:00</td>
                                     <td>1.000.000 VNĐ</td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
                                     <td>DEF456</td>
                                     <td>Công ty B</td>
                                     <td>Trần Thị B</td>
-                                    <td>2023-11-15 11:30:00</td>
                                     <td>2.000.000 VNĐ</td>
                                 </tr>
                                 <tr>
-                                    <td>3</td>
                                     <td>GHI789</td>
                                     <td>Công ty C</td>
                                     <td>Lê Văn C</td>
-                                    <td>2023-11-16 12:40:00</td>
                                     <td>3.000.000 VNĐ</td>
                                 </tr>
                                 <tr>
-                                    <td>4</td>
                                     <td>JKL101</td>
                                     <td>Công ty D</td>
                                     <td>Nguyễn Thị D</td>
-                                    <td>2023-11-17 13:50:00</td>
                                     <td>4.000.000 VNĐ</td>
                                 </tr>
                                 <tr>
-                                    <td>5</td>
                                     <td>MNO234</td>
                                     <td>Công ty E</td>
                                     <td>Trần Văn E</td>
-                                    <td>2023-11-18 14:00:00</td>
                                     <td>5.000.000 VNĐ</td>
                                 </tr>
                             </tbody>
@@ -363,8 +335,51 @@
     <script src="js/helper.js"></script>
 
     <script>
+        var currentqueryzz=
+        'SELECT * FROM chitietnhap ';
+        var listchitiet = [];
+
+        $.ajax({
+    url: "./controller/ProductsController.php",
+    type: "post",
+    dataType: "json",
+    timeout: 1500,
+    data: {
+      request: "chitietnhap",
+      currentquery: currentqueryzz,
+    },
+    success: function (data) {
+      console.log(data);
+      listchitiet = data.result;
+      showchitietnhap();
+    },
+    //fail
+    error: function () {
+      alert("2sad");
+    },
+  });
+  function showchitietnhap() {
+    var html='';
+
+    listchitiet.forEach(function (chitiet){
+        html+=`<tr>
+        <td>${chitiet.MaPN}</td>
+        <td>${chitiet.MaSP}</td>
+        <td>${chitiet.MaSize}</td>
+        <td>${chitiet.MaVien}</td>
+        <td>${chitiet.SoLuong}</td>
+        <td>${chitiet.TongTien}</td>
+        </tr>
+        `;
+    });
+    var importdetail=document.querySelector('.import-detail');
+    importdetail.querySelector('tbody').innerHTML=html;
+  }
+
         var addButtons = document.querySelectorAll('.add');
         var modal = document.querySelector('.modal.add-import');
+        var addphieunhap = document.querySelector('.btn-control-large');
+
 
         addButtons.forEach(function (addButton) {
             addButton.addEventListener('click', function () {
@@ -377,6 +392,9 @@
                 modal.classList.remove('open');
             });
         });
+        
+
+      
     </script>
 </body>
 

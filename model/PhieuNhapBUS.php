@@ -28,7 +28,7 @@ class PhieuNhapBUS extends DB_business {
                 $Mavien = $ctpn['MaDe'];
                 $GiaNhap = $ctpn['GiaNhap'];
                 $GiaBan = $ctpn['GiaBan'];
-                $sql = "INSERT INTO chitietnhap (mapn,masp,masize,mavien,soluong) VALUES ('$mapn','$masp','$Masize','$Mavien','$soluong')";
+                $sql = "INSERT INTO chitietnhap (mapn,masp,masize,mavien,soluong,tongtien) VALUES ('$mapn','$masp','$Masize','$Mavien','$soluong','$GiaNhap' * '$soluong')";
                 $result = $this->insertz($sql);
                 if (!$result) {
                     

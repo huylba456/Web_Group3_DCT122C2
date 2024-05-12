@@ -540,7 +540,7 @@
         },
       });
     }
-        function showAccounts() {
+function showAccounts() {
             count=listAccounts.length;
             let currentDate = new Date();
 
