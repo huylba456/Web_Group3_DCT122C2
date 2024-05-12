@@ -105,7 +105,17 @@ class DB_driver {
         }
         return false;
     }
-   
+
+    function deleteee($sql) {
+        $this->connect();
+        $result = mysqli_query($this->__conn, $sql);
+
+        if ($result) {
+            return true;
+        }
+        return false;
+    }
+
 
 
 }

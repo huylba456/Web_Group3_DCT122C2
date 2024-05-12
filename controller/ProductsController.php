@@ -53,6 +53,34 @@ switch($_POST['request']) {
     case 'getAccounts':
         getAccounts();
         break;
+    case 'getAccountss':
+        getAccounts();
+        break;
+    case 'capnhattrangthai':
+        if(isset($_POST['id']) && isset($_POST['trangthai'])){
+            $id = $_POST['id'];
+            $trangthai = $_POST['trangthai'];
+            $sql="UPDATE TaiKhoanNguoiDung SET TrangThai='$trangthai' WHERE MaND='$id'";
+            $result = (new NguoiDungBUS())->updatezzz($sql);
+            if($result != false){
+                die (json_encode($result));
+            }
+            die (json_encode(null));
+        }
+        break;
+    case 'xoataikhoan':
+        if(isset($_POST['id'])){
+            $id = $_POST['id'];
+            $sql="DELETE FROM TaiKhoanNguoiDung WHERE MaND='$id'";
+            $result = (new NguoiDungBUS())->deleteee($sql);
+            $sql="DELETE FROM NguoiDung WHERE MaND='$id'";
+            $result = (new NDBUS())->deleteee($sql);
+            if($result != false){
+                die (json_encode($result));
+            }
+            die (json_encode(null));
+        }
+        break;
     case 'changePage':
         if(isset($_POST['currentpage']) && isset($_POST['currentquery'])){
             getProductPagAjax();
@@ -101,7 +129,7 @@ switch($_POST['request']) {
 function loginUser() {
     $username=$_POST['data_username'];
 	$password=$_POST['data_pass'];
-    $sql = "SELECT * FROM TaiKhoanNguoiDung tk join NguoiDung nd on tk.MaND = nd.MaND WHERE tk.TaiKhoan='$username' AND tk.MatKhau='$password'";
+    $sql = "SELECT * FROM TaiKhoanNguoiDung tk join NguoiDung nd on tk.MaND = nd.MaND WHERE tk.TaiKhoan='$username' AND tk.MatKhau='$password' AND tk.TrangThai=1";
     $result = (new NguoiDungBus())->get_list($sql);
     // create array include $result and null
     $returnz = array('result' => $result, 'cart' => null);
@@ -298,3 +326,4 @@ function getAllCategory() {
     }
     die (json_encode(null));
 }
+?>

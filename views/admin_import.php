@@ -231,7 +231,7 @@
     </div>
     <div class="modal add-import">
         <div class="modal-container">
-        <h3>CHỈNH SỬA SẢN PHẨM</h3>
+        <h3>THÊM SẢN PHẨM</h3>
             <button class="modal-close product-form"><i class="fa-solid fa-xmark"></i></i></button>
             <div class="modal-layout-one">
                 <div class="modal-layout-four">

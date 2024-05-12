@@ -26,13 +26,15 @@ class PhieuNhapBUS extends DB_business {
                 $soluong = $ctpn['SoLuong'];
                 $Masize = $ctpn['MaSize'];
                 $Mavien = $ctpn['MaDe'];
+                $GiaNhap = $ctpn['GiaNhap'];
+                $GiaBan = $ctpn['GiaBan'];
                 $sql = "INSERT INTO chitietnhap (mapn,masp,masize,mavien,soluong) VALUES ('$mapn','$masp','$Masize','$Mavien','$soluong')";
                 $result = $this->insertz($sql);
                 if (!$result) {
                     
                     die (json_encode(array('status' => 'fail')));
                 }
-                $sql = "UPDATE chitietsanpham SET soluong = soluong + $soluong WHERE masp = '$masp' AND masize = '$Masize' AND mavien = '$Mavien'";
+                $sql = "UPDATE chitietsanpham SET gianhap='$GiaNhap', giatien='$GiaBan', soluong = soluong + $soluong  WHERE masp = '$masp' AND masize = '$Masize' AND mavien = '$Mavien'";
                 $result = $this->updatezzz($sql);
                 if (!$result) {
                     die (json_encode(array('status' => 'fail khi them ctsp')));

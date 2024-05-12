@@ -415,7 +415,7 @@
     </div>
 
 
-    <div class="modal signup open">
+    <div class="modal signup">
         <div class="modal-container">
             <h3 class="modal-container-title add-account-e" style="font-weight: 600; font-size:20px">THÊM KHÁCH HÀNG MỚI
             </h3>
@@ -424,6 +424,12 @@
             <button class="modal-close"><i class="fa-solid fa-xmark"></i></button>
             <div class="form-content sign-up">
                 <form action="" class="signup-form">
+                    <div class="form-group">
+                        <label for="idd" class="form-label">Mã người dùng</label>
+                        <input id="idd" name="idd" type="text" placeholder="VD: ND01"
+                            class="form-control">
+                        <span class="form-message-name form-message"></span>
+                    </div>
                     <div class="form-group">
                         <label for="fullname" class="form-label">Tên đầy đủ</label>
                         <input id="fullname" name="fullname" type="text" placeholder="VD: Pham Van Kiet"
@@ -458,15 +464,22 @@
                             class="form-control">
                         <span class="form-message-confirm-password form-message"></span>
                     </div>
-                    <select name="chonquyen" id="chonquyen" onchange="showUser()">
+                    <div class="form-group">
+                        <label for="gioitinh" class="form-label">Giới tính</label>
+                        <select name="gioitinh" id="gioitinh">
+                            <option value="Nam">Nam</option>
+                            <option value="Nu">Nữ</option>
+                        </select>
+                    </div>
+                    <!-- <select name="chonquyen" id="chonquyen" onchange="showUser()">
                             <option value="0">Nhan vien</option>
                             <option value="1">Khach hang</option>
-                        </select>
-                    <div class="form-group edit-account-e">
+                        </select> -->
+                    <!-- <div class="form-group edit-account-e">
                         <label for="" class="form-label">Trạng thái</label>
                         <input type="checkbox" id="user-status" class="switch-input">
                         <label for="user-status" class="switch"></label>
-                    </div>
+                    </div> -->
                     <!-- <button class="form-submit add-account-e" id="signup-button">Đăng ký</button> -->
                     <button class="form-submit edit-account-e" id="btn-update-account"><i
                             class="fa-regular fa-floppy-disk"></i> Lưu thông tin</button>
@@ -477,9 +490,35 @@
     
     <script>
         var listAccounts=[];
+        var listAccountss=[];
+        var count =0;
         var currentqueryx =
-      'SELECT nguoidung.MaND, Ho, Ten, GioiTinh, SDT, Email,DiaChi FROM nguoidung, taikhoannguoidung WHERE nguoidung.MaND = taikhoannguoidung.MaND AND taikhoannguoidung.TrangThai=1 ';
+      'SELECT nguoidung.MaND, Ho, Ten, GioiTinh, SDT, Email,DiaChi FROM nguoidung, taikhoannguoidung WHERE nguoidung.MaND = taikhoannguoidung.MaND ';
+      var currentqueryxx =
+      'SELECT nguoidung.MaND, TaiKhoan, MatKhau, TrangThai FROM nguoidung, taikhoannguoidung WHERE nguoidung.MaND = taikhoannguoidung.MaND ';
         loaderAccounts();
+
+        loaderAccountss();
+        function loaderAccountss() {
+        $.ajax({
+        url: "./controller/ProductsController.php",
+        type: "post",
+        dataType: "json",
+        timeout: 1500,
+        data: {
+          request: "getAccountss",
+          currentquery: currentqueryxx,
+        },
+        success: function (data) {
+          console.log(data);
+          listAccountss= data.result;
+        },
+        //fail
+        error: function (data) {
+          console.log(data);
+        },
+      });
+    }
         function loaderAccounts() {
         $.ajax({
         url: "./controller/ProductsController.php",
@@ -502,6 +541,16 @@
       });
     }
         function showAccounts() {
+            count=listAccounts.length;
+            let currentDate = new Date();
+
+// Lấy ngày, tháng và năm hiện tại
+let day = currentDate.getDate();
+let month = currentDate.getMonth() + 1; // Tháng bắt đầu từ 0 nên cần cộng thêm 1
+let year = currentDate.getFullYear();
+
+// Định dạng ngày, tháng và năm thành chuỗi "dd/mm/yyyy"
+let formattedDate = (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month + '/' + year;
       var html = "";
       listAccounts.forEach(function (item) {
         html += `<tr>
@@ -510,7 +559,7 @@
                  <td>${item.SDT}</td>   
                  <td>${item.Email}</td>
                  <td>${item.DiaChi}</td>
-                 <td>20/12/2020</td>
+                 <td>${formattedDate}</td>
                  <td><span class="status-complete">Hoạt động</span></td>
                  <td class="control control-table">
                  <button id="edit-account"><i class="fa-regular fa-pen-to-square"></i></button>
@@ -523,7 +572,6 @@
     }
 
     window.onload = function() {
-        console.log("asdaasd");
         // var editButtons = document.querySelectorAll('.btn-edit');
         var closeButtons = document.querySelectorAll('.modal-close');
         var updateButtons = document.querySelectorAll('.btn-update-product-form');
@@ -534,6 +582,7 @@
         var uploadImg = document.querySelector('.upload-image-preview');
         var detailButtons = document.querySelectorAll('.btn-detail');
         var modalSignup = document.querySelector('.signup');
+        var editform=document.querySelector('.signup-form');
         var editUserButtons = document.querySelectorAll('#edit-account');
         var addUserButtons = document.querySelectorAll('#btn-add-user');
         var addUserTitle = document.querySelector('.add-account-e');
@@ -543,11 +592,160 @@
         var nostatus= document.querySelectorAll(".status-no-complete");
         var statusUser = document.querySelectorAll('.form-group edit-account-e');
         var addUser = document.querySelector('#btn-add-user');
-        addUser.addEventListener('click', function() {      
+        var btndelete = document.querySelectorAll('.btn-delete');
+        updateSignupButton.addEventListener('click',function(e){
+
+            if(updateSignupButton.innerHTML==='<i class="fa-regular fa-floppy-disk" aria-hidden="true"></i>Lưu thông tin')
+            {
+                e.preventDefault();
+            window.location.reload();
+                var id=document.querySelector('#idd');
+                var name = document.querySelector('#fullname');
+                var sdt = document.querySelector('#phone');
+                var email = document.querySelector('#email');
+                var diachi = document.querySelector('#address');
+                var password = document.querySelector('#password');
+                var cfpassword = document.querySelector('#confirm-password');
+                var gioitinh = document.querySelector('#gioitinh').value;
+                if (id.value=="" || name.value == "" || sdt.value == "" || email.value == "" || diachi.value == "" || password.value == "" || cfpassword.value == "") {
+                    alert("Vui lòng nhập đầy đủ thông tin");
+                    return;
+                }
+                if (password.value != cfpassword.value) {
+                    alert("Mật khẩu không khớp");
+                    return;
+                }
+let splitted = name.value.split(' '); // Chia chuỗi thành mảng các từ dựa trên khoảng trắng
+let firstPart = splitted.slice(0, -1).join(' '); // Lấy các phần tử từ đầu đến phần tử thứ hai cuối cùng và nối lại thành chuỗi
+let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
+    $.ajax({
+      url: './controller/SignUpController.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+          request: 'themtaikhoan',
+          id: id.value,
+          ho: firstPart,
+          ten: secondPart,
+          email: email.value,
+          password: password.value,
+          gioitinh: gioitinh,
+          sdt: sdt.value,
+          diachi: diachi.value
+      },
+      success: function(data) {
+          if(data) {
+            console.log(data);
+              alert("thành công");
+          }
+      },
+      error: function(data) {
+          alert("thất bại");
+      }
+  });
+    id.value = "";
+    name.value = "";
+    sdt.value = "";
+    email.value = "";
+    diachi.value = "";
+    password.value = "";
+    cfpassword.value = "";
+            }
+            else if(updateSignupButton.innerHTML==='<i class="fa-regular fa-floppy-disk" aria-hidden="true"></i> Lưu thay đổi')
+            {
+                e.preventDefault();
+            window.location.reload();
+                var id=document.querySelector('#idd');
+                var name = document.querySelector('#fullname');
+                var sdt = document.querySelector('#phone');
+                var email = document.querySelector('#email');
+                var diachi = document.querySelector('#address');
+                var password = document.querySelector('#password');
+                var cfpassword = document.querySelector('#confirm-password');
+                var gioitinh = document.querySelector('#gioitinh').value;
+                if (id.value=="" || name.value == "" || sdt.value == "" || email.value == "" || diachi.value == "" || password.value == "" || cfpassword.value == "") {
+                    alert("Vui lòng nhập đầy đủ thông tin");
+                    return;
+                }
+                if (password.value != cfpassword.value) {
+                    alert("Mật khẩu không khớp");
+                    return;
+                }
+let splitted = name.value.split(' '); // Chia chuỗi thành mảng các từ dựa trên khoảng trắng
+let firstPart = splitted.slice(0, -1).join(' '); // Lấy các phần tử từ đầu đến phần tử thứ hai cuối cùng và nối lại thành chuỗi
+let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
+    $.ajax({
+      url: './controller/SignUpController.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+          request: 'suataikhoan',
+          id: id.value,
+          ho: firstPart,
+          ten: secondPart,
+          email: email.value,
+          password: password.value,
+          gioitinh: gioitinh,
+          sdt: sdt.value,
+          diachi: diachi.value
+      },
+      success: function(data) {
+          if(data) {
+            console.log(data);
+              alert("thành công");
+          }
+      },
+      error: function(data) {
+          alert("thất bại");
+      }
+  });
+    id.value = "";
+    name.value = "";
+    sdt.value = "";
+    email.value = "";
+    diachi.value = "";
+    password.value = "";
+    cfpassword.value = "";
+            }
+        });
+
+        btndelete.forEach(function(button) {
+            button.addEventListener('click', function() {
+                if(confirm("Bạn có chắc chắn muốn xóa không?") == false) {
+                    return;
+                }
+                else {
+                var parent = button.parentElement.parentElement;
+                var id = parent.querySelector('td').innerHTML;
+                $.ajax({
+                    url: './controller/ProductsController.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        request: 'xoataikhoan',
+                        id: id,
+                    },
+                    success: function(data) {
+                        if (data) {
+                            alert("Xóa thành công");
+                        }
+                    },
+                    error: function(data) {
+                        alert("Xóa thất bại");
+                    }
+                });
+            }
+                window.location.reload();
+            });
+        });
+
+        addUser.addEventListener('click', function() {   
+            edittt=modalSignup.querySelector('.signup-form');   
+            edittt.querySelector('.form-group').style.display = 'block';
             modalSignup.classList.add('open');
             addUserTitle.innerHTML = "Thêm khách hàng mới";
             updateSignupButton.innerHTML = `<i
-                            class="fa-regular fa-floppy-disk"></i> Lưu thông tin`;
+                            class="fa-regular fa-floppy-disk"></i>Lưu thông tin`;
         });
         // tab for section
         const sidebars = document.querySelectorAll(".sidebar-list-item.tab-content");
@@ -574,10 +772,52 @@
           if(stat.innerHTML == "Hoạt động"){
               stat.innerHTML = "Bị khóa";
             stat.style.backgroundColor = "#f04e2e";
+            var parent = stat.parentElement.parentElement;
+                var len=parent.querySelectorAll('td')[0].innerHTML;
+                $.ajax({
+                    url: './controller/ProductsController.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        request: 'capnhattrangthai',
+                        id: len,
+                        trangthai: 0,
+                    },
+                    success: function(data) {
+                        if (data) {
+                            alert("Cập nhật thành công");
+                        }
+                    },
+                    error: function(data) {
+                        alert(data);
+                        alert("Cập nhật thất bại");
+                    }
+                });
        }
          else{
               stat.innerHTML = "Hoạt động";
               stat.style.backgroundColor = "#27ae60";
+              var parent = stat.parentElement.parentElement;
+                var len=parent.querySelectorAll('td')[0].innerHTML;
+                $.ajax({
+                    url: './controller/ProductsController.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        request: 'capnhattrangthai',
+                        id: len,
+                        trangthai: 1,
+                    },
+                    success: function(data) {
+                        if (data) {
+                            alert("Cập nhật thành công");
+                        }
+                    },
+                    error: function(data) {
+                        alert(data);
+                        alert("Cập nhật thất bại");
+                    }
+                });
          }
           });
     });
@@ -597,6 +837,10 @@
                 modal.classList.remove('open');
                 modalDetail.classList.remove('open');
                 modalSignup.classList.remove('open');
+                var inp=editform.querySelectorAll('input');
+                for(i=0;i<inp.length;i++)
+                        inp[i].value='';
+
             });
         });
 
@@ -624,9 +868,30 @@
 
                 updateSignupButton.innerHTML = `<i
                             class="fa-regular fa-floppy-disk"></i> Lưu thay đổi`;
+                
                 addUserTitle.innerHTML = "Chinh sửa khách hàng";
+                edittt=modalSignup.querySelector('.signup-form');
+                edittt.querySelector('.form-group').style.display = 'none';
+                // editform.querySelector('.form-group').disabled=true;
                 modal.classList.remove('open');
                 modalSignup.classList.add('open');
+                var parent = button.parentElement.parentElement;
+                var len=parent.querySelectorAll('td');
+                var inp=editform.querySelectorAll('input');
+                for(i=0;i<len.length-1;i++)
+                {
+                    if(i<5)
+                        inp[i].value=len[i].innerHTML;
+                    if(i>4)
+                    listAccountss.forEach(function(item){
+                        if(item.MaND==len[0].innerHTML)
+                        {
+                            inp[i].value=item.MatKhau;
+                            inp[i].value=item.MatKhau;
+                        }
+                    });
+                }
+                
             });
         });
     }

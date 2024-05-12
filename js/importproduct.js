@@ -139,7 +139,7 @@ function addeventThempn() {
             "TenSize": document.querySelector('#product-item').options[document.querySelector('#product-item').selectedIndex].text.split(' - ')[0],
             "TenDe": document.querySelector('#product-item').options[document.querySelector('#product-item').selectedIndex].text.split(' - ')[1],
             "GiaNhap": document.getElementById('product-price').value,
-            "GiaBan": document.getElementById('product-pricesell').value
+            "GiaBan": document.getElementById('product-pricesell').value,
         })
         loadTablepn();
         sum += parseInt(document.getElementById('product-price').value) * parseInt(soluong);
@@ -231,8 +231,9 @@ function thempn(e) {
         success: function(data) {
                 createToast('success', 'Thêm phiếu nhập thành công!');
             
-        }
+        }     
     })
+    window.location.reload();
 }
 
 function addeventsuapn() {

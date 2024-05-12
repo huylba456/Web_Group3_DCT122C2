@@ -211,6 +211,9 @@ document.querySelector(".dangkybtn").addEventListener("click", function () {
         cfpassword.value +
         " "
     );
+  let splitted = name.value.split(' '); // Chia chuỗi thành mảng các từ dựa trên khoảng trắng
+let firstPart = splitted.slice(0, -1).join(' '); // Lấy các phần tử từ đầu đến phần tử thứ hai cuối cùng và nối lại thành chuỗi
+let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
     // ajax register
     $.ajax({
       url: './controller/SignUpController.php',
@@ -218,7 +221,8 @@ document.querySelector(".dangkybtn").addEventListener("click", function () {
       dataType: 'json',
       data: {
           request: 'dangky',
-          name: name.value,
+          ho: firstPart,
+          ten: secondPart,
           email: email.value,
           password: password.value,
           gioitinh: gioitinh,

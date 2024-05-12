@@ -24,6 +24,7 @@ function loginz() {
         return 1;
       } else {
         alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+
         return 0;
       }
     },
@@ -47,7 +48,6 @@ function logins() {
       if (result != null) {
         alert("Đăng nhập thành công!");
         document.querySelector('.popupLogin').classList.add('--none');
-        
         return 1;
       } else {
         alert("Tên đăng nhập hoặc mật khẩu không đúng!");

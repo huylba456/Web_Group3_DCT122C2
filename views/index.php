@@ -401,8 +401,8 @@
 
             if (checkForm) {
                 // alert("Đăng nhập thành công!" + email.value + " " + password.value);
-                loginz(username.value, password.value);
-              
+                loginz(username.value, password.value);  
+               
                 var s=`
                     <div class="header__action-location">
                         <i class="fa-solid fa-location-dot"></i>
@@ -424,7 +424,7 @@
                         <p>${username.value}</p>
                     </div>`;
                     document.querySelector('.header__action').innerHTML=s;
-                
+                    return 1;
                 formError.style.display = "none";
                 // email.value = "";
                 // password.value = "";
