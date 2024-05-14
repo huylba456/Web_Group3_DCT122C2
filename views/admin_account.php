@@ -110,11 +110,9 @@
                         </select>
                     </div>
                     <div class="admin-control-center">
-                        <form action="" class="form-search">
-                            <span class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            &nbsp;<button id="Search1"><i class="fa-solid fa-magnifying-glass"></i></button>
                             <input id="form-search-user" type="text" class="form-search-input"
-                                placeholder="Tìm kiếm khách hàng..." oninput="showUser()">
-                        </form>
+                            placeholder="Tìm kiếm khách hàng..." oninput="showUser()">
                     </div>
                     <div class="admin-control-right">
                         <form action="" class="fillter-date">
@@ -897,7 +895,48 @@ let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
         });
     }
     </script>
+    <script>
+        const search1 = document.getElementById('Search1');
+        search1.addEventListener('click', function() {
+   var ma=document.querySelector('.admin-control-center input').value;
+   document.querySelectorAll('.table tbody tr').forEach(tr => {
+    if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    } else {
+      tr.style.display = 'none';
+    }
+})
+})
+    </script>
+    <script>
+        document.getElementById('time-start-user').addEventListener('change', filterByDateRange);
+        document.getElementById('time-end-user').addEventListener('change', filterByDateRange);
 
+function filterByDateRange() {
+    var startDate = document.getElementById('time-start-user').value;
+    var endDate = document.getElementById('time-end-user').value;
+    
+    // Nếu cả hai ngày đều được đặt, tiến hành lọc
+    if (startDate && endDate) {
+        var start = new Date(startDate);
+        var end = new Date(endDate);
+        
+        document.querySelectorAll('.table tbody tr').forEach(tr => {
+            var dateCell = tr.querySelector('td:nth-child(6)').textContent;
+            var dateParts = dateCell.split('/');
+            var formattedDateCell = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+            var rowDate = new Date(formattedDateCell);
+            
+            if (rowDate >= start && rowDate <= end) {
+                tr.style.display = 'table-row';
+            } else {
+                tr.style.display = 'none';
+            }
+        });
+    }
+}
+
+    </script>
 </body>
 
 </html>
