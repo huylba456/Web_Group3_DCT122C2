@@ -570,6 +570,7 @@ let formattedDate = (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') 
       });
       document.querySelector("#show-user").innerHTML = html;
     }
+    
 
     window.onload = function() {
         // var editButtons = document.querySelectorAll('.btn-edit');
