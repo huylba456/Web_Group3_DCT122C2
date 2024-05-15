@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/notification.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
 </head>
 
 <body>
@@ -48,10 +50,8 @@
         <div class="wrapper__left">
 
             <header class="header --noshadown">
-                <div class="header__logo">
-                    <a href="index.php">
+                <div class="header__logo" onclick='reloaddd()'>
                         <img src="img/logo-pizza.png" alt="logo">
-                    </a>
                 </div>
 
                 <div class="header-middle-center">
@@ -265,7 +265,141 @@
         </div>
         <!-- <a href="index.php?controller=AdminIndexController&action=index">admin</a> -->
 
-        <script>
+<script>
+function reloaddd()
+{
+    location.reload();
+}
+
+loaddd();
+function loaddd() {
+    $.ajax({
+        url: './controller/ProductsController.php',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            request: 'getCurrentUser'
+        },
+        success: function(data) {
+            // console.log(data['result'][0].TaiKhoan);
+            if(data['result'][0].MaND){
+            var s=`
+                    <div class="header__action-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=HistoryBillController&action=index"><i class="fa-solid fa-file-invoice"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href='?logout=true' id='logout'><i class="fa-solid fa-right-from-bracket"></i></a>
+                    </div>
+                    <div class="header__action-member">
+                        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+                        <p>${data['result'][0].Ho+" "+data['result'][0].Ten}</p>
+                    </div>`;
+                    document.querySelector('.header__action').innerHTML=s;
+
+            var cartIcon = document.querySelector('.fa-cart-shopping');
+            var closeCartIcon = document.querySelector('.close-cart');
+            var wrapperRight = document.querySelector('.wrapper__right');
+            var wrapperLeft = document.querySelector('.wrapper__left');
+            var scproductsList = document.querySelector('.scproducts__list');
+            var items = document.querySelectorAll('.scproducts__list-item');
+
+            cartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'block';
+                wrapperLeft.style.width = '75%';
+                scproductsList.style.padding = '30px 0px';
+                scproductsList.style.gap = '5px';
+                items.forEach(function(item) {
+                    item.style.width = '24.5%';
+                });
+            });
+
+            closeCartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'none';
+                wrapperLeft.style.width = '100%';
+                scproductsList.style.padding = '';
+                scproductsList.style.gap = '';
+                items.forEach(function(item) {
+                    item.style.width = '';
+                });
+            });
+            var formError = document.querySelector(".form-error");
+                formError.style.display = "none";
+            // document.querySelector('.name').value = data['result'][0].Ho + ' ' + data['result'][0].Ten; 
+            // document.querySelector('.email').value = data['result'][0].SDT;
+            // document.querySelector('.sdt').value = data['result'][0].Email;
+            // document.querySelector('.diachi').value = data['result'][0].DiaChi;
+        }
+        else if(data['result'][0].MaNV){
+            var s=` <div class="header__action-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=HistoryBillController&action=index"><i class="fa-solid fa-file-invoice"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=AdminIndexController&action=index"><i class="fa-solid fa-sliders"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href='?logout=true' id='logout'><i class="fa-solid fa-right-from-bracket"></i></a>
+                    </div>
+                    <div class="header__action-member">
+                        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+                        <p>${data['result'][0].MaNV}</p>
+                    </div>`;
+        document.querySelector('.header__action').innerHTML=s;
+        var cartIcon = document.querySelector('.fa-cart-shopping');
+            var closeCartIcon = document.querySelector('.close-cart');
+            var wrapperRight = document.querySelector('.wrapper__right');
+            var wrapperLeft = document.querySelector('.wrapper__left');
+            var scproductsList = document.querySelector('.scproducts__list');
+            var items = document.querySelectorAll('.scproducts__list-item');
+
+            cartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'block';
+                wrapperLeft.style.width = '75%';
+                scproductsList.style.padding = '30px 0px';
+                scproductsList.style.gap = '5px';
+                items.forEach(function(item) {
+                    item.style.width = '24.5%';
+                });
+            });
+
+            closeCartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'none';
+                wrapperLeft.style.width = '100%';
+                scproductsList.style.padding = '';
+                scproductsList.style.gap = '';
+                items.forEach(function(item) {
+                    item.style.width = '';
+                });
+            });
+            var formError = document.querySelector(".form-error");
+                formError.style.display = "none";
+        }
+    }
+    });
+}
+
+
         document.addEventListener("DOMContentLoaded", function() {
             // Lấy phần tử .popupLogin
             var popupLogin = document.querySelector(".popupLogin");
@@ -401,59 +535,7 @@
             if (checkForm) {
                 // alert("Đăng nhập thành công!" + email.value + " " + password.value);
                 loginz(username.value, password.value);  
-               
-                var s=`
-                    <div class="header__action-location">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="header__action-bell">
-                        <i class="fa-regular fa-bell"></i>
-                    </div>
-                    <div class="header__action-bell">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <div class="header__action-bell">
-                        <a href="index.php?controller=HistoryBillController&action=index"><i class="fa-solid fa-file-invoice"></i></a>
-                    </div>
-                    <div class="header__action-bell">
-                        <a href='?logout=true' id='logout'><i class="fa-solid fa-right-from-bracket"></i></a>
-                    </div>
-                    <div class="header__action-member">
-                        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
-                        <p>${username.value}</p>
-                    </div>`;
-                    document.querySelector('.header__action').innerHTML=s;
-
-                    var cartIcon = document.querySelector('.fa-cart-shopping');
-            var closeCartIcon = document.querySelector('.close-cart');
-            var wrapperRight = document.querySelector('.wrapper__right');
-            var wrapperLeft = document.querySelector('.wrapper__left');
-            var scproductsList = document.querySelector('.scproducts__list');
-            var items = document.querySelectorAll('.scproducts__list-item');
-
-            cartIcon.addEventListener('click', function(event) {
-                event.stopPropagation();
-                wrapperRight.style.display = 'block';
-                wrapperLeft.style.width = '75%';
-                scproductsList.style.padding = '30px 0px';
-                scproductsList.style.gap = '5px';
-                items.forEach(function(item) {
-                    item.style.width = '24.5%';
-                });
-            });
-
-            closeCartIcon.addEventListener('click', function(event) {
-                event.stopPropagation();
-                wrapperRight.style.display = 'none';
-                wrapperLeft.style.width = '100%';
-                scproductsList.style.padding = '';
-                scproductsList.style.gap = '';
-                items.forEach(function(item) {
-                    item.style.width = '';
-                });
-            });
-
-                formError.style.display = "none";
+                location.reload();
                 // email.value = "";
                 // password.value = "";
             } else {
@@ -528,71 +610,16 @@
             if (checkForm) {
                 // alert("Đăng nhập thành công!" + email.value + " " + password.value);
                 logins(username.value, password.value);
-                
-                var s=` <div class="header__action-location">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="header__action-bell">
-                        <i class="fa-regular fa-bell"></i>
-                    </div>
-                    <div class="header__action-bell">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <div class="header__action-bell">
-                        <a href="index.php?controller=HistoryBillController&action=index"><i class="fa-solid fa-file-invoice"></i></a>
-                    </div>
-                    <div class="header__action-bell">
-                        <a href="index.php?controller=AdminIndexController&action=index"><i class="fa-solid fa-sliders"></i></a>
-                    </div>
-                    <div class="header__action-bell">
-                        <a href='?logout=true' id='logout'><i class="fa-solid fa-right-from-bracket"></i></a>
-                    </div>
-                    <div class="header__action-member">
-                        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
-                        <p>${username.value}</p>
-                    </div>`;
-        document.querySelector('.header__action').innerHTML=s;
-     
-        var cartIcon = document.querySelector('.fa-cart-shopping');
-            var closeCartIcon = document.querySelector('.close-cart');
-            var wrapperRight = document.querySelector('.wrapper__right');
-            var wrapperLeft = document.querySelector('.wrapper__left');
-            var scproductsList = document.querySelector('.scproducts__list');
-            var items = document.querySelectorAll('.scproducts__list-item');
-
-            cartIcon.addEventListener('click', function(event) {
-                event.stopPropagation();
-                wrapperRight.style.display = 'block';
-                wrapperLeft.style.width = '75%';
-                scproductsList.style.padding = '30px 0px';
-                scproductsList.style.gap = '5px';
-                items.forEach(function(item) {
-                    item.style.width = '24.5%';
-                });
-            });
-
-            closeCartIcon.addEventListener('click', function(event) {
-                event.stopPropagation();
-                wrapperRight.style.display = 'none';
-                wrapperLeft.style.width = '100%';
-                scproductsList.style.padding = '';
-                scproductsList.style.gap = '';
-                items.forEach(function(item) {
-                    item.style.width = '';
-                });
-            });
-
-                formError.style.display = "none";
+                location.reload();
                 // email.value = "";
                 // password.value = "";
             } else {
                 formError.style.display = "flex";
             }
         });
-        </script>
+</script>
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="js/notificationEffect.js"></script>
         <script src="js/script.js"></script>
         <script src="js/helper.js"></script>

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/list-bill.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 
@@ -54,6 +55,31 @@
                     <p>THÀNH VIÊN</p>
                 </div>
             </div>
+            <script>
+                loadddbill();
+function loadddbill() {
+    $.ajax({
+        url: './controller/ProductsController.php',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            request: 'getCurrentUser'
+        },
+        success: function(data) {
+            if(data['result'][0].MaND){
+            document.querySelector('.header__action-member').innerHTML=
+            ` <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+                    <p>${data['result'][0].Ho+" "+data['result'][0].Ten}</p>`;
+        }
+        else if(data['result'][0].MaND){
+            document.querySelector('.header__action-member').innerHTML=
+            ` <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+                    <p>${data['result'][0].MaND}</p>`
+        }
+    }
+    });
+}
+            </script>
         </header>
 
         <div class="container">

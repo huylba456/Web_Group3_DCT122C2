@@ -1,6 +1,7 @@
 <?php
 require_once('BaseController.php');
 require_once(__DIR__ . '/../model/SanPhamBUS.php');
+require_once(__DIR__ . '/../model/chitiethoadonBUS.php');
 class ProductManagementController extends BaseController
 {
     public function index()
@@ -19,8 +20,14 @@ if (isset($_POST['request'])) {
         case 'uploadProduct':
             uploadProduct();
             break;
+        case 'changeProduct':
+            changeProduct();
+            break;
         case 'deleteProduct':
             deleteProduct();
+            break;
+        case 'checkproduct':
+            checkproduct();
             break;
     }
 }
@@ -99,6 +106,50 @@ function getprod() {
     return $bussp->get_list($sql);
 }
 
+function checkproduct(){
+   
+    $masp = $_POST['masp'];
+    $sql = "SELECT * FROM chitiethoadon WHERE MaSP = '$masp'";
+    $result = (new chitiethoadonBUS())->get_list($sql);
+    if ($result) {
+        die (json_encode($result));
+    }
+    // die (json_encode(array('status' => 'fail')));
+        die (json_encode($result));
+}
+
+function changeProduct(){
+    global $bussp;
+    $masp = $_POST['masp'];
+    $sql = "SELECT * FROM sanpham WHERE MaSP = '$masp'";
+    $result = $bussp->get_list($sql);
+    if($result[0]['TrangThai'] == 1){
+    $sql = "UPDATE sanpham SET TrangThai = 0 WHERE MaSP = '$masp'";
+    }else{
+        $sql = "UPDATE sanpham SET TrangThai = 1 WHERE MaSP = '$masp'";
+    }
+    $result = $bussp->update($sql);
+    if ($result) {
+        // delete all chitietsanpham
+        changechitietsp($masp);
+    }
+}
+
+function changechitietsp($id){
+    global $bussp;
+    $sql = "SELECT * FROM chitietsanpham WHERE MaSP = '$id'";
+    $result = $bussp->get_list($sql);
+    if($result[0]['TrangThai'] == 1){
+    $sql = "UPDATE chitietsanpham SET TrangThai = 0 WHERE MaSP = '$id'";
+    }else{
+        $sql = "UPDATE chitietsanpham SET TrangThai = 1 WHERE MaSP = '$id'";
+    }
+    $result = $bussp->update($sql);
+    if ($result) {
+        die (json_encode(array('status' => 'successz1')));
+    }
+    die (json_encode(array('status' => 'fail')));
+}
 function deleteProduct() {
     global $bussp;
     $masp = $_POST['masp'];

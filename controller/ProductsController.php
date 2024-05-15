@@ -59,6 +59,9 @@ switch($_POST['request']) {
     case 'getAccountss':
         getAccounts();
         break;
+    case 'getProductsne':
+        getProductsne();
+        break;
     case 'capnhattrangthai':
         if(isset($_POST['id']) && isset($_POST['trangthai'])){
             $id = $_POST['id'];
@@ -258,6 +261,20 @@ function getAccounts() {
     $rownum = (new DB_driver())->get1row($countrow);
    
     $result = (new NDBUS())->get_list($query);
+
+    if ($result != null) {
+        die (json_encode(array('countrow' => $rownum['total'], 'result' => $result)));
+    }
+    die (json_encode(null));
+}
+
+function getProductsne(){
+    $query = $_POST['currentquery'];
+    // count(*) from query
+    $countrow = "SELECT count(*) as total from ($query) as total";
+    $rownum = (new DB_driver())->get1row($countrow);
+    
+    $result = (new SanPhamBUS())->get_list($query);
 
     if ($result != null) {
         die (json_encode(array('countrow' => $rownum['total'], 'result' => $result)));

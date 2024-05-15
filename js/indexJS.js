@@ -132,6 +132,19 @@ function toggleActive(clickedBtn, category) {
 }
 
 function addEventProducts() {
+  // $.ajax({
+  //   type: "POST",
+  //   url: "controller/ProductsController.php",
+  //   dataType: "json",
+  //   timeout: 1500, // sau 1.5 giây mà không phản hồi thì dừng => hiện lỗi
+  //   data: {
+  //     request: "logout",
+  //   },
+  //   success: function (data) {
+  //     console.log(data);
+  //   },
+  
+  // });
   var products = document.querySelectorAll(".scproducts__list-item");
   products.forEach(function (product) {
     product.addEventListener("click", function () {
@@ -251,10 +264,8 @@ function addEventProducts() {
 
           html += `</div>
                   <div class="box__bottom">
-                  <div class="buttons_added">
-                  <input class="minus is-form" type="button" value="-" onclick="decreasingNumber(this, ${data})">
-                  <input class="input-qty" max="100" min="1" name="" type="number" value="1">
-                  <input class="plus is-form" type="button" value="+" onclick="increasingNumber(this, ${data})">
+                   <div class="buttons_added">
+                 
                   </div>
                   <div class="btn --add" value='${data[0].MaSP}'>
                       <p>Thêm vào giỏ hàng </p>

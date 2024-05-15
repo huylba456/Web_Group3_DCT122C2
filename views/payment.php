@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/styles.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 
@@ -65,23 +65,26 @@
             <h2>
                 Thông tin đặt hàng
             </h2>
-
+            <div class="form-item" style="display:none">
+                <label for="Mã ND*">Mã ND*</label>
+                <input type="text" placeholder="Nhap ten" class="idd">
+            </div>
             <div class="form-item">
                 <label for="Ho va ten*">Họ và tên*</label>
                 <input type="text" placeholder="Nhap ten" class="name">
             </div>
 
             <div class="form-item">
-                <label for="Ho va ten*">Số điện thoại*</label>
-                <input type="text" placeholder="Nhap so dien thoai" class="sdt">
+                <label for="Email*">Email*</label>
+                <input type="text" placeholder="Nhap email" class="email">
             </div>
             
             <div class="form-item">
-                <label for="Ho va ten*">Email*</label>
-                <input type="text" placeholder="Nhap email" class="email">
+                <label for="Số điện thoại*">Số điện thoại*</label>
+                <input type="text" placeholder="Nhap so dien thoai" class="sdt">
             </div>
             <div class="form-item">
-                <label for="Ho va ten*">Dia chi*</label>
+                <label for="Dia chi*">Dia chi*</label>
                 <input type="text" placeholder="Nhap dia chi" class="diachi">
             </div>
             <button class="btn">
@@ -189,7 +192,7 @@
             </div>
     </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
     <script src="js/helper.js"></script>
     <script src="js/payment.js"></script>
     <script>
@@ -245,7 +248,6 @@
     })
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
     </script>
 

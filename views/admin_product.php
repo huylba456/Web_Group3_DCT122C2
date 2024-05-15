@@ -562,7 +562,7 @@
     <script src="js/helper.js"></script>
     <script src="js/adminproduct.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    window.onload = function() {
 
         var closeButtons = document.querySelectorAll('.modal-close');
         var updateButtons = document.querySelectorAll('.btn-update-product-form');
@@ -579,7 +579,6 @@
         var addUserTitle = document.querySelector('.add-account-e');
         var addSignupButton = document.querySelector('#signup-button');
         var updateSignupButton = document.querySelector('#btn-update-account');
-        
     
 
 
@@ -614,6 +613,17 @@
                 modal.classList.remove('open');
                 modalDetail.classList.remove('open');
                 modalSignup.classList.remove('open');
+                var modalright= document.querySelector('.modal-content-right');
+                modalright.querySelector('#ten-mon').value='';
+                modalright.querySelector('#chon-loai').value='Chọn loại';
+                modalright.querySelector('#chon-tt').value='LD';
+                modalright.querySelector('#mo-ta').value='';
+                modalright.querySelector('.rowTable').innerHTML='';
+                // var rowTable = document.querySelector(".rowTable");
+                // rowTable.innerHTML = '';
+
+                console.log(modalright.querySelector('.rowTable').innerHTML);
+                modalright.querySelectorAll('.form-group')[0].style.display="block";
             });
         });
 
@@ -651,7 +661,9 @@
             });
         });
 
-    });
+        
+
+    };
     </script>
 
 </body>

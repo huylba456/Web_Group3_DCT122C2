@@ -2,7 +2,7 @@
 require_once('BaseController.php');
 // dir to hoadonbus
 require_once(__DIR__ . '/../model/HoaDonBUS.php');
-
+require_once(__DIR__ . '/../model/NDBUS.php');
 session_start();
 
 class PaymentController extends BaseController
@@ -17,6 +17,9 @@ if (isset($_POST['request'])) {
     switch ($_POST['request']) {
         case 'dathang':
             dathang();
+            break;
+        case 'updateee':
+            updateee();
             break;
     }
 }
@@ -37,4 +40,14 @@ function dathang() {
         'TrangThai' => 0
     ];
     return (new HoaDonBUS())->add1hoadon($data, $listProduct);
+}
+function updateee() {
+    $ho= $_POST['ho'];
+    $ten = $_POST['ten'];
+    $phone = $_POST['sdt'];
+    $address = $_POST['diachi'];
+    $email = $_POST['email'];
+    $id = $_POST['id'];
+     $sql="UPDATE NguoiDung SET Ho='$ho',Ten ='$ten', SDT='$phone', Email='$email', DiaChi='$address' WHERE MaND='$id'";
+    return (new NDBUS())->updatezzz($sql);
 }

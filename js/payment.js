@@ -75,22 +75,46 @@ function loadUserInfo() {
         },
         success: function(data) {
             console.log(data);
+            document.querySelector('.idd').value = data['result'][0].MaND;
             document.querySelector('.name').value = data['result'][0].Ho + ' ' + data['result'][0].Ten; 
-            document.querySelector('.email').value = data['result'][0].SDT;
-            document.querySelector('.sdt').value = data['result'][0].Email;
+            document.querySelector('.email').value = data['result'][0].Email;
+            document.querySelector('.sdt').value = data['result'][0].SDT;
             document.querySelector('.diachi').value = data['result'][0].DiaChi;
         }
     })
 }
 
 function addeventdathang(listProduct) {
-    var dathangbtn = document.querySelector('.dathangbtn');
+    var dathangbtn = document.querySelector('.btn');
     dathangbtn.addEventListener('click', function() {
+        var id = document.querySelector('.idd').value;
         var name = document.querySelector('.name').value;
         var email = document.querySelector('.email').value;
         var sdt = document.querySelector('.sdt').value;
         var diachi = document.querySelector('.diachi').value;
         var total = document.querySelector('.price').innerHTML;
+
+let splitted = name.split(' '); // Chia chuỗi thành mảng các từ dựa trên khoảng trắng
+let firstPart = splitted.slice(0, -1).join(' '); // Lấy các phần tử từ đầu đến phần tử thứ hai cuối cùng và nối lại thành chuỗi
+let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
+
+        $.ajax({
+            url: './controller/PaymentController.php',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                request: 'updateee',
+                id: id,
+                ho: firstPart,
+                ten: secondPart,
+                email: email,
+                sdt: sdt,
+                diachi: diachi
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        });
         // delete last character
         total = total.slice(0, -1);
         // transform "," to ""

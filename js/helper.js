@@ -422,6 +422,7 @@ function addeventbutbtn() {
             var cartdiv = document.querySelector(".list");
             
             if (data) {
+              console.log(data);
               data["cart"] == null ? (data["cart"] = []) : data["cart"];
               // check current product in cart
               if (findProductInCart(data["cart"], curProduct)) {

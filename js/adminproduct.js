@@ -1,4 +1,4 @@
-var currentqueryz = "SELECT * FROM `sanpham` WHERE  sanpham.TrangThai = 1 ";
+var currentqueryz = "SELECT * FROM `sanpham` ";
 var currentRowqueryz = "SELECT COUNT(*) FROM `sanpham";
 var currentPagez = 1;
 var perPage = 8;
@@ -64,7 +64,7 @@ function loadTableProduct() {
   //     totalPage = row / perPage;
   //     totalPage = Math.ceil(totalPage);
   //     showProductTableAdmin();
-  //     renderPagAdmin(totalPage, currentPagez);
+  //     renderPagAdmin(totalPage, currentPagez);list-id
   //     addeventdelete();
   //   },
   // });
@@ -83,24 +83,91 @@ function showProductTableAdmin() {
                <span class="list-category">${item.Loai}</span>
            </div>
         </div>
-           <div class="list-right">
+          <div class="list-right">
+          <div style='display:none'>
+            <span class="list-id">${item.MaSP}</span>
+            </div>
                <div class="list-control">
                    <div class="list-tool">
-                       <button class="btn-edit" onclick="prepared()"><i class="fa-regular fa-pen-to-square"></i></button>
+                       <button class="btn-edit" onclick="prepared(this)"><i class="fa-regular fa-pen-to-square"></i></button>
                        <button class="btn-delete" value="${item.MaSP}"><i class="fa-solid fa-trash"></i></button>
                    </div>
-               </div>
-        </div>
+              </div>
+          </div>
    </div>`;
   });
   document.querySelector("#show-product").innerHTML = html;
   // var editButtons = document.querySelectorAll('.btn-edit');
   // console.log('editButtons', editButtons)
 }
-function prepared() {
+function prepared(butedit) {
   var titleModal = document.querySelector(".modal-container-title");
   var modal = document.querySelector(".add-product");
   var uploadImg = document.querySelector(".upload-image-preview");
+  var modalright= document.querySelector('.modal-content-right');
+
+  modalright.querySelectorAll('.form-group')[0].style.display="none";
+  // var showpro= document.querySelector('#show-product');
+  // lists= showpro.querySelectorAll('.list');
+  
+  var parentt=butedit.parentElement.parentElement.parentElement.parentElement;
+  console.log(parentt);
+  var nameproduct=parentt.querySelector('h4').innerHTML;
+  var listproducts=[];
+        var currentqueryy =
+      `SELECT TenSP, MaSize, MaVien, Mota, Loai from sanpham , chitietsanpham WHERE sanpham.MaSP=chitietsanpham.MaSP`
+        $.ajax({
+        url: "./controller/ProductsController.php",
+        type: "post",
+        dataType: "json",
+        timeout: 1500,
+        data: {
+          request: "getProductsne",
+          currentquery: currentqueryy,
+        },
+        success: function (data) {
+          // console.log(data.result);
+          listproducts= data.result;
+          listproducts.forEach(function (item){
+            if(nameproduct == item.TenSP)
+              {
+                modalright.querySelector('.rowTable').innerHTML='';
+                modalright.querySelector('#ten-mon').value=item.TenSP;
+                modalright.querySelector('#chon-loai').value=item.Loai;
+                modalright.querySelector('#chon-tt').value=item.MaSize+item.MaVien;
+                modalright.querySelector('#mo-ta').value=item.Mota;
+                var thuoctinh = document.querySelector('#chon-tt').value;
+                var tentt = document.querySelector('#chon-tt');
+                // get text of option
+                var tentt = tentt.options[tentt.selectedIndex].text;
+                tentt = tentt.replace("Size: ", "");
+                tentt = tentt.replace(" - ", "-");
+
+
+                if (curAttribute.has(thuoctinh)) {
+                    // alert('Thuộc tính đã tồn tại');
+                    // return 0;
+                }
+                else {
+                    curAttribute.set(thuoctinh, 
+                        {
+                            tensize: tentt.split('-')[0],
+                            tende: tentt.split('-')[1]
+                        }
+                    );
+                }
+                filltable();
+              }
+          });
+        },
+        //fail
+        error: function (data) {
+          console.log(data);
+        },
+      });
+    
+
+    
 
   uploadImg.src = "img/pizza-1.png";
   modal.classList.add("open");
@@ -191,22 +258,61 @@ function addeventdelete() {
   var btns = document.querySelectorAll(".btn-delete");
   btns.forEach(function (btn) {
     btn.addEventListener("click", function (ev) {
-      var masp = ev.target.getAttribute("value");
-      alert(masp);
+      var masp = btn.parentElement.parentElement.parentElement.querySelector(".list-id").innerHTML;
       $.ajax({
         url: "./controller/ProductManagementController.php",
         type: "POST",
         dataType: "json",
         data: {
-          request: "deleteProduct",
+          request: "checkproduct",
           masp: masp,
         },
         success: function (data) {
           console.log(data);
-          loadTableProduct();
+          if(data){
+            btn.style.backgroundColor = "red";
+          $.ajax({
+            url: "./controller/ProductManagementController.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+              request: "changeProduct",
+              masp: masp,
+            },
+            success: function (data) {
+              console.log(data);
+              loadTableProduct();
+            },
+          });
+        }
+          else{
+            if(confirm("Bạn có chắc chắn muốn xóa không?") == false) {
+              return;
+          }
+          else {
+            $.ajax({
+              url: "./controller/ProductManagementController.php",
+              type: "POST",
+              dataType: "json",
+              data: {
+                request: "deleteProduct",
+                masp: masp,
+              },
+              success: function (data) {
+                console.log(data);
+                loadTableProduct();
+              },
+            });
+          }
+          }
         },
-      });
+        error: function (data) {
+          console.log(data);
+          console.log("e"+masp);
+    },
+  });
     });
+    
   });
 }
 
