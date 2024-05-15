@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/font.css">
+    <script src="../js/nointernet1.js" crossorigin="anonymous"></script>
+    <script src="../js/nointernet2.js"></script>
 
 
 </head>

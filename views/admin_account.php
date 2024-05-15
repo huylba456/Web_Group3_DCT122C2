@@ -14,6 +14,9 @@
     <!-- <link rel="stylesheet" href="css/components.css"> -->
     <link rel="stylesheet" href="css/admin_styles1.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/nointernet1.js" crossorigin="anonymous"></script>
+    <script src="../js/nointernet2.js"></script>
+    <link rel="stylesheet" href="css/font.css">
 </head>
 
 <body>
