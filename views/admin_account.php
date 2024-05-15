@@ -904,9 +904,17 @@ let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
         search1.addEventListener('click', function() {
    var ma=document.querySelector('.admin-control-center input').value;
    document.querySelectorAll('.table tbody tr').forEach(tr => {
-    if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
+    if (tr.querySelector('td:nth-child(1)').textContent.includes(ma)) {
       tr.style.display = 'table-row';
-    } else {
+    }else if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    }else if (tr.querySelector('td:nth-child(3)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    }else if (tr.querySelector('td:nth-child(4)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    }else if (tr.querySelector('td:nth-child(5)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    }else {
       tr.style.display = 'none';
     }
 })
