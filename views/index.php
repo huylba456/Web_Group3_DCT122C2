@@ -65,7 +65,7 @@
                 </div>
                 <div class="header__action">
                     <div class="header__action-location">
-                        <i class="fa-solid fa-location-dot"></i>
+                    <a href="dhsg.html"><i class="fa-solid fa-location-dot"></i></a>
                     </div>
                     <div class="header__action-bell">
                         <i class="fa-regular fa-bell"></i>
@@ -404,7 +404,7 @@
                
                 var s=`
                     <div class="header__action-location">
-                        <i class="fa-solid fa-location-dot"></i>
+                    <a href="dhsg.html"><i class="fa-solid fa-location-dot"></i></a>
                     </div>
                     <div class="header__action-bell">
                         <i class="fa-regular fa-bell"></i>
@@ -530,7 +530,7 @@
                 logins(username.value, password.value);
                 
                 var s=` <div class="header__action-location">
-                        <i class="fa-solid fa-location-dot"></i>
+                <a href="dhsg.html"><i class="fa-solid fa-location-dot"></i></a>
                     </div>
                     <div class="header__action-bell">
                         <i class="fa-regular fa-bell"></i>
