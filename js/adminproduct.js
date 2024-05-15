@@ -270,7 +270,7 @@ function addeventdelete() {
         success: function (data) {
           console.log(data);
           if(data){
-            btn.style.backgroundColor = "red";
+            // btn.style.backgroundColor = "";
           $.ajax({
             url: "./controller/ProductManagementController.php",
             type: "POST",
