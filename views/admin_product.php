@@ -331,8 +331,8 @@
                                 <option>Chọn loại</option>
                                 <option>BÒ</option>
                                 <option>HẢI SẢN</option>
-                                <option>Món Phụ</option>
-                                <option>Nước uống</option>
+                                <option>HEO</option>
+                                <option>GÀ</option>
                             </select>
                             <span class="form-message"></span>
                         </div>
@@ -581,7 +581,7 @@
         var addUserTitle = document.querySelector('.add-account-e');
         var addSignupButton = document.querySelector('#signup-button');
         var updateSignupButton = document.querySelector('#btn-update-account');
-        var addbtnproduct = document.querySelector('#add-product-button');
+        
     
 
 
@@ -651,9 +651,6 @@
                 modal.classList.remove('open');
                 modalSignup.classList.add('open');
             });
-        });
-        addbtnproduct.addEventListener('click', function() {
-            modal.classList.remove('open');
         });
 
     });

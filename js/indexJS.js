@@ -1,5 +1,5 @@
 var currentqueryz =
-  'SELECT distinct sanpham.MaSP, TenSP, Mota, Img, Loai FROM sanpham, chitietsanpham WHERE sanpham.MaSP = chitietsanpham.MaSP and chitietsanpham.gianhap > 0 and sanpham.TrangThai = 1 and chitietsanpham.trangthai = 1';
+  'SELECT distinct sanpham.MaSP, TenSP, Mota, Img, Loai, GiaTien FROM sanpham, chitietsanpham WHERE sanpham.MaSP = chitietsanpham.MaSP and chitietsanpham.gianhap > 0 and sanpham.TrangThai = 1 and chitietsanpham.trangthai = 1 GROUP BY sanpham.MaSP';
 var currentRowqueryz =
   'SELECT COUNT(distinct sanpham.masp)  FROM sanpham, chitietsanpham WHERE sanpham.MaSP = chitietsanpham.MaSP and chitietsanpham.gianhap > 0 and sanpham.TrangThai = 1 and chitietsanpham.trangthai = 1';
 var currentPagez = 1;
@@ -137,6 +137,7 @@ function addEventProducts() {
     product.addEventListener("click", function () {
       activeloader();
       var id = product.getAttribute("value");
+      console.log("hhhh"+id);
       var popup = document.querySelector(".popup");
       // remove --none
       popup.classList.remove("--none");
@@ -152,13 +153,15 @@ function addEventProducts() {
         },
         success: function (data) {
           var datatemp = data;
-          console.log(data);
+          console.log("1:"+data);
           var from = document.querySelector('#min-price').value;
           var to = document.querySelector('#max-price').value;
-
+          console.log(from,to);
           if (from && to) {
             data = [];
-            console.log(data);
+            from=from+"000";
+            to=to+"000";
+            console.log("2:"+data);
             datatemp.forEach( function(item) {
               if (parseFloat(item.GiaTien) >= from && parseFloat(item.GiaTien) <= to) {
                 data.push(item);
@@ -166,7 +169,7 @@ function addEventProducts() {
          
             })
           }
-          console.log(data);
+          console.log("3:"+data);
           let setSize = new Set(); 
           let setVien = new Set();
           var sizearray = [];
@@ -194,7 +197,7 @@ function addEventProducts() {
               sizevien.push(obj2);
             }
           });
-          console.log(setSize);
+          console.log("4:"+setSize);
           if (data.length == 0) {
             alert("Error");
             return;
@@ -411,9 +414,9 @@ function livesearch(input, category, min, max) {
 
   // Tạo câu truy vấn với biến input
   currentqueryz =
-    "SELECT sanpham.MaSP, TenSP, Mota, Img, Loai, MaSize, MaVien, GiaTien FROM `sanpham` left join `chitietsanpham` on `sanpham`.masp=`chitietsanpham`.masp left join `loaisanpham` on chitietsanpham.masp=loaisanpham.masp WHERE sanpham.TenSP LIKE '%" +
+    "SELECT sanpham.MaSP, TenSP, Mota, Img, sanpham.Loai, MaSize, MaVien, GiaTien FROM sanpham left join chitietsanpham on sanpham.masp=chitietsanpham.masp WHERE sanpham.TenSP LIKE '%" +
     input +
-    "%' and (chitietsanpham.MASIZE='S' AND chitietsanpham.MAVIEN='M') ";
+    "%'  ";
   let category_id = 0;
 
   if (min + max != 0) {
@@ -423,24 +426,23 @@ function livesearch(input, category, min, max) {
 
   if (category != "Tất cả") {
     switch (category) {
-      case "Pizza Bo":
-        category_id = 2;
+      case "Pizza Bò":
+        category_id = 'BÒ';
         break;
-      case "Pizza Ga":
-        category_id = 1;
+      case "Pizza Gà":
+        category_id = 'GÀ';
         break;
-      case "Pizza Hai San":
-        category_id = 3;
+      case "Pizza Hải Sản":
+        category_id = 'HẢI SẢN';
         break;
-      case "Món ăn vặt":
-        category_id = 4;
-        break;
-      case "Nước uống":
-        category_id = 5;
+      
+      case "Pizza Heo":
+        category_id = 'HEO';
         break;
     }
-    currentqueryz += " and loaisanpham.maloai= " + category_id + "";
+    currentqueryz += " and sanpham.Loai= " + '"'+category_id +'"'+ "";
   }
+  currentqueryz += " GROUP BY sanpham.MaSP";
   currentPagez = 1;
   console.log(currentPagez, currentqueryz);
 
@@ -458,7 +460,9 @@ function livesearch(input, category, min, max) {
     success: function (data) {
       if (data && data.result && data.result.length > 0) {
         listProduct = data.result;
+        console.log("11:"+data.countrow);
         var totalPage = data.countrow / perPage;
+        totalPage = Math.ceil(totalPage);
         showProducts();
         renderPag(totalPage);
       } else {
@@ -469,7 +473,8 @@ function livesearch(input, category, min, max) {
       }
     },
     //fail
-    error: function () {
+    error: function (data) {
+      console.log(data);
       console.log("onii chan baka");
     },
   });
@@ -483,3 +488,36 @@ document.querySelector(".search-btn").addEventListener("click", function () {
   console.log(input, category, min, max);
   livesearch(input, category, min, max);
 });
+
+document.querySelector("#advanced-search-price-btn").addEventListener("click", function () {
+  var input = $(".form-search-input").val();
+  var category = $("#advanced-search-category-select").val();
+  var min = $("#min-price").val();
+  var max = $("#max-price").val();
+  console.log(input, category, min, max);
+  livesearch(input, category, min, max);
+});
+
+function sortascending(){
+  console.log("sort ascending");  
+  listProduct.forEach(function (item) {
+    console.log(item.GiaTien);
+  });
+  listProduct.sort(function(a, b) {
+    return parseFloat(a.GiaTien) - parseFloat(b.GiaTien);
+  });
+  showProducts();
+
+}
+function sortdescending(){
+  console.log("sort descending");
+  console.log("sortdescending");
+  console.log("gg:"+listProduct.length);
+  listProduct.forEach(function (item) {
+    console.log(item.GiaTien);
+  });
+  listProduct.sort(function(a, b) {
+    return parseFloat(b.GiaTien) - parseFloat(a.GiaTien);
+  });
+  showProducts();
+}

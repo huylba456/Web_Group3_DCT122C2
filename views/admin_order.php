@@ -187,8 +187,7 @@
                                 <option>Pizza Bò</option>
                                 <option>Pizza Gà</option>
                                 <option>Pizza Hải Sản</option>
-                                <option>Món Phụ</option>
-                                <option>Nước uống</option>
+                                <option>Pizza Heo</option>
                             </select>
                             <span class="form-message"></span>
                         </div>

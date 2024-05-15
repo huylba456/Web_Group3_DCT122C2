@@ -43,31 +43,31 @@ function loadTableProduct() {
     },
   });
 
-  $.ajax({
-    url: "./controller/ProductManagementController.php",
-    type: "POST",
-    dataType: "json",
-    data: {
-      request: "loadTableProduct",
-      currentquery: currentqueryz,
-      currentpage: currentPagez,
-    },
-    success: function (data) {
-      var row;
-      if (data == null) {
-        listProduct = [];
-        row = 0;
-      } else {
-        listProduct = data.result;
-        row = data.countrow;
-      }
-      totalPage = row / perPage;
-      totalPage = Math.ceil(totalPage);
-      showProductTableAdmin();
-      renderPagAdmin(totalPage, currentPagez);
-      addeventdelete();
-    },
-  });
+  // $.ajax({
+  //   url: "./controller/ProductManagementController.php",
+  //   type: "POST",
+  //   dataType: "json",
+  //   data: {
+  //     request: "loadTableProduct",
+  //     currentquery: currentqueryz,
+  //     currentpage: currentPagez,
+  //   },
+  //   success: function (data) {
+  //     var row;
+  //     if (data == null) {
+  //       listProduct = [];
+  //       row = 0;
+  //     } else {
+  //       listProduct = data.result;
+  //       row = data.countrow;
+  //     }
+  //     totalPage = row / perPage;
+  //     totalPage = Math.ceil(totalPage);
+  //     showProductTableAdmin();
+  //     renderPagAdmin(totalPage, currentPagez);
+  //     addeventdelete();
+  //   },
+  // });
 }
 
 function showProductTableAdmin() {
@@ -77,12 +77,12 @@ function showProductTableAdmin() {
        <div class="list-left">
        <img src="${item.Img}" alt="">;
            
-        <div class="list-info">
+           <div class="list-info">
                <h4>${item.TenSP}</h4>
                <p class="list-note">${item.Mota}</p>
                <span class="list-category">${item.Loai}</span>
            </div>
-            </div>
+        </div>
            <div class="list-right">
                <div class="list-control">
                    <div class="list-tool">
@@ -247,6 +247,7 @@ function resetInput() {
   currentPagez = 1;
   document.getElementById("the-loai").value = "Tất cả";
   loadTableProduct();
+  location.reload();
 }
 function loadCombinationSizeAndCrust() {
   $.ajax({
@@ -349,6 +350,11 @@ function addeventaddproduct() {
             contentType: false, 
             success: function(data) {
                 console.log(data);
+                var addbtnproduct = document.querySelector('#add-product-button');
+                addbtnproduct.addEventListener('click', function() {
+                  modal.classList.remove('open');
+                  
+              });
             }
         });
         

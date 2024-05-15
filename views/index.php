@@ -89,11 +89,10 @@
                         <span>Phân loại </span>
                         <select name="" id="advanced-search-category-select">
                             <option>Tất cả</option>
-                            <option>Pizza Bo </option>
-                            <option>Pizza Ga</option>
-                            <option>Pizza Hai San</option>
-                            <option>Món ăn vặt</option>
-                            <option>Nước uống</option>
+                            <option>Pizza Bò</option>
+                            <option>Pizza Gà</option>
+                            <option>Pizza Hải Sản</option>
+                            <option>Pizza Heo</option>
                         </select>
                     </div>
                     <div class="advanced-search-price">
@@ -102,21 +101,21 @@
                         <span>đến</span>
                         <input type="number" placeholder="tối đa" id="max-price" />
                         <button id="advanced-search-price-btn">
-                            <i class="fa-light fa-magnifying-glass-dollar"></i>
+                        <i class="fa-solid fa-magnifying-glass-dollar"></i>
                         </button>
                     </div>
                     <div class="advanced-search-control">
-                        <button id="sort-ascending">
-                            <i class="fa-regular fa-arrow-up-short-wide"></i>
+                        <button id="sort-ascending" onclick="sortascending()">
+                            <i class="fa-solid fa-arrow-up-short-wide"></i>
                         </button>
-                        <button id="sort-descending">
-                            <i class="fa-regular fa-arrow-down-wide-short"></i>
+                        <button id="sort-descending" onclick="sortdescending()">
+                            <i class="fa-solid fa-arrow-down-wide-short"></i>
                         </button>
-                        <button id="reset-search">
-                            <i class="fa-light fa-arrow-rotate-right"></i>
+                        <button id="reset-search" onclick="reloadsearch()">
+                            <i class="fa-solid fa-arrow-rotate-right"></i>
                         </button>
                         <button onclick="closeSearchAdvanced()">
-                            <i class="fa-light fa-xmark"></i>
+                            <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
                 </div>
@@ -688,6 +687,14 @@
             });
         });
 
+            function closeSearchAdvanced() {
+                var advancedSearch = document.querySelector(".advanced-search");
+                advancedSearch.classList.remove("--down");
+            }
+
+            function reloadsearch() {
+                location.reload();
+            }
         window.onload = function() {
             var cartIcon = document.querySelector('.fa-cart-shopping');
             var closeCartIcon = document.querySelector('.close-cart');

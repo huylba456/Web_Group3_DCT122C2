@@ -33,37 +33,6 @@ function uploadProduct() {
     $description = $_POST['mota'];
     $masp = $_POST['masp'];
 
-    // for ($i = 0; $i < count($sizelist); $i++) {
-    //     for ($j = 0; $j < count($vienlist); $j++) {
-    //         $sql = "INSERT INTO chitietsanpham(MaSP, MaSize, MaVien, GiaNhap, GiaTien, SoLuong) VALUES ('pi12zza222aa', '{$sizelist[$i]}', '{$vienlist[$j]['MaVien']}','{$arrayitem[$i]->gianhap}' ,'{$arrayitem[$i]->giaxuat}', 0)";
-    //         $result = (new SanPhamBUS())->insertz($sql);
-    //         if (!$result) {
-    //             var_dump("ppo");
-    //         }
-    //         else {
-    //             var_dump("ppp");
-    //         }
-    //     }
-    // }
-
-    // if(!empty($_FILES["up-hinh-anh"]["name"])) { 
-    //     $fileName = basename($_FILES["up-hinh-anh"]["name"]); 
-    //     // lấy loại file (đuôi file) jpg, png, gif,...
-    //     $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-        
-    //     $allowTypes = array('jpg','png','jpeg','gif'); 
-    //     // nếu mà file đó nằm trong mảng allowTypes (tức là file hợp lệ)
-    //     if(in_array($fileType, $allowTypes)) {
-    //         $image = $_FILES['up-hinh-anh']['tmp_name']; 
-    //         $imgContent = addslashes(file_get_contents($image)); 
-
-    //         $sql = "INSERT INTO sanpham(MaSP, TenSP, Mota, Img, Loai, ImgBinary) VALUES ('pi12zza', '$name', '$description', '', '$category', '$imgContent')";
-    //         $result = (new SanPhamBUS())->insertz($sql);
-    //         if ($result) {
-    //             die (json_encode(array('status' => 'success')));
-    //         }
-    //     }
-    // }
     
     if (isset($_FILES['up-hinh-anh'])) {
         global $bussp;
@@ -80,11 +49,11 @@ function uploadProduct() {
         } else {
             $uploadFile = './images/pizzaimg/pizza_temp.jpg';
         }
+
         // them sp vao db
         $sql = "INSERT INTO sanpham(MaSP, TenSP, Mota, Img, Loai) VALUES ('$masp', '$name', '$description', '$uploadFile', '$category')";
         $result = $bussp->insertz($sql);
 
-        if ($result) {
             // add chitietsanpham
             // convert to arrray $_POST['chitietsanpham'];
             
@@ -92,16 +61,13 @@ function uploadProduct() {
             foreach ($listchitiet as $item) {
                 $sql = "INSERT INTO chitietsanpham(MaSP, MaSize, MaVien, GiaNhap, GiaTien, SoLuong) VALUES ('$masp', '{$item['masize']}', '{$item['made']}','0' ,'0', 0)";
                 $result = $bussp->insertz($sql);
-                if (!$result) {
-                    die (json_encode(array('status' => 'fail')));
-                }
-            }
-            die (json_encode(array('status' => 'success')));
+
+        if (!$result) {
+            die (json_encode(array('status' => 'fail')));
         }
     }
-
-
-    
+    die (json_encode(array('status' => 'success')));
+    }
 
     die (json_encode(array('status' => 'fail')));
 }
