@@ -111,6 +111,7 @@
                             <option value="1">Hoạt động</option>
                             <option value="0">Bị khóa</option>
                         </select>
+                        &nbsp;<button id="Search2"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     <div class="admin-control-center">
                     &nbsp; <input id="form-search-user" type="text" class="form-search-input"
@@ -939,7 +940,28 @@ function filterByDateRange() {
     }
 }
 
+
     </script>
+    <!-- <script>
+        const search2 = document.getElementById('Search2');
+        var selectElement = document.getElementById('tinh-trang-user');
+        var ba=selectElement.value;
+        if(ba == 0){
+            ba = 'Bị khóa';
+        } else if(ba == 1){
+            ba = 'Hoạt động';
+        }else {ba = 'Tất cả';}
+        search2.addEventListener('click', function() {
+   document.querySelectorAll('.table tbody tr').forEach(tr => {
+    if (tr.querySelector('td:nth-child(7)').textContent.includes(ba)) {
+      tr.style.display = 'table-row';
+    } else {
+      tr.style.display = 'none';
+    }
+})
+})
+    console.log(ba);
+    </script> -->
 </body>
 
 </html>
