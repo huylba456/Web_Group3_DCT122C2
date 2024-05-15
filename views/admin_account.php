@@ -955,12 +955,16 @@ function filterByDateRange() {
    document.querySelectorAll('.table tbody tr').forEach(tr => {
     if (tr.querySelector('td:nth-child(7)').textContent.includes(ba)) {
       tr.style.display = 'table-row';
-    } else {
+    }
+    else if (ba == 'Tất cả') {
+      tr.style.display = 'table-row';
+    }
+    else {
       tr.style.display = 'none';
     }
 })
 })
-    console.log(ba);
+    
     </script> -->
 </body>
 
