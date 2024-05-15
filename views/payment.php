@@ -28,7 +28,14 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/styles.css">
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+=======
+    <link rel="stylesheet" href="css/font.css">
+    <script src="../js/nointernet1.js" crossorigin="anonymous"></script>
+    <script src="../js/nointernet2.js"></script>
+
+>>>>>>> 5868ea7dd21e626367e08d7d231022b6331118b1
 
 </head>
 

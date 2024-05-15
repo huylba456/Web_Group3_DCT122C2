@@ -14,6 +14,9 @@
     <!-- <link rel="stylesheet" href="css/components.css"> -->
     <link rel="stylesheet" href="css/admin_styles1.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/nointernet1.js" crossorigin="anonymous"></script>
+    <script src="../js/nointernet2.js"></script>
+    <link rel="stylesheet" href="css/font.css">
 </head>
 
 <body>
@@ -108,6 +111,7 @@
                             <option value="1">Hoạt động</option>
                             <option value="0">Bị khóa</option>
                         </select>
+                        &nbsp;<button id="Search2"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     <div class="admin-control-center">
                     &nbsp; <input id="form-search-user" type="text" class="form-search-input"
@@ -900,9 +904,17 @@ let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
         search1.addEventListener('click', function() {
    var ma=document.querySelector('.admin-control-center input').value;
    document.querySelectorAll('.table tbody tr').forEach(tr => {
-    if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
+    if (tr.querySelector('td:nth-child(1)').textContent.includes(ma)) {
       tr.style.display = 'table-row';
-    } else {
+    }else if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    }else if (tr.querySelector('td:nth-child(3)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    }else if (tr.querySelector('td:nth-child(4)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    }else if (tr.querySelector('td:nth-child(5)').textContent.includes(ma)) {
+      tr.style.display = 'table-row';
+    }else {
       tr.style.display = 'none';
     }
 })
@@ -936,7 +948,32 @@ function filterByDateRange() {
     }
 }
 
+
     </script>
+    <!-- <script>
+        const search2 = document.getElementById('Search2');
+        var selectElement = document.getElementById('tinh-trang-user');
+        var ba=selectElement.value;
+        if(ba == 0){
+            ba = 'Bị khóa';
+        } else if(ba == 1){
+            ba = 'Hoạt động';
+        }else {ba = 'Tất cả';}
+        search2.addEventListener('click', function() {
+   document.querySelectorAll('.table tbody tr').forEach(tr => {
+    if (tr.querySelector('td:nth-child(7)').textContent.includes(ba)) {
+      tr.style.display = 'table-row';
+    }
+    else if (ba == 'Tất cả') {
+      tr.style.display = 'table-row';
+    }
+    else {
+      tr.style.display = 'none';
+    }
+})
+})
+    
+    </script> -->
 </body>
 
 </html>

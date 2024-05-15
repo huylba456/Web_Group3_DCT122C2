@@ -36,8 +36,14 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/notification.css">
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
+=======
+    <link rel="stylesheet" href="css/font.css">
+    <script src="../js/nointernet1.js" crossorigin="anonymous"></script>
+    <script src="../js/nointernet2.js"></script>
+>>>>>>> 5868ea7dd21e626367e08d7d231022b6331118b1
 </head>
 
 <body>
@@ -65,7 +71,7 @@
                 </div>
                 <div class="header__action">
                     <div class="header__action-location">
-                        <i class="fa-solid fa-location-dot"></i>
+                    <a href="dhsg.html"><i class="fa-solid fa-location-dot"></i></a>
                     </div>
                     <div class="header__action-bell">
                         <i class="fa-regular fa-bell"></i>
@@ -535,7 +541,63 @@ function loaddd() {
             if (checkForm) {
                 // alert("Đăng nhập thành công!" + email.value + " " + password.value);
                 loginz(username.value, password.value);  
+<<<<<<< HEAD
                 location.reload();
+=======
+               
+                var s=`
+                    <div class="header__action-location">
+                    <a href="dhsg.html"><i class="fa-solid fa-location-dot"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=HistoryBillController&action=index"><i class="fa-solid fa-file-invoice"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href='?logout=true' id='logout'><i class="fa-solid fa-right-from-bracket"></i></a>
+                    </div>
+                    <div class="header__action-member">
+                        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+                        <p>${username.value}</p>
+                    </div>`;
+                    document.querySelector('.header__action').innerHTML=s;
+
+                    var cartIcon = document.querySelector('.fa-cart-shopping');
+            var closeCartIcon = document.querySelector('.close-cart');
+            var wrapperRight = document.querySelector('.wrapper__right');
+            var wrapperLeft = document.querySelector('.wrapper__left');
+            var scproductsList = document.querySelector('.scproducts__list');
+            var items = document.querySelectorAll('.scproducts__list-item');
+
+            cartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'block';
+                wrapperLeft.style.width = '75%';
+                scproductsList.style.padding = '30px 0px';
+                scproductsList.style.gap = '5px';
+                items.forEach(function(item) {
+                    item.style.width = '24.5%';
+                });
+            });
+
+            closeCartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'none';
+                wrapperLeft.style.width = '100%';
+                scproductsList.style.padding = '';
+                scproductsList.style.gap = '';
+                items.forEach(function(item) {
+                    item.style.width = '';
+                });
+            });
+
+                formError.style.display = "none";
+>>>>>>> 5868ea7dd21e626367e08d7d231022b6331118b1
                 // email.value = "";
                 // password.value = "";
             } else {
@@ -610,7 +672,65 @@ function loaddd() {
             if (checkForm) {
                 // alert("Đăng nhập thành công!" + email.value + " " + password.value);
                 logins(username.value, password.value);
+<<<<<<< HEAD
                 location.reload();
+=======
+                
+                var s=` <div class="header__action-location">
+                <a href="dhsg.html"><i class="fa-solid fa-location-dot"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=HistoryBillController&action=index"><i class="fa-solid fa-file-invoice"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href="index.php?controller=AdminIndexController&action=index"><i class="fa-solid fa-sliders"></i></a>
+                    </div>
+                    <div class="header__action-bell">
+                        <a href='?logout=true' id='logout'><i class="fa-solid fa-right-from-bracket"></i></a>
+                    </div>
+                    <div class="header__action-member">
+                        <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
+                        <p>${username.value}</p>
+                    </div>`;
+        document.querySelector('.header__action').innerHTML=s;
+     
+        var cartIcon = document.querySelector('.fa-cart-shopping');
+            var closeCartIcon = document.querySelector('.close-cart');
+            var wrapperRight = document.querySelector('.wrapper__right');
+            var wrapperLeft = document.querySelector('.wrapper__left');
+            var scproductsList = document.querySelector('.scproducts__list');
+            var items = document.querySelectorAll('.scproducts__list-item');
+
+            cartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'block';
+                wrapperLeft.style.width = '75%';
+                scproductsList.style.padding = '30px 0px';
+                scproductsList.style.gap = '5px';
+                items.forEach(function(item) {
+                    item.style.width = '24.5%';
+                });
+            });
+
+            closeCartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                wrapperRight.style.display = 'none';
+                wrapperLeft.style.width = '100%';
+                scproductsList.style.padding = '';
+                scproductsList.style.gap = '';
+                items.forEach(function(item) {
+                    item.style.width = '';
+                });
+            });
+
+                formError.style.display = "none";
+>>>>>>> 5868ea7dd21e626367e08d7d231022b6331118b1
                 // email.value = "";
                 // password.value = "";
             } else {
