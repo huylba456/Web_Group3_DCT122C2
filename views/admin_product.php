@@ -113,9 +113,9 @@
                         </select>
                     </div>
                     <div class="admin-control-center">
-                    &nbsp;<button id="Search1"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <input id="form-search-user" type="text" class="form-search-input"
+                    &nbsp;  <input id="form-search-user" type="text" class="form-search-input"
                             placeholder="Tìm kiếm khách hàng..." oninput="showUser()">
+                            &nbsp;<button id="Search1"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     <div class="admin-control-right">
                         <button class="btn-control-large" id="btn-cancel-product" onclick="resetInput()"><i
