@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="admin.css"> -->
-    <script src="https://kit.fontawesome.com/3dff50b2d8.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/3dff50b2d8.js" crossorigin="anonymous"></script> -->
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../css/reset.css">
     <!-- <link rcáel="stylesheet" href="../css/variables.css"> -->
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/admin_styles.css">
     <link rel="stylesheet" href="css/font.css">
-    <script src="../js/nointernet1.js" crossorigin="anonymous"></script>
-    <script src="../js/nointernet2.js"></script>
+    <script src="js/nointernet1.js" crossorigin="anonymous"></script>
+    <script src="js/nointernet2.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-pro-v6-6.2.0/css/all.min.css" />
     <!-- <link rel="stylesheet" href="../css/styles.css"> -->
 </head>
 
