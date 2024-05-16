@@ -153,8 +153,8 @@ function changechitietsp($id){
 function deleteProduct() {
     global $bussp;
     $masp = $_POST['masp'];
-    $sql = "UPDATE sanpham SET TrangThai = 0 WHERE MaSP = '$masp'";
-    $result = $bussp->update($sql);
+    $sql = "DELETE FROM sanpham WHERE MaSP = '$masp'";
+    $result = $bussp->deleteee($sql);
     if ($result) {
         // delete all chitietsanpham
         deletechitietsp($masp);
@@ -172,8 +172,8 @@ function deleteProduct() {
 
 function deletechitietsp($id) {
     global $bussp;
-    $sql = "UPDATE chitietsanpham SET TrangThai = 0 WHERE MaSP = '$id'";
-    $result = $bussp->update($sql);
+    $sql = "DELETE FROM chitietsanpham WHERE MaSP = '$id'";
+    $result = $bussp->deleteee($sql);
     if ($result) {
         die (json_encode(array('status' => 'successz1')));
     }

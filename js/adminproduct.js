@@ -8,6 +8,8 @@ var listSizeProduct = [];
 var curAttribute = new Map();
 var totalPage = 0;
 var flag = 0;
+var btn='';
+var index=0;
 loadTableProduct();
 loadCombinationSizeAndCrust();
 addeventinputthemsp();
@@ -16,7 +18,7 @@ addeventthemthuoctinh();
 loadcomcomboboxtheloai();
 
 var listProduct;
-function loadTableProduct() {
+function loadTableProduct(btn,index) {
   $.ajax({
     url: "./controller/ProductManagementController.php",
     type: "POST",
@@ -37,7 +39,7 @@ function loadTableProduct() {
       }
       totalPage = row / perPage;
       totalPage = Math.ceil(totalPage);
-      showProductTableAdmin();
+      showProductTableAdmin(btn,index);
       renderPagAdmin(totalPage, currentPagez);
       addeventdelete();
     },
@@ -70,9 +72,13 @@ function loadTableProduct() {
   // });
 }
 
-function showProductTableAdmin() {
+function showProductTableAdmin(btnn,indexx) {
   var html = "";
-  listProduct.forEach(function (item) {
+  listProduct.forEach(function (item,i) {
+    var faaa='<i class="fa-solid fa-trash"></i>';
+    if(i==indexx){
+      var faaa=btnn;
+    }
     html += `<div class="list">
        <div class="list-left">
        <img src="${item.Img}" alt="">;
@@ -90,7 +96,7 @@ function showProductTableAdmin() {
                <div class="list-control">
                    <div class="list-tool">
                        <button class="btn-edit" onclick="prepared(this)"><i class="fa-regular fa-pen-to-square"></i></button>
-                       <button class="btn-delete" value="${item.MaSP}"><i class="fa-solid fa-trash"></i></button>
+                       <button class="btn-delete" value="${item.MaSP}">${faaa}</button>
                    </div>
               </div>
           </div>
@@ -256,8 +262,10 @@ function themsanphammoi() {}
 
 function addeventdelete() {
   var btns = document.querySelectorAll(".btn-delete");
-  btns.forEach(function (btn) {
+  btns.forEach(function (btn,index) {
     btn.addEventListener("click", function (ev) {
+      console.log("sadsad"+index);
+      var faa='';
       var masp = btn.parentElement.parentElement.parentElement.querySelector(".list-id").innerHTML;
       $.ajax({
         url: "./controller/ProductManagementController.php",
@@ -268,20 +276,27 @@ function addeventdelete() {
           masp: masp,
         },
         success: function (data) {
-          console.log(data.length);
-          // if(btn.style.backgroundColor == "red"){
-          //   btn.style.backgroundColor = "green";
-          // }
-          // else {
-          //   btn.style.backgroundColor = "red";
-          //   }
+          if(btn.querySelector('i').classList.contains('fa-trash')){
+            faa='<i class="fa-solid fa-lock"></i>';
+          }
+          else if(btn.querySelector('i').classList.contains('fa-lock')){
+            faa='<i class="fa-solid fa-unlock"></i>';
+          }
+          else if(btn.querySelector('i').classList.contains('fa-unlock')){
+            faa='<i class="fa-solid fa-lock"></i>';
+          }
+
           if(data.length){
-            // if(btn.style.backgroundColor == "red"){
-            //   btn.style.backgroundColor = "green";
-            // }
-            // else {
-            //   btn.style.backgroundColor = "red";
-            //   }
+            if(btn.querySelector('i').classList.contains('fa-trash')){
+              btn.innerHTML ='<i class="fa-solid fa-lock"></i>';
+            }
+            else if(btn.querySelector('i').classList.contains('fa-lock')){ 
+              btn.innerHTML ='<i class="fa-solid fa-unlock"></i>';
+              }
+            else if(btn.querySelector('i').classList.contains('fa-unlock')){ 
+              btn.innerHTML ='<i class="fa-solid fa-lock"></i>';
+              }
+
           $.ajax({
             url: "./controller/ProductManagementController.php",
             type: "POST",
@@ -292,7 +307,7 @@ function addeventdelete() {
             },
             success: function (data) {
               console.log(data);
-              loadTableProduct();
+              loadTableProduct(faa,index);
             },
           });
         }
