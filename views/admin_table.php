@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="css/font.css">
     <script src="js/nointernet1.js" crossorigin="anonymous"></script>
     <script src="js/nointernet2.js"></script>
+    <script src="js/nointernet3.js"></script>
     <link rel="stylesheet" href="css/font-awesome-pro-v6-6.2.0/css/all.min.css" />
+    
 </head>
 
 <body>
@@ -343,8 +345,17 @@
 
     });
     </script> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  -->
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<<<<<<< HEAD
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+=======
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+>>>>>>> ad0ae9ef34f2273c2da4aa67188cef718146b04d
     <script src="js/statistic.js"></script>
     <script>
         function cancelSearchTable(){
