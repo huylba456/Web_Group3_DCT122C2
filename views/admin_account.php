@@ -993,7 +993,9 @@ function filterByDateRange() {
     }
 })
 })
-    
+    function cancelSearchUser(){
+        location.reload();
+    }
     </script>
 </body>
 
