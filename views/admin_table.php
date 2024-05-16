@@ -34,7 +34,7 @@
             </div>
             <div class="middle-sidebar">
                 <ul class="sidebar-list">
-                    <li class="sidebar-list-item tab-content active">
+                    <li class="sidebar-list-item tab-content">
                         <a href="index.php?controller=AdminIndexController&action=index" class="sidebar-link">
                             <div class="sidebar-icon"><i class="fa-solid fa-house"></i></div>
                             <div class="hidden-sidebar">Trang tổng quan</div>
@@ -64,7 +64,7 @@
                             <div class="hidden-sidebar">Nhập hàng</div>
                         </a>
                     </li>
-                    <li class="sidebar-list-item tab-content">
+                    <li class="sidebar-list-item tab-content active">
                         <a href="index.php?controller=AdminStatisticController&action=index" class="sidebar-link">
                             <div class="sidebar-icon"><i class="fa-solid fa-chart-simple"></i></div>
                             <div class="hidden-sidebar">Thống kê</div>
@@ -146,7 +146,7 @@
                                 class="fa-solid fa-arrow-up-short-wide"></i></button>
                         <button class="btn-reset-order" onclick="thongKe(2)"><i
                                 class="fa-solid fa-arrow-down-wide-short"></i></button>
-                        <button class="btn-reset-order" onclick="thongKe(0)"><i
+                            <button class="btn-reset-order" onclick="cancelSearchTable()"><i
                                 class="fa-solid fa-rotate-right"></i></button>
                     </div>
                 </div>
@@ -346,6 +346,11 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/statistic.js"></script>
+    <script>
+        function cancelSearchTable(){
+            location.reload();
+        }
+    </script>
 
 </body>
 

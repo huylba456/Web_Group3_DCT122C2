@@ -35,7 +35,7 @@
             </div>
             <div class="middle-sidebar">
                 <ul class="sidebar-list">
-                    <li class="sidebar-list-item tab-content active">
+                    <li class="sidebar-list-item tab-content">
                         <a href="index.php?controller=AdminIndexController&action=index" class="sidebar-link">
                             <div class="sidebar-icon"><i class="fa-solid fa-house"></i></div>
                             <div class="hidden-sidebar">Trang tổng quan</div>
@@ -47,7 +47,7 @@
                             <div class="hidden-sidebar">Sản phẩm</div>
                         </a>
                     </li>
-                    <li class="sidebar-list-item tab-content">
+                    <li class="sidebar-list-item tab-content active">
                         <a href="index.php?controller=AccountManagementController&action=index" class="sidebar-link">
                             <div class="sidebar-icon"><i class="fa-solid fa-users"></i></i></div>
                             <div class="hidden-sidebar">Tài khoản</div>
@@ -107,16 +107,17 @@
             <div class="section active">
                 <div class="admin-control">
                     <div class="admin-control-left">
-                        <select name="tinh-trang-user" id="tinh-trang-user" onchange="showUser()">
+                        <select name="tinh-trang-user" id="tinh-trang-user" >
                             <option value="2">Tất cả</option>
                             <option value="1">Hoạt động</option>
                             <option value="0">Bị khóa</option>
                         </select>
-                        &nbsp;<button id="Search2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        
                     </div>
                     <div class="admin-control-center">
                     &nbsp; <input id="form-search-user" type="text" class="form-search-input"
-                            placeholder="Tìm kiếm khách hàng..." oninput="showUser()">
+                            placeholder="Tìm kiếm khách hàng..." > 
+                            <!-- oninput="showUser()" -->
                             &nbsp;<button id="Search1"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     <div class="admin-control-right">
@@ -128,7 +129,7 @@
                             <div>
                                 <label for="time-end">Đến</label>
                                 <input type="date" class="form-control-date" id="time-end-user" onchange="showUser()">
-                            </div>.
+                            </div>
                         </form>
                         <button class="btn-reset-order" onclick="cancelSearchUser()"><i
                                 class="fa-solid fa-rotate-right"></i></button>
@@ -902,22 +903,38 @@ let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
     </script>
     <script>
         const search1 = document.getElementById('Search1');
+        
         search1.addEventListener('click', function() {
+            var searchTerm = document.querySelector('.admin-control-center input').value.toLowerCase();
    var ma=document.querySelector('.admin-control-center input').value;
    document.querySelectorAll('.table tbody tr').forEach(tr => {
-    if (tr.querySelector('td:nth-child(1)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else if (tr.querySelector('td:nth-child(3)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else if (tr.querySelector('td:nth-child(4)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else if (tr.querySelector('td:nth-child(5)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else {
-      tr.style.display = 'none';
-    }
+    let found = false; // Flag to track if the search term is found in any cell
+        
+        // Loop through each cell in the current row
+        tr.querySelectorAll('td').forEach(td => {
+            if (td.textContent.toLowerCase().includes(searchTerm)) {
+                found = true; // Set the flag to true if the search term is found in any cell
+            }
+        });
+        
+    // if (tr.querySelector('td:nth-child(1)').textContent.includes(ma) ) {
+    //   tr.style.display = 'table-row';
+    // }else if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
+    //   tr.style.display = 'table-row';
+    // }else if (tr.querySelector('td:nth-child(3)').textContent.includes(ma)) {
+    //   tr.style.display = 'table-row';
+    // }else if (tr.querySelector('td:nth-child(4)').textContent.includes(ma)) {
+    //   tr.style.display = 'table-row';
+    // }else if (tr.querySelector('td:nth-child(5)').textContent.includes(ma)) {
+    //   tr.style.display = 'table-row';
+    // }else {
+    //   tr.style.display = 'none';
+    // }
+    if (found) {
+            tr.style.display = 'table-row'; // Show the row
+        } else {
+            tr.style.display = 'none'; // Hide the row
+        }
 })
 })
     </script>
@@ -951,16 +968,19 @@ function filterByDateRange() {
 
 
     </script>
-    <!-- <script>
+    <script>
         const search2 = document.getElementById('Search2');
         var selectElement = document.getElementById('tinh-trang-user');
-        var ba=selectElement.value;
+        console.log(selectElement)
+        
+        selectElement.addEventListener('click', function() {
+            var ba=selectElement.value;
+        console.log(ba)
         if(ba == 0){
             ba = 'Bị khóa';
         } else if(ba == 1){
             ba = 'Hoạt động';
         }else {ba = 'Tất cả';}
-        search2.addEventListener('click', function() {
    document.querySelectorAll('.table tbody tr').forEach(tr => {
     if (tr.querySelector('td:nth-child(7)').textContent.includes(ba)) {
       tr.style.display = 'table-row';
@@ -973,8 +993,10 @@ function filterByDateRange() {
     }
 })
 })
-    
-    </script> -->
+    function cancelSearchUser(){
+        location.reload();
+    }
+    </script>
 </body>
 
 </html>
