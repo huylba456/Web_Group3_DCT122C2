@@ -350,12 +350,11 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  -->
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-<<<<<<< HEAD
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-=======
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
->>>>>>> ad0ae9ef34f2273c2da4aa67188cef718146b04d
     <script src="js/statistic.js"></script>
     <script>
         function cancelSearchTable(){
