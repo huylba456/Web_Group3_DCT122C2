@@ -17,7 +17,7 @@
     <script src="js/nointernet1.js" crossorigin="anonymous"></script>
     <script src="js/nointernet2.js"></script>
     <link rel="stylesheet" href="css/font-awesome-pro-v6-6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="css/font.css">
+    <!-- <link rel="stylesheet" href="css/font.css"> -->
 </head>
 
 <body>

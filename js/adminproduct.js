@@ -268,9 +268,20 @@ function addeventdelete() {
           masp: masp,
         },
         success: function (data) {
-          console.log(data);
-          if(data){
-            btn.style.backgroundColor = "";
+          console.log(data.length);
+          // if(btn.style.backgroundColor == "red"){
+          //   btn.style.backgroundColor = "green";
+          // }
+          // else {
+          //   btn.style.backgroundColor = "red";
+          //   }
+          if(data.length){
+            // if(btn.style.backgroundColor == "red"){
+            //   btn.style.backgroundColor = "green";
+            // }
+            // else {
+            //   btn.style.backgroundColor = "red";
+            //   }
           $.ajax({
             url: "./controller/ProductManagementController.php",
             type: "POST",

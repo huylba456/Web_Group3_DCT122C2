@@ -782,7 +782,7 @@ tbody tr td {
 }
 
 .btn-delete {
-  background-color: var(--red);
+  background-color: red;
   color: white;
 }
 
