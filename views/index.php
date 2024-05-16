@@ -77,9 +77,9 @@
                     <div class="header__action-location" >
                     <a href="dhsg.html"><i class="fa-solid fa-location-dot" style='color:red'></i></a>
                     </div>
-                    <div class="header__action-bell">
+                    <!-- <div class="header__action-bell">
                         <i class="fa-regular fa-bell"></i>
-                    </div>
+                    </div> -->
                     <div class="header__action-bell">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
@@ -297,9 +297,7 @@ function loaddd() {
                     <div class="header__action-location" >
                         <i class="fa-solid fa-location-dot" style='color:red'></i>
                     </div>
-                    <div class="header__action-bell">
-                        <i class="fa-regular fa-bell"></i>
-                    </div>
+                    
                     <div class="header__action-bell">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
@@ -354,9 +352,7 @@ function loaddd() {
             var s=` <div class="header__action-location" >
                         <i class="fa-solid fa-location-dot" style='color:red'></i>
                     </div>
-                    <div class="header__action-bell">
-                        <i class="fa-regular fa-bell"></i>
-                    </div>
+                    
                     <div class="header__action-bell">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>

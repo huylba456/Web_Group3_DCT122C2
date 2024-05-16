@@ -69,9 +69,9 @@ CREATE TABLE `NguoiDung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `NguoiDung` (`MaND`, `Ho`, `Ten`, `GioiTinh`, `SDT`, `Email`, `DiaChi`) VALUES
-('ND01', 'Nguyen The', 'Kiet', 'Nam', '0123456789', 'trungky@gmail.com', 'Dak Lag'),
+('ND01', 'Nguyen The', 'Kiet', 'Nam', '0999999999', 'trungky@gmail.com', 'Dak Lag'),
 ('ND02', 'Nguyen The', 'Kien', 'Nam', '0123456789', 'bbn@gmail.com', 'Dak Lag'),
-('ND03', 'Nguyen The', 'Khai', 'Nam', '0123456789', 'asd@gmail.com', 'Dak Lag');
+('ND03', 'Nguyen The', 'Khai', 'Nam', '0123456789', 'asd@gmail.com', 'Bien Hoa');
 
 
 CREATE TABLE `NhanVien` ( 
@@ -88,8 +88,8 @@ CREATE TABLE `NhanVien` (
 
 INSERT INTO `NhanVien` (`MaNV`, `Ho`, `Ten`, `GioiTinh`, `SDT`, `Email`, `DiaChi`, `PhanQuyen`) VALUES
 ('NV01', 'Nguyen The', 'Hanh', 'Nam', '0123456789', 'trung@gmail.com', 'Dak Lak', 1),
-('NV02', 'Nguyen The', 'Hung', 'Nam', '0123456789', 'abc@gmail.com', 'Dak Lak', 2),
-('NV03', 'Nguyen The', 'Huy', 'Nam', '0123456789', 'skd@gmail.com', 'Dak Lak', 3);
+('NV02', 'Nguyen The', 'Hung', 'Nam', '0888888888', 'abc@gmail.com', 'Dak Lak', 2),
+('NV03', 'Nguyen The', 'Huy', 'Nam', '0123456789', 'skd@gmail.com', 'Bien Hoa', 3);
 
 
 CREATE TABLE `HoaDon` (
@@ -180,7 +180,15 @@ CREATE TABLE `SanPham` (
 INSERT INTO `SanPham` (`MaSP`, `TenSP`, `Mota`, `Img`, `Loai`) VALUES
 ('PBBQ', 'PIZZA GÀ BBQ', 'Xốt cà chua, gà, mozzarella, hành tây tím, ba rọi xông khói, xốt BBQ.', './images/pizzaimg/bbq.jpg', 'GÀ'),
 ('PBD', 'PIZZA BÒ XỐT DEMI', 'Bò bằm, hành tây tím, ớt chuông, cà chua, mozzarella, xốt demi glace.', './images/pizzaimg/bodemi.jpg', 'BÒ'),
+('PCA', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
+('PCBB', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
+('PCC', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
+('PCD', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
+('PCE', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
+('PCF', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
+('PCG', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
 ('PCH', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
+('PCJ', 'PIZZA HẢI SẢN PESTO', 'Xốt ranch, mozzarella, hành tây tím, xốt pesto, tôm, mực, thanh cua.', './images/pizzaimg/cahoi.jpg', 'HẢI SẢN'),
 ('PPR', 'PIZZA DOUBLE PEPPERONI', 'Xốt cà chua, mozzarella, xúc xích Ý (pepperoni).', './images/pizzaimg/peppe.jpg', 'HEO'),
 ('PHS', 'PIZZA HẢI SẢN DODO', 'Xốt ranch, mozzarella, hành tây tím, tôm, mực, thanh cua, mè, nori', './images/pizzaimg/haisandodo.jpg', 'HẢI SẢN'),
 ('PGM', 'PIZZA GÀ PHÔ MAI XANH', 'Xốt kem, gà bơ tỏi, mozzarella, hành tây tím, cà chua Đà Lạt, phô mai xanh.', './images/pizzaimg/gaphomaixanh.jpg', 'GÀ'),
@@ -250,6 +258,15 @@ INSERT INTO `ChiTietSanPham` (`MaSP`, `MaSize`, `MaVien`, `GiaNhap` ,`GiaTien`) 
 ('PBBQ', 'S', 'V', '119000', '119000'),
 ('PBBQ', 'M', 'V', '129000', '129000'),
 ('PBBQ', 'L', 'V', '139000', '139000'),
+('PCA', 'L', 'D', '139000', '139000'),
+('PCBB', 'L', 'D', '139000', '139000'),
+('PCC', 'L', 'D', '139000', '139000'),
+('PCD', 'L', 'D', '139000', '139000'),
+('PCE', 'L', 'D', '139000', '139000'),
+('PCF', 'L', 'D', '139000', '139000'),
+('PCG', 'L', 'D', '139000', '139000'),
+('PCH', 'L', 'D', '139000', '139000'),
+('PCJ', 'L', 'D', '139000', '139000'),
 ('PBD', 'S', 'M','119000', '119000'),
 ('PBD', 'M', 'M', '129000', '129000'),
 ('PBD', 'L', 'M', '139000', '139000'),
