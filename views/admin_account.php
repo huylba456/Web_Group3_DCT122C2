@@ -129,7 +129,7 @@
                             <div>
                                 <label for="time-end">Đến</label>
                                 <input type="date" class="form-control-date" id="time-end-user" onchange="showUser()">
-                            </div>.
+                            </div>
                         </form>
                         <button class="btn-reset-order" onclick="cancelSearchUser()"><i
                                 class="fa-solid fa-rotate-right"></i></button>
