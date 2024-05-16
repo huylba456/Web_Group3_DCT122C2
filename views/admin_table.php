@@ -345,13 +345,13 @@
 
     });
     </script> -->
-<<<<<<< HEAD
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  -->
-=======
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
->>>>>>> 3d38f7faa46986a5b6f7a91fc94b5a3e52415fe7
+
     <script src="js/statistic.js"></script>
     <script>
         function cancelSearchTable(){
