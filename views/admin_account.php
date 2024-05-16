@@ -107,16 +107,17 @@
             <div class="section active">
                 <div class="admin-control">
                     <div class="admin-control-left">
-                        <select name="tinh-trang-user" id="tinh-trang-user" onchange="showUser()">
+                        <select name="tinh-trang-user" id="tinh-trang-user" >
                             <option value="2">Tất cả</option>
                             <option value="1">Hoạt động</option>
                             <option value="0">Bị khóa</option>
                         </select>
-                        &nbsp;<button id="Search2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        
                     </div>
                     <div class="admin-control-center">
                     &nbsp; <input id="form-search-user" type="text" class="form-search-input"
-                            placeholder="Tìm kiếm khách hàng..." oninput="showUser()">
+                            placeholder="Tìm kiếm khách hàng..." > 
+                            <!-- oninput="showUser()" -->
                             &nbsp;<button id="Search1"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                     <div class="admin-control-right">
@@ -902,22 +903,38 @@ let secondPart = splitted.slice(-1)[0]; // Lấy phần tử cuối cùng
     </script>
     <script>
         const search1 = document.getElementById('Search1');
+        
         search1.addEventListener('click', function() {
+            var searchTerm = document.querySelector('.admin-control-center input').value.toLowerCase();
    var ma=document.querySelector('.admin-control-center input').value;
    document.querySelectorAll('.table tbody tr').forEach(tr => {
-    if (tr.querySelector('td:nth-child(1)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else if (tr.querySelector('td:nth-child(3)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else if (tr.querySelector('td:nth-child(4)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else if (tr.querySelector('td:nth-child(5)').textContent.includes(ma)) {
-      tr.style.display = 'table-row';
-    }else {
-      tr.style.display = 'none';
-    }
+    let found = false; // Flag to track if the search term is found in any cell
+        
+        // Loop through each cell in the current row
+        tr.querySelectorAll('td').forEach(td => {
+            if (td.textContent.toLowerCase().includes(searchTerm)) {
+                found = true; // Set the flag to true if the search term is found in any cell
+            }
+        });
+        
+    // if (tr.querySelector('td:nth-child(1)').textContent.includes(ma) ) {
+    //   tr.style.display = 'table-row';
+    // }else if (tr.querySelector('td:nth-child(2)').textContent.includes(ma)) {
+    //   tr.style.display = 'table-row';
+    // }else if (tr.querySelector('td:nth-child(3)').textContent.includes(ma)) {
+    //   tr.style.display = 'table-row';
+    // }else if (tr.querySelector('td:nth-child(4)').textContent.includes(ma)) {
+    //   tr.style.display = 'table-row';
+    // }else if (tr.querySelector('td:nth-child(5)').textContent.includes(ma)) {
+    //   tr.style.display = 'table-row';
+    // }else {
+    //   tr.style.display = 'none';
+    // }
+    if (found) {
+            tr.style.display = 'table-row'; // Show the row
+        } else {
+            tr.style.display = 'none'; // Hide the row
+        }
 })
 })
     </script>
@@ -951,16 +968,19 @@ function filterByDateRange() {
 
 
     </script>
-    <!-- <script>
+    <script>
         const search2 = document.getElementById('Search2');
         var selectElement = document.getElementById('tinh-trang-user');
-        var ba=selectElement.value;
+        console.log(selectElement)
+        
+        selectElement.addEventListener('click', function() {
+            var ba=selectElement.value;
+        console.log(ba)
         if(ba == 0){
             ba = 'Bị khóa';
         } else if(ba == 1){
             ba = 'Hoạt động';
         }else {ba = 'Tất cả';}
-        search2.addEventListener('click', function() {
    document.querySelectorAll('.table tbody tr').forEach(tr => {
     if (tr.querySelector('td:nth-child(7)').textContent.includes(ba)) {
       tr.style.display = 'table-row';
@@ -974,7 +994,7 @@ function filterByDateRange() {
 })
 })
     
-    </script> -->
+    </script>
 </body>
 
 </html>
