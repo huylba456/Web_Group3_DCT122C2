@@ -434,6 +434,9 @@
     //     });
 
     // });
+    function cancelSearchOrder(){
+        location.reload();
+    }
     </script>
     
 </body>

@@ -146,7 +146,7 @@
                                 class="fa-solid fa-arrow-up-short-wide"></i></button>
                         <button class="btn-reset-order" onclick="thongKe(2)"><i
                                 class="fa-solid fa-arrow-down-wide-short"></i></button>
-                        <button class="btn-reset-order" onclick="thongKe(0)"><i
+                            <button class="btn-reset-order" onclick="cancelSearchTable()"><i
                                 class="fa-solid fa-rotate-right"></i></button>
                     </div>
                 </div>
@@ -346,6 +346,11 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <script src="js/statistic.js"></script>
+    <script>
+        function cancelSearchTable(){
+            location.reload();
+        }
+    </script>
 
 </body>
 
